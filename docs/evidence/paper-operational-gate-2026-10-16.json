@@ -1,0 +1,50 @@
+{
+  "date_utc": "2026-10-16",
+  "scope": "S10G Paper operational gate",
+  "mode": "paper",
+  "live_trading_enabled": false,
+  "private_mexc_calls": 0,
+  "telegram_delivery_attempted": false,
+  "risk_freshness_ticker_ttl_seconds": 5,
+  "worker_stale_seconds": 20,
+  "alert_activation_confirmation_seconds": {
+    "market_stale": 15,
+    "worker_down": 10,
+    "kill_switch": 0
+  },
+  "alert_recovery_seconds": 30,
+  "tests": {
+    "command": "make lint test",
+    "result": "119 passed, 1 third-party anyio/starlette deprecation warning",
+    "ws_disconnect": "DATA_STALE, no order",
+    "heartbeat_only_stall": "WORKER_STALE, no order, market quality trade_eligible",
+    "kill_reduce_only_close": "ALLOW, filled",
+    "process_harness": "temporary local PostgreSQL 18, 2 API processes, 2 alert processes, 1 outbox activation",
+    "process_harness_file": "paper-operational-process-2026-10-16.json"
+  },
+  "compose": {
+    "services_rebuilt": ["api", "trading"],
+    "migration_head": "f7c6482e5a01",
+    "alembic_check": "No new upgrade operations detected",
+    "smoke": "PASS: paper mode, readiness and all dependencies ok, kill switch true"
+  },
+  "quiet_public_sample": {
+    "duration_seconds": 120.032,
+    "samples": 109,
+    "http_errors": 0,
+    "ticker_stale_samples": 1,
+    "ticker_age_p99_seconds": 4.729,
+    "ticker_age_max_seconds": 5.052,
+    "ticker_source_step_p50_seconds": 3.003,
+    "ticker_source_step_max_seconds": 3.865,
+    "summary_file": "paper-public-quiet-summary-2026-10-16.json",
+    "samples_file": "paper-public-quiet-2026-10-16.jsonl"
+  },
+  "limits": [
+    "120 seconds do not establish MEXC cadence SLA or long-tail freshness",
+    "No real Telegram test channel delivery or old backlog triage",
+    "No controlled DB delay or full partial-loop stall in a live worker process",
+    "No private account fee, fill, tier, ADL or liquidation parity",
+    "No live trading or exchange order execution"
+  ]
+}

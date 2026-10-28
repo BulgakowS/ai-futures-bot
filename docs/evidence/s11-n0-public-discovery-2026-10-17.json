@@ -1,0 +1,327 @@
+{
+  "active_compose_db_paper_outbox_access": false,
+  "announcements": {
+    "btc_distinct_4h_post_windows": 7,
+    "candidate_limit": "Keyword counts are screening upper bounds, not verified BTC-wide impact; sampled pages do not give complete corpus counts or edit history.",
+    "cross_page_duplicate_rows": 0,
+    "endpoint": "https://api.mexc.com/api/v3/announcements",
+    "language": "en-US",
+    "limit": 100,
+    "newest_sampled_post_utc": "2026-10-16T14:51:30Z",
+    "oldest_sampled_post_utc": "2018-03-31T23:59:43Z",
+    "page1_page2_overlap": 0,
+    "page1_repeat": {
+      "added_urls": 0,
+      "changed_title_hashes_for_shared_urls": 0,
+      "items": 100,
+      "removed_urls": 0,
+      "reported_total_pages": 281,
+      "same_order": true
+    },
+    "page_summaries": [
+      {
+        "broad_futures_candidate_count": 18,
+        "btc_title_count": 1,
+        "descending_post_time": true,
+        "first_post_utc": "2026-10-16T14:51:30Z",
+        "futures_keyword_count": 54,
+        "items": 100,
+        "oldest_post_utc": "2026-10-08T09:53:55Z",
+        "page": 1,
+        "reported_total_pages": 281
+      },
+      {
+        "broad_futures_candidate_count": 25,
+        "btc_title_count": 3,
+        "descending_post_time": true,
+        "first_post_utc": "2026-10-08T09:30:43Z",
+        "futures_keyword_count": 57,
+        "items": 100,
+        "oldest_post_utc": "2026-09-29T08:19:52Z",
+        "page": 2,
+        "reported_total_pages": 281
+      },
+      {
+        "broad_futures_candidate_count": 20,
+        "btc_title_count": 2,
+        "descending_post_time": true,
+        "first_post_utc": "2026-06-02T09:59:25Z",
+        "futures_keyword_count": 38,
+        "items": 100,
+        "oldest_post_utc": "2026-05-25T10:42:43Z",
+        "page": 20,
+        "reported_total_pages": 281
+      },
+      {
+        "broad_futures_candidate_count": 12,
+        "btc_title_count": 1,
+        "descending_post_time": true,
+        "first_post_utc": "2024-09-12T14:03:51Z",
+        "futures_keyword_count": 27,
+        "items": 100,
+        "oldest_post_utc": "2024-09-06T05:02:52Z",
+        "page": 140,
+        "reported_total_pages": 281
+      },
+      {
+        "broad_futures_candidate_count": 1,
+        "btc_title_count": 0,
+        "descending_post_time": true,
+        "first_post_utc": "2020-10-23T03:06:51Z",
+        "futures_keyword_count": 5,
+        "items": 39,
+        "oldest_post_utc": "2018-03-31T23:59:43Z",
+        "page": 281,
+        "reported_total_pages": 281
+      }
+    ],
+    "sampled_pages": [
+      1,
+      2,
+      20,
+      140,
+      281
+    ],
+    "sampled_rows": 439,
+    "unique_broad_futures_keyword_candidates": 76,
+    "unique_btc_title_candidates": 7,
+    "unique_canonical_rows": 439,
+    "unique_futures_keyword_candidates": 181
+  },
+  "checked_at_utc": "2026-10-17T10:43:48Z",
+  "documentation": {
+    "announcements": "https://www.mexc.com/api-docs/spot-v3/mexc-platform/get-announcements",
+    "futures_kline": "https://www.mexc.com/api-docs/futures/market-endpoints/get-candlestick-data",
+    "terms_observation": "Section 17(d) restricts listed commercial uses of MEXC data without written consent; 17(e) has broad restrictions on copying/storing properties; 17(f) addresses automated access not purposely provided. Whether local model research/training is authorized is unresolved here; no legal conclusion.",
+    "user_agreement": "https://www.mexc.com/terms",
+    "user_agreement_last_updated": "2026-10-13"
+  },
+  "local_training_resources": {
+    "cpu_logical": 8,
+    "hardware": "Apple M1 Pro",
+    "limit": "Model, feature matrix and licensed dataset are not fixed; N0 does not claim training-time or memory fit.",
+    "ram_bytes": 17179869184,
+    "ram_gib": 16,
+    "training_peak_ram_measured": false,
+    "training_wall_time_measured": false
+  },
+  "market": {
+    "latest_hour4": {
+      "duplicate_time_rows": 0,
+      "final": 1999,
+      "first_final_utc": "2025-11-18T04:00:00Z",
+      "largest_step_hours": 4.0,
+      "last_final_utc": "2026-10-17T04:00:00Z",
+      "missing_4h_windows_within_span": 0,
+      "non_4h_steps": 0,
+      "parallel_lengths_equal": true,
+      "returned": 2000
+    },
+    "older_hour4_fixed_window": {
+      "duplicate_time_rows": 0,
+      "first_utc": "2025-10-01T00:00:00Z",
+      "last_utc": "2025-10-08T00:00:00Z",
+      "missing_4h_windows_within_returned_span": 0,
+      "request_end_utc": "2025-10-08T00:00:00Z",
+      "request_start_utc": "2025-10-01T00:00:00Z",
+      "returned": 43
+    },
+    "sampled_news_event_windows": [
+      {
+        "earliest_returned_utc": "2026-10-08T21:00:00Z",
+        "event_post_utc": "2026-10-09T09:20:43Z",
+        "expected_hourly_windows": 19,
+        "latest_returned_utc": "2026-10-09T15:00:00Z",
+        "missing_hourly_windows": 0,
+        "request_end_utc": "2026-10-09T15:00:00Z",
+        "request_start_utc": "2026-10-08T21:00:00Z",
+        "required_4h_label_windows_present": true,
+        "returned": 19,
+        "title_screen": "BTC"
+      },
+      {
+        "earliest_returned_utc": "2024-09-08T14:00:00Z",
+        "event_post_utc": "2024-09-09T02:34:23Z",
+        "expected_hourly_windows": 19,
+        "latest_returned_utc": "2024-09-09T08:00:00Z",
+        "missing_hourly_windows": 0,
+        "request_end_utc": "2024-09-09T08:00:00Z",
+        "request_start_utc": "2024-09-08T14:00:00Z",
+        "required_4h_label_windows_present": true,
+        "returned": 19,
+        "title_screen": "BTC"
+      },
+      {
+        "earliest_returned_utc": "2026-10-14T21:00:00Z",
+        "event_post_utc": "2026-10-15T09:21:09Z",
+        "expected_hourly_windows": 19,
+        "latest_returned_utc": "2026-10-15T15:00:00Z",
+        "missing_hourly_windows": 0,
+        "request_end_utc": "2026-10-15T15:00:00Z",
+        "request_start_utc": "2026-10-14T21:00:00Z",
+        "required_4h_label_windows_present": true,
+        "returned": 19,
+        "title_screen": "broad_futures_keyword"
+      }
+    ]
+  },
+  "network_budget": {
+    "actual_requests": 11,
+    "body_limit_bytes": 4000000,
+    "elapsed_seconds": 7.002,
+    "global_deadline_seconds": 90,
+    "host_allowlist": [
+      "https://api.mexc.com"
+    ],
+    "max_requests": 12,
+    "methods": [
+      "GET"
+    ],
+    "minimum_interval_seconds": 0.6,
+    "no_retries": true,
+    "per_request_timeout_seconds": 8
+  },
+  "private_api_calls": 0,
+  "raw_titles_urls_prices_saved": false,
+  "requests": [
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:41Z",
+      "bytes": 23903,
+      "http": 200,
+      "path": "/api/v3/announcements",
+      "query": {
+        "language": "en-US",
+        "limit": 100,
+        "page": 1
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:42Z",
+      "bytes": 24167,
+      "http": 200,
+      "path": "/api/v3/announcements",
+      "query": {
+        "language": "en-US",
+        "limit": 100,
+        "page": 2
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:43Z",
+      "bytes": 23979,
+      "http": 200,
+      "path": "/api/v3/announcements",
+      "query": {
+        "language": "en-US",
+        "limit": 100,
+        "page": 20
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:43Z",
+      "bytes": 28493,
+      "http": 200,
+      "path": "/api/v3/announcements",
+      "query": {
+        "language": "en-US",
+        "limit": 100,
+        "page": 140
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:44Z",
+      "bytes": 7877,
+      "http": 200,
+      "path": "/api/v3/announcements",
+      "query": {
+        "language": "en-US",
+        "limit": 100,
+        "page": 281
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:44Z",
+      "bytes": 23903,
+      "http": 200,
+      "path": "/api/v3/announcements",
+      "query": {
+        "language": "en-US",
+        "limit": 100,
+        "page": 1
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:45Z",
+      "bytes": 211558,
+      "http": 200,
+      "path": "/api/v1/contract/kline/BTC_USDT",
+      "query": {
+        "interval": "Hour4"
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:46Z",
+      "bytes": 5019,
+      "http": 200,
+      "path": "/api/v1/contract/kline/BTC_USDT",
+      "query": {
+        "end": 1759881600,
+        "interval": "Hour4",
+        "start": 1759276800
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:47Z",
+      "bytes": 2119,
+      "http": 200,
+      "path": "/api/v1/contract/kline/BTC_USDT",
+      "query": {
+        "end": 1791558000,
+        "interval": "Min60",
+        "start": 1791493200
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:47Z",
+      "bytes": 2138,
+      "http": 200,
+      "path": "/api/v1/contract/kline/BTC_USDT",
+      "query": {
+        "end": 1725868800,
+        "interval": "Min60",
+        "start": 1725804000
+      }
+    },
+    {
+      "api_code": 0,
+      "at_utc": "2026-10-17T10:43:48Z",
+      "bytes": 2135,
+      "http": 200,
+      "path": "/api/v1/contract/kline/BTC_USDT",
+      "query": {
+        "end": 1792076400,
+        "interval": "Min60",
+        "start": 1792011600
+      }
+    }
+  ],
+  "scope": "S11 N0 documented public MEXC discovery, no active stack access",
+  "telegram_messages": 0,
+  "verdict": "collect-only",
+  "verdict_reasons": [
+    "Only a stratified page sample was inspected; usable corpus size and edits cannot be established.",
+    "Historical announcement postTime does not establish first_seen_at or the title version then available; forward news examples are not yet recorded.",
+    "Data-use rights for storing/training on MEXC content are unresolved under current User Agreement.",
+    "No frozen training dataset, time split, costs, calibration or forward evaluation exists."
+  ]
+}

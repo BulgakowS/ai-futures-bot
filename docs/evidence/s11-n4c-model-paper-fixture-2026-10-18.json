@@ -1,0 +1,48 @@
+{
+  "checked_at_utc": "2026-10-18T10:02:01Z",
+  "scope": "S11/N4c synthetic test-only Model to Paper execution gate",
+  "default_gate": {
+    "model_paper_fixture_enabled": false,
+    "allowed_environment": "APP_ENV=test, explicit forecast fixture flag, disposable SQLite URL matching Database settings",
+    "production_route_or_scheduler": false,
+    "real_model_approval": false
+  },
+  "positive_fixture": {
+    "source": "sealed synthetic forecast and proposal with verified artifact and approval",
+    "quantity_policy": "Decimal 10.9 rounded down to 10 by volUnit=1",
+    "paper_path": "ModelPaperService -> PaperService.submit -> PaperService risk -> estimated Paper fill",
+    "paper_intents": 1,
+    "risk_verdicts": 1,
+    "paper_orders": 1,
+    "paper_fills": 1,
+    "risk_outcome": "ALLOW",
+    "order_status": "FILLED",
+    "same_service_concurrent_replay": "same stored result, no extra intent/order/fill",
+    "restart_replay": "same stored result, no extra intent/order/fill"
+  },
+  "negative_fixtures": [
+    "WAIT or unsealed forecast, missing approval, corrupt artifact, mismatched outcome/rules, expired approval, stale forecast and disabled gate: zero Paper intent/order/fill",
+    "min/max quantity outside contract: zero Paper intent/order/fill",
+    "kill, stale market, stale worker and stale rules: one REJECT intent/verdict but zero order/fill",
+    "UNKNOWN existing order: zero new intent/order/fill"
+  ],
+  "checks": {
+    "targeted_command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/integration/test_model_paper.py tests/integration/test_forecast_journal.py tests/unit/test_news_forecast.py",
+    "result": "11 passed",
+    "ruff_check_format": "pass",
+    "git_diff_check": "pass"
+  },
+  "external_activity": {
+    "active_compose_or_database_mutations": 0,
+    "real_mexc_news_gets": 0,
+    "private_api_calls": 0,
+    "telegram_sends": 0,
+    "live_trading": false
+  },
+  "limitations": [
+    "Synthetic forecast clock override and current synthetic Paper market snapshots do not prove real forward event-time execution.",
+    "Race was exercised within one service instance; cross-process ModelPaper orchestration race was not tested.",
+    "Real MEXC news data-use rights, model forward gate and Stage 8 operational gate remain open.",
+    "No production route, scheduler, approval or automatic Paper activation exists."
+  ]
+}

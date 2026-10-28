@@ -1,0 +1,78 @@
+{
+  "recorded_at_utc": "2026-10-18T03:10:39Z",
+  "stage": "S11/N3a",
+  "scope": "synthetic-only local training and evaluation",
+  "network_requests": 0,
+  "active_stack_mutations": 0,
+  "paper_intents_or_orders": 0,
+  "synthetic_fixture": {
+    "symbol": "BTC_USDT",
+    "timeframe": "4h",
+    "final_candles": 100,
+    "announcement_versions": 99,
+    "samples": 98,
+    "source_waits": 1,
+    "split_counts": {"train": 38, "validation": 29, "test": 29},
+    "rolling_heldout_test_counts": [14, 15],
+    "embargo_hours": 4,
+    "dataset_checksum": "c13e16d56569774f957a5e34b81326a3b2bc6a8b01bde3ef118091f1e95b7452",
+    "config_checksum": "6d6318c65e65de23aa0be22746ecef597adb6dd0d2e1f72d988169f76286585b",
+    "source_checksum": "dd7ee6e103109a22a271b1f29add2fccaed42252dc66808ce8e74201ed8fd159"
+  },
+  "algorithm": {
+    "version": "multinomial-sgd-v1",
+    "seed": 7,
+    "epochs": 160,
+    "learning_rate": "0.03",
+    "l2": "0.001",
+    "threshold_source": "validation_only",
+    "candidate_thresholds": ["0.40", "0.50", "0.60", "0.70"],
+    "label_cost_bps": "10",
+    "fee_bps_per_side": "4",
+    "synthetic_funding_bps": "0",
+    "synthetic_roundtrip_slippage_bps": "2"
+  },
+  "evaluation": {
+    "status": "evaluated-synthetic",
+    "promotion_verdict": "collect-only: synthetic data and no forward evidence",
+    "models": {
+      "market-only": {
+        "artifact_checksum": "70682936bcf9df87aa73b23adc324cef18b51f2272c66a4d275f0a57282aed14",
+        "threshold": "0.70",
+        "test_brier": "0.00077676",
+        "test_wait_count": 0
+      },
+      "news-only": {
+        "artifact_checksum": "8ae8b337beb780934e3aba7b4131b3ff7fcf8ff0b07eb6129b8c69f22a6a8bad",
+        "threshold": "0.40",
+        "test_brier": "0.52060605",
+        "test_wait_count": 10
+      },
+      "market+news": {
+        "artifact_checksum": "90084cc582aa0ab9ad062887040f3a6a7bd11fc0410c8dcadb344e0f809af582",
+        "threshold": "0.70",
+        "test_brier": "0.00077119",
+        "test_wait_count": 0
+      }
+    },
+    "test_brier_news_minus_market": "-0.00000557",
+    "baselines_test_brier": {
+      "always-neutral": "0.97724138",
+      "market-sign-rule": "1.46000000"
+    }
+  },
+  "verification": {
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/unit/test_news_dataset.py tests/unit/test_news_training.py",
+    "result": "16 passed in 0.90s",
+    "ruff_check": "pass",
+    "ruff_format_check": "pass",
+    "compileall": "pass",
+    "git_diff_check": "pass"
+  },
+  "limits": [
+    "All titles and candles are synthetic fixtures; no raw real news or prices are stored here.",
+    "The repeating synthetic price pattern can make market-only scores appear nearly perfect; these numbers are not evidence of MEXC predictive performance or profitability.",
+    "No real forward news coverage, persisted dataset export, funding history, model registry, forecast UI, or broker wiring was tested.",
+    "MEXC data-use rights remain unresolved; no model is approved for deployment or trading."
+  ]
+}

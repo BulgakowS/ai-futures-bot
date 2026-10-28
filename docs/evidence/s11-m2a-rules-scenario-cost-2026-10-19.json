@@ -1,0 +1,25 @@
+{
+  "stage": "S11/M2a",
+  "date_utc": "2026-10-19",
+  "status": "collect-only",
+  "source": "public MEXC Contract Info payload, local observation only",
+  "scope": "default-off BTC_USDT rules journal and offline scenario cost",
+  "checks": {
+    "targeted_integration": "3 passed (root verification before handoff)",
+    "full_local": "make lint test: Ruff PASS; 258 passed, 1 Starlette/anyio deprecation warning",
+    "migration": "disposable SQLite upgrade head, check, downgrade d3c7a5e91f02, upgrade head, check: PASS",
+    "browser_docs": "gstack /browse attempted; local Chromium unavailable; no new official Contract Info verification"
+  },
+  "boundaries": {
+    "rules_effective_at": "local observed_at, not exchange effective time",
+    "fee": "public metadata assumption, not account fee or actual fill",
+    "funding_slippage": "predeclared Decimal scenario assumptions, not observed costs",
+    "g5b": "not wired; remains collect-only/missing_cost_provenance",
+    "active_postgresql_compose": "not migrated or run",
+    "gkg_pilot": "not restarted; prior pilot stopped after two releases",
+    "news_network_budget_bytes": 5000000000,
+    "news_retention": "minimal numeric aggregates and coverage only",
+    "model_training_or_forward_metric": "none",
+    "paper_telegram_live": "not run"
+  }
+}

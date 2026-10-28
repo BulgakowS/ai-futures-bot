@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-10-14T15:48:27.665786+00:00",
+  "ticker": {
+    "symbol": "BTC_USDT",
+    "kind": "ticker",
+    "event_id": "4398886e-f9bf-45bf-ac4d-588bae9777c1",
+    "source_time": "2026-10-14T15:48:25.807000+00:00",
+    "received_at": "2026-10-14T15:48:27.326888+00:00",
+    "source": "ws",
+    "quality_status": "ok",
+    "config_version": "foundation-v1",
+    "data": {
+      "lastPrice": "81756.3",
+      "bid1": "81756.3",
+      "ask1": "81756.4",
+      "fairPrice": "81761.8",
+      "indexPrice": "81799.5",
+      "fundingRate": "-0.000016",
+      "holdVol": "448363547"
+    },
+    "quality": {
+      "status": "ok",
+      "trade_eligible": true,
+      "reasons": [],
+      "transport": "ws"
+    }
+  },
+  "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+  "private_keys": false,
+  "depth": {
+    "source_time": "2026-10-14T15:48:24.870000+00:00",
+    "source": "rest",
+    "quality_status": "ok"
+  },
+  "funding": {
+    "source_time": "2026-10-14T15:48:24.180000+00:00",
+    "source": "rest",
+    "quality_status": "ok"
+  },
+  "candles": {
+    "1m": {
+      "count": 200,
+      "final_count": 199,
+      "last_source_time": "2026-10-14T15:48:27.438000+00:00"
+    },
+    "5m": {
+      "count": 200,
+      "final_count": 199,
+      "last_source_time": "2026-10-14T15:48:27.438000+00:00"
+    },
+    "15m": {
+      "count": 200,
+      "final_count": 199,
+      "last_source_time": "2026-10-14T15:48:27.438000+00:00"
+    }
+  },
+  "health": {
+    "status": "ok",
+    "mode": "paper",
+    "dependencies": {
+      "database": "ok",
+      "migrations": "ok",
+      "redis": "ok",
+      "trading": "ok",
+      "state": "ok"
+    },
+    "request_id": "ed38c838-8536-4b32-9adf-8552cd6c431e",
+    "occurred_at": "2026-10-14T15:48:27.816543+00:00"
+  }
+}

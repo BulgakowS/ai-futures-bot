@@ -1,0 +1,43 @@
+{
+  "stage": "S10B/F3",
+  "date_utc": "2026-10-15",
+  "environment": "local Apple Silicon; SQLite deterministic tests; Docker Compose PostgreSQL/Redis/API/trading; APP_MODE=paper; kill switch true",
+  "responsible": "Codex F3 subagent",
+  "tests": {
+    "command": "make lint test",
+    "result": "95 passed, 1 third-party anyio/starlette deprecation warning",
+    "intermediate_run": "One earlier full run had 94 passed and one existing bot OPEN/WAIT timing failure while local Compose services were active; isolated bot rerun passed and the final full rerun passed 95/95. Bot fixture uses the production 5-second market TTL and can be load-sensitive; no F3 assertion failed.",
+    "dataset": "synthetic deterministic 27 settlement fixtures; no live keys or orders",
+    "scenarios": [
+      "more than 20 held settlements and collectCycle transition",
+      "positive and negative settled rates",
+      "page metadata, ordered overlap, duplicate, missing page/time, shifted and same-count shifted page",
+      "restart and repeated tick: each held settlement posted once",
+      "failed pagination retry repairs coverage without ledger rewrite",
+      "closed position in current epoch, missing final 1m close, later recovery",
+      "equity unknown and open/reset blocked while unresolved",
+      "separate paper portfolio balance and backtest mode isolation"
+    ]
+  },
+  "compose": {
+    "build": "docker compose -p ai-futures up -d --build api trading: PASS",
+    "migration": "alembic current: e0e429e4cf31 (head)",
+    "schema_check": "alembic check: No new upgrade operations detected",
+    "smoke": "scripts/smoke.py: readiness ok; database/migrations/redis/trading/state ok; mode paper; kill switch true",
+    "sanitized_funding_status": "after final restart BTC_USDT verified coverage 2026-10-14 16:00 UTC through 2026-10-15 16:00 UTC; earliest held fill 2026-10-14 16:04 UTC; 1000 durable public rows, including older prior observations"
+  },
+  "public_probe": {
+    "time_utc_approx": "2026-10-15 14:07",
+    "host": "https://api.mexc.com",
+    "requests": 5,
+    "methods": "GET only; current funding and history pages 1/3, 2/2, 1/1000, 2/999",
+    "result": "all success=true, code=0; history totalCount=1620; 1/1000 returned 1000 rows, 2/999 returned 621; overlapping settleTime=1763280000000",
+    "credential_use": "none",
+    "official_source": "https://www.mexc.com/api-docs/futures/market-endpoints/get-funding-rate-history"
+  },
+  "limits": [
+    "Public history does not provide exact settlement valuation; prior final 1m close is an explicit model estimate.",
+    "Pagination has no documented atomic snapshot guarantee; page changes or cadence ambiguity remain fail closed.",
+    "No live account funding parity or multi-process PostgreSQL race/long soak claim."
+  ]
+}

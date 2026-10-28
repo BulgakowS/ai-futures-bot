@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-10-17T00:30:49Z",
+  "scope": "S10J offline Telegram delivery gate",
+  "delivery_enabled_in_local_env": false,
+  "local_env_credential_values_logged": false,
+  "external_messages": 0,
+  "test_channel_send_attempted": false,
+  "active_outbox_update_or_delete": false,
+  "make_lint_test": {
+    "result": "pass",
+    "tests_passed": 138,
+    "warnings": 1
+  },
+  "compose_api_rebuild": "pass",
+  "compose_read_only_smoke": {
+    "result": "pass",
+    "mode": "paper",
+    "kill_switch": true,
+    "dependencies": ["database", "migrations", "redis", "trading", "state"]
+  },
+  "historical_outbox_read_only_check": {
+    "cohort_before_or_at_utc": "2026-10-16T15:41:26.787264Z",
+    "rows": 323,
+    "published_rows": 0
+  },
+  "limits": [
+    "No real Telegram delivery was authorized or tested",
+    "Only the known historical cohort was checked against active Compose DB",
+    "The modelled restart/idempotency tests use local SQLite and httpx.MockTransport"
+  ]
+}

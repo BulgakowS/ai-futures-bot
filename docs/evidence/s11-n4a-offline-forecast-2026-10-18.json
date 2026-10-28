@@ -1,0 +1,37 @@
+{
+  "task": "S11/N4a offline forecast and journal",
+  "recorded_at_utc": "2026-10-18T03:17:40Z",
+  "inputs": "synthetic fixtures only",
+  "environment": "disposable SQLite, APP_ENV=test, explicit fixture gate",
+  "tests": {
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/unit/test_news_dataset.py tests/unit/test_news_training.py tests/unit/test_news_forecast.py tests/integration/test_forecast_journal.py",
+    "passed": 21,
+    "failed": 0,
+    "duration_seconds": 2.28
+  },
+  "migration": {
+    "revision": "b8c9e4a01722",
+    "disposable_sqlite_upgrade_head": "pass",
+    "alembic_check": "pass: no new upgrade operations",
+    "downgrade_to": "a4e7d9c20b61",
+    "downgrade": "pass",
+    "reupgrade": "pass",
+    "temporary_database_removed": true
+  },
+  "contract_checks": [
+    "feature-only context has no future label fields",
+    "N2a and N4a feature hashes match at identical anchor",
+    "future candle and news edit do not change earlier feature hash",
+    "unapproved or non-test synthetic artifact returns WAIT",
+    "stale, coverage gap, edit, backfill, invalid artifact/rules/context return WAIT",
+    "candidate prices use Decimal and tick rounding only in approved test fixture",
+    "restart replay retains one sealed forecast and causal IDs",
+    "SQLite UPDATE/DELETE triggers reject journal mutations",
+    "zero Paper intent and order rows in disposable test database"
+  ],
+  "external_requests": 0,
+  "active_compose_or_database_writes": 0,
+  "paper_intents_or_orders": 0,
+  "telegram_sends": 0,
+  "verdict": "N4a partial; Stage 9 collect-only"
+}

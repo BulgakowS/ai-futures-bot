@@ -1,0 +1,42 @@
+{
+  "by_kind": [
+    {
+      "kind": "kill_switch",
+      "last_24h": 3,
+      "last_hour": 0,
+      "newest_utc": "2026-10-16T08:57:59.801645+00:00",
+      "oldest_utc": "2026-10-16T08:50:13.073508+00:00",
+      "published": 0,
+      "queued": 3,
+      "total": 3
+    },
+    {
+      "kind": "market_stale",
+      "last_24h": 83,
+      "last_hour": 0,
+      "newest_utc": "2026-10-16T23:06:47.400474+00:00",
+      "oldest_utc": "2026-10-15T08:30:24.385999+00:00",
+      "published": 0,
+      "queued": 275,
+      "total": 275
+    },
+    {
+      "kind": "worker_down",
+      "last_24h": 22,
+      "last_hour": 0,
+      "newest_utc": "2026-10-16T15:37:46.869517+00:00",
+      "oldest_utc": "2026-10-15T08:32:50.59129+00:00",
+      "published": 0,
+      "queued": 48,
+      "total": 48
+    }
+  ],
+  "checked_at_utc": "2026-10-17T00:34:06.772604+00:00",
+  "payload_or_secret_exported": false,
+  "scope": "S10K before; read-only active Compose PostgreSQL",
+  "window_definitions": [
+    "lifetime",
+    "last 1 hour",
+    "last 24 hours"
+  ]
+}

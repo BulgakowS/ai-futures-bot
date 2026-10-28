@@ -1,0 +1,90 @@
+{
+  "date_utc": "2026-10-20",
+  "scope": "read-only MEXC Futures Live/0-fee discovery",
+  "official_pages_method": "gstack /browse, headed local Chrome",
+  "official_sources": [
+    {
+      "url": "https://www.mexc.com/zero-fee",
+      "finding": "0-Fee Fest terms exclude API users from 0 fees; eligibility, pair validity, quota and risk review can vary; liquidation is excluded"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/market-endpoints/get-contract-info",
+      "finding": "GET /api/v1/contract/detail/country, optional symbol, 10 requests per 2 seconds; public fee rates and zero-fee flags are contract metadata"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-fee-details",
+      "finding": "private GET /api/v1/private/account/tiered_fee_rate/v2; View Order Details; 20 requests per 2 seconds; documented data object includes symbol, realMakerFee, realTakerFee and feeRateMode"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/integration-guide",
+      "finding": "private OPEN-API requests require ApiKey, Request-Time and HMAC Signature; futures order placement permission requires KYC; unbound API keys expire after 90 days"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/place-order",
+      "finding": "private POST /api/v1/private/order/create; Order Placing; 4 requests per 2 seconds; externalOid optional; reduceOnly only in one-way mode"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-order-by-external-id",
+      "finding": "private order lookup by external ID; View Order Details; 20 requests per 2 seconds"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-current-orders",
+      "finding": "private current order list; View Order Details; 20 requests per 2 seconds"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-historical-order-deal-details",
+      "finding": "private historical deal details include actual fee, feeCurrency, taker and orderId; View Order Details; 20 requests per 2 seconds"
+    }
+  ],
+  "public_catalog_probe": {
+    "performed_by": "root agent",
+    "method": "GET",
+    "path": "/api/v1/contract/detail/country",
+    "symbol_parameter": "omitted",
+    "authentication": "none",
+    "response_cap_attempts": ["2 MB", "8 MB"],
+    "first_attempt": "response exceeded 2 MB cap; no catalog conclusion drawn",
+    "second_attempt": {
+      "success": true,
+      "code": 0,
+      "data_type": "list",
+      "rows": 1108
+    },
+    "observed_examples_with_public_zero_flags_and_zero_maker_taker_rates": [
+      "ARB_USDT",
+      "LINK_USDT (feeRateType=TEMP)",
+      "AVAX_USDT"
+    ],
+    "limitations": "No count of all zero-fee rows, account eligibility, API fee, historical validity or regional eligibility established"
+  },
+  "read_only_operational_snapshot": {
+    "performed_by": "root agent",
+    "date_utc": "2026-10-20",
+    "readiness": "ok",
+    "mode": "paper",
+    "kill_switch": true,
+    "telegram_alert_outbox_queued": 362,
+    "telegram_alert_outbox_published": 0,
+    "market_stale_alerts_last_24h": 6,
+    "quiet_market_sample": {
+      "script": "scripts/quiet_market_sample.py",
+      "start_utc": "2026-10-20T08:34:42Z",
+      "end_utc": "2026-10-20T08:35:42Z",
+      "samples": 60,
+      "http_errors": 0,
+      "ticker_stale": 4,
+      "ticker_source_age_seconds": {
+        "p50": 2.895,
+        "p95": 5.152,
+        "max": 5.738
+      },
+      "full_series_local_only": "/private/tmp/ai-futures-live-readiness-market-2026-10-20.jsonl"
+    },
+    "limitation": "Short read-only sample; no SLA or stale root cause established"
+  },
+  "private_requests": 0,
+  "orders": 0,
+  "api_keys_used": false,
+  "runtime_change": false,
+  "live_gate": "closed; BTC_USDT Paper-only runtime"
+}

@@ -1,0 +1,32 @@
+{
+  "stage": "S11/G7c",
+  "checked_at_utc": "2026-10-19T22:03:00Z",
+  "status": "evaluated-synthetic-only",
+  "source": "synthetic-sparse-fixture-v1",
+  "dataset_schema": "gdelt-gkg-sparse-market-dataset-v3",
+  "algorithm": "sparse-gkg-multinomial-sgd-v1",
+  "split": {
+    "train": 27,
+    "validation": 14,
+    "test": 13,
+    "embargo_hours": 4
+  },
+  "paired_test": {
+    "anchor_count": 13,
+    "same_anchor_set": true,
+    "brier_delta_sparse_minus_market": "-0.00012547"
+  },
+  "artifact_checksums": {
+    "market-only": "1a848bc712da86b44c7758a759bd26096cb4863c3054e4ff04e3171c279a2cf0",
+    "sparse-gkg+market": "fc5f4737b0ab27b3c06f0ad10e7b29be36dbada9faf3039042073ab817820338"
+  },
+  "real_artifacts": 0,
+  "real_forward_clock_started": false,
+  "paper_orders": 0,
+  "limitations": [
+    "All samples and market/news IDs in this evaluation are synthetic fixtures.",
+    "Small synthetic Brier difference is not evidence of predictive value or profitability.",
+    "Real persisted entrypoint returns collect-only without verified rules, account fee, funding, slippage and frozen source-compatible cohort.",
+    "No production inference, automatic Paper execution or Live trading."
+  ]
+}

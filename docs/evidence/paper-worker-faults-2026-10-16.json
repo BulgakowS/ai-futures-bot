@@ -1,0 +1,117 @@
+{
+  "alert_confirm_seconds": {
+    "market_stale": 15,
+    "worker_down": 10
+  },
+  "alert_outbox": {
+    "kill_switch": 1,
+    "market_stale": 1,
+    "worker_down": 1
+  },
+  "api_process": "uvicorn_create_app",
+  "bot_stall": {
+    "blocked_open": {
+      "no_order_or_fill": true,
+      "reason": "WORKER_STALE"
+    },
+    "degraded": {
+      "elapsed_s": 3.922,
+      "utc": "2026-10-16T15:36:16.999873+00:00"
+    },
+    "fault_utc": "2026-10-16T15:36:13.078302+00:00"
+  },
+  "database": "temporary_local_postgresql_cluster",
+  "db_row_delay": {
+    "blocked_open": {
+      "no_order_or_fill": true,
+      "reason": "WORKER_STALE"
+    },
+    "fault_utc": "2026-10-16T15:36:44.603927+00:00",
+    "hold_elapsed_s": 3.948,
+    "readiness_trading": "stale",
+    "released_utc": "2026-10-16T15:36:48.552173+00:00",
+    "stale": {
+      "elapsed_s": 3.745,
+      "utc": "2026-10-16T15:36:48.352801+00:00"
+    }
+  },
+  "external_messages": 0,
+  "ingestion_stall": {
+    "blocked_open": {
+      "no_order_or_fill": true,
+      "reason": "WORKER_STALE"
+    },
+    "degraded": {
+      "elapsed_s": 4.172,
+      "utc": "2026-10-16T15:36:22.100744+00:00"
+    },
+    "fault_utc": "2026-10-16T15:36:17.929034+00:00",
+    "stale_reduce_close": "DATA_STALE"
+  },
+  "kill_close_fresh": {
+    "fill": true,
+    "risk": "ALLOW"
+  },
+  "ledger": {
+    "balanced": true,
+    "rows": 7
+  },
+  "market_alert": {
+    "elapsed_s": 18.197,
+    "utc": "2026-10-16T15:36:42.464026+00:00"
+  },
+  "market_source": "synthetic_loopback_only",
+  "mode": "paper",
+  "new_pending_after_recovery_fill": {
+    "elapsed_s": 1.257,
+    "utc": "2026-10-16T15:36:44.603487+00:00"
+  },
+  "paper_recovery": {
+    "elapsed_s": 0.825,
+    "utc": "2026-10-16T15:36:13.004366+00:00"
+  },
+  "paper_stall": {
+    "blocked_open": {
+      "no_order_or_fill": true,
+      "reason": "WORKER_STALE"
+    },
+    "degraded": {
+      "elapsed_s": 4.568,
+      "utc": "2026-10-16T15:36:01.804067+00:00"
+    },
+    "fault_utc": "2026-10-16T15:35:57.235932+00:00",
+    "pending_no_fill": true,
+    "pending_status": "RISK_CANCELED",
+    "readiness_trading": "stale"
+  },
+  "private_mexc_calls": 0,
+  "processes": {
+    "api": 1,
+    "trading_worker": 2
+  },
+  "restart_replay": {
+    "counts_after": {
+      "fill": 1,
+      "intent": 6,
+      "order": 2
+    },
+    "counts_before": {
+      "fill": 1,
+      "intent": 6,
+      "order": 2
+    },
+    "same_intent": true
+  },
+  "startup": {
+    "elapsed_s": 2.065,
+    "utc": "2026-10-16T15:35:55.776845+00:00"
+  },
+  "temporary_postgres_stopped": true,
+  "worker_alert": {
+    "elapsed_s": 9.943,
+    "utc": "2026-10-16T15:36:12.028596+00:00"
+  },
+  "worker_heartbeat_seconds": 1,
+  "worker_process": "run_worker",
+  "worker_stale_seconds": 4
+}

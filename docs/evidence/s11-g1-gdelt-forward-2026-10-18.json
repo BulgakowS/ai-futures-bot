@@ -1,0 +1,44 @@
+{
+  "stage": "S11/G1",
+  "date_utc": "2026-10-18",
+  "source": "GDELT Project DOC 2.0 timelinevol aggregate",
+  "terms": "https://gdeltproject.org/about.html#termsofuse",
+  "data_overview": "https://gdeltproject.org/data.html",
+  "source_check": "N0b official-pages review 2026-10-18 10:14-10:17 UTC",
+  "public_probe": {
+    "performed_by": "root before G1 implementation",
+    "request_count": 1,
+    "query": "bitcoin",
+    "mode": "timelinevol",
+    "timespan": "1d",
+    "series": "Volume Intensity",
+    "point_count": 52,
+    "nonzero_count": 25,
+    "raw_body_committed": false
+  },
+  "implementation": {
+    "enabled_by_default": false,
+    "manual_one_shot_only": true,
+    "max_get_per_call": 1,
+    "max_body_bytes": 256000,
+    "max_points": 96,
+    "min_poll_interval_minutes": 15,
+    "article_fields_persisted": false,
+    "paper_or_model_connected": false
+  },
+  "tests": {
+    "targeted_integration": "3 passed",
+    "full_suite": "206 passed, 1 dependency deprecation warning",
+    "ruff": "passed after formatting-only news_forward.py cleanup",
+    "disposable_sqlite_migration": "upgrade/check/downgrade/upgrade passed",
+    "http": "MockTransport only in G1 tests",
+    "active_postgresql_tested": false
+  },
+  "remaining": [
+    "real recurring forward coverage and revision rate",
+    "PostgreSQL concurrent poller verification",
+    "GDELT-compatible dataset/feature and N5 protocol revision",
+    "source interpretation for local ML training",
+    "N5 forward gate and separate Paper activation"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "active_compose_postgresql_read_only_aggregate",
+  "window_start_utc": "2026-10-16T15:45:48+00:00",
+  "window_end_utc": "2026-10-16T16:00:50+00:00",
+  "query": "count alert.telegram outbox events grouped by payload kind within window",
+  "outbox_events": 0,
+  "concurrent_market_samples": 877,
+  "concurrent_ticker_stale_samples": 21,
+  "limits": [
+    "A zero outbox count does not prove the monitor observed every brief stale interval",
+    "No outbox rows were changed or delivered"
+  ]
+}

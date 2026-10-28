@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-17T07:54:49Z",
+  "scope": "S10M isolated controlled fixture; no active Paper mutations",
+  "browser": {
+    "tool": "gstack /browse headless source CLI",
+    "page": "http://127.0.0.1:3000/",
+    "mock": "scripts/ui_stale_mock.js installed in one browser tab after initial read-only page load",
+    "mocked_data": true,
+    "health_status": "ok",
+    "kill_switch": false,
+    "quality": "stale",
+    "quality_reason": "disconnect_or_schema_error",
+    "ticker_source": "rest_fallback",
+    "banner": "Дані обмежені · disconnect_or_schema_error. Час джерела: 2026-10-17 07:49:08 UTC. Запустити: Недоступно.",
+    "ready_bot_start_disabled": true,
+    "intercepted_fetches": 139,
+    "intercepted_non_get_fetches": 0,
+    "post_clicks": 0,
+    "screenshot": "docs/evidence/ui-stale-mock-2026-10-17.png",
+    "browser_stopped_after_test": true
+  },
+  "bot_gap_fixture": {
+    "test": "tests/integration/test_bots.py::test_disconnect_gap_reconciliation_replay_does_not_redecide",
+    "store": "disposable SQLite test DB",
+    "market_feed": "controlled synthetic fixture",
+    "injected_disconnect_method": "MarketIngestion.disconnect",
+    "missing_final_windows": 1,
+    "decision_reason_while_stale": "DATA_STALE",
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "reconciliation": "MarketIngestion.reconcile with controlled public adapter and replayed backfill",
+    "replayed_final_candle_count": 2,
+    "decisions_after_replay_and_new_bot_service_instance": 1,
+    "final_candle_rows_for_gap_window": 1
+  },
+  "checks": {
+    "bot_and_market_integration": "15 passed, 1 external Starlette deprecation warning",
+    "ruff": "pass",
+    "git_diff_check": "pass"
+  },
+  "limitations": [
+    "Browser quality response is injected, not produced by an actual public WS fault.",
+    "Bot fixture uses synthetic prices and a controlled reconciliation backfill.",
+    "No new public MEXC control query or long running WS tail was executed."
+  ]
+}

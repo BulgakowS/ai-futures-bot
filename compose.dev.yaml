@@ -1,0 +1,11 @@
+services:
+  api:
+    command: [sh, -c, 'alembic upgrade head && uvicorn ai_futures.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir services/api']
+    volumes:
+      - ./services:/app/services:ro
+      - ./alembic:/app/alembic:ro
+      - ./scripts:/app/scripts:ro
+  trading:
+    command: [uvicorn, services.trading.dev:app, --host, 127.0.0.1, --port, '9000', --reload, --reload-dir, services]
+    volumes:
+      - ./services:/app/services:ro

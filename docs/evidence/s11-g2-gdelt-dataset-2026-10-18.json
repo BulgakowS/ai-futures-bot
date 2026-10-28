@@ -1,0 +1,31 @@
+{
+  "stage": "S11/G2",
+  "date_utc": "2026-10-18",
+  "status": "synthetic_offline_contract_only",
+  "schema": "gdelt-volume-market-dataset-v1",
+  "source": "GDELT-owned-aggregate-Volume-Intensity",
+  "symbol": "BTC_USDT",
+  "horizon_hours": 4,
+  "expected_volume_slots_per_anchor": 16,
+  "source_viability": {
+    "g1_bounded_1d_probe_points": 52,
+    "g1_1d_grid_slots": 96,
+    "g1_1d_probe_nonzero_points": 25,
+    "separate_4h_probe": "timeout; no semantics established",
+    "real_eligible_anchors_proven": false,
+    "separate_timelinevolraw_1d_probe": "HTTP 429; no semantics established",
+    "official_doc_url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/",
+    "official_doc_reviewed_at_utc": "2026-10-18T19:43:00Z",
+    "official_doc_limit": "15m timestep for TimelineVol under 72h; no guarantee all slots returned"
+  },
+  "checks": {
+    "targeted_command": "PYTHONPATH=services/api .venv/bin/pytest -q tests/unit/test_gdelt_dataset.py tests/unit/test_news_dataset.py tests/integration/test_gdelt_forward.py",
+    "targeted_result": "18 passed in 3.71s",
+    "new_code_ruff": "PASS",
+    "new_code_ruff_format": "PASS"
+  },
+  "real_training": false,
+  "forward_started": false,
+  "paper_activation": false,
+  "live_trading": false
+}

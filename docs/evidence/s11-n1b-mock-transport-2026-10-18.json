@@ -1,0 +1,51 @@
+{
+  "checked_at_utc": "2026-10-18T09:44:24Z",
+  "scope": "S11/N1b mock-only bounded announcement transport and one-shot poller",
+  "source_shape": "synthetic MEXC announcement page envelope: code=0, data.totalPage, data.rows",
+  "default_gate": {
+    "news_fixture_ingest_enabled": false,
+    "allowed_environment_when_enabled": "test only",
+    "production_ingestion": "hard-disabled",
+    "production_scheduler_wired": false,
+    "accepted_transport": "httpx.MockTransport only"
+  },
+  "bounds": {
+    "endpoint_shape": "GET https://api.mexc.com/api/v3/announcements?language=en-US&page=N&limit=100",
+    "max_pages_per_scan": 3,
+    "page_one_recheck": true,
+    "max_physical_http_attempts_per_transport": 8,
+    "max_retries_per_page": 1,
+    "minimum_interval_seconds": 0.5,
+    "retry_after_cap_seconds": 2,
+    "max_response_body_bytes": 4000000
+  },
+  "verified_fixtures": [
+    "disabled gate caused zero MockTransport calls and zero journal rows",
+    "three pages plus page-one recheck marked shifted on edit",
+    "identical replay after new service instance inserted zero versions",
+    "first_seen_at used fetch observation time and available_at did not backdate to postTime",
+    "transient HTTP 429 and 503 each retried once and succeeded",
+    "persistent HTTP 429 and 503 preserved last_success_at and wrote failure coverage",
+    "attempt bound stopped a third scan at eight physical mock HTTP calls",
+    "all checked fixtures had zero Paper orders"
+  ],
+  "checks": {
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/integration/test_news_transport.py tests/integration/test_news.py",
+    "result": "17 passed in 6.01s",
+    "ruff_check_and_format": "pass",
+    "git_diff_check": "pass"
+  },
+  "external_activity": {
+    "real_mexc_gets": 0,
+    "private_api_calls": 0,
+    "active_compose_db_access": false,
+    "active_paper_mutations": 0,
+    "telegram_messages": 0,
+    "live_trading": false
+  },
+  "limitations": [
+    "Real MEXC page envelope/schema and pagination shifts were not revalidated in this mock-only step.",
+    "Data-use rights for storing/training MEXC announcements remain unresolved.",
+    "PostgreSQL concurrent writers, production API coverage, real forward collection and model evaluation remain untested."
+  ]
+}

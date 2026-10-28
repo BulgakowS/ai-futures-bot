@@ -1,0 +1,49 @@
+{
+  "by_kind": [
+    {
+      "first_soak_window": 0,
+      "kind": "kill_switch",
+      "last_24h": 3,
+      "last_hour": 0,
+      "newest_utc": "2026-10-16T08:57:59.801645+00:00",
+      "observation_window": 0,
+      "oldest_utc": "2026-10-16T08:50:13.073508+00:00",
+      "published": 0,
+      "queued": 3,
+      "second_soak_window": 0,
+      "total": 3
+    },
+    {
+      "first_soak_window": 0,
+      "kind": "market_stale",
+      "last_24h": 80,
+      "last_hour": 0,
+      "newest_utc": "2026-10-16T23:06:47.400474+00:00",
+      "observation_window": 0,
+      "oldest_utc": "2026-10-15T08:30:24.385999+00:00",
+      "published": 0,
+      "queued": 275,
+      "second_soak_window": 0,
+      "total": 275
+    },
+    {
+      "first_soak_window": 0,
+      "kind": "worker_down",
+      "last_24h": 18,
+      "last_hour": 0,
+      "newest_utc": "2026-10-16T15:37:46.869517+00:00",
+      "observation_window": 0,
+      "oldest_utc": "2026-10-15T08:32:50.59129+00:00",
+      "published": 0,
+      "queued": 48,
+      "second_soak_window": 0,
+      "total": 48
+    }
+  ],
+  "checked_at_utc": "2026-10-17T01:34:45.32522+00:00",
+  "observation_end_utc": "2026-10-17T01:34:26.2867+00:00",
+  "observation_events": [],
+  "observation_start_utc": "2026-10-17T00:34:20.354237+00:00",
+  "payload_or_secret_exported": false,
+  "scope": "S10K after; read-only active Compose PostgreSQL"
+}

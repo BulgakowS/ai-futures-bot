@@ -1,0 +1,47 @@
+{
+  "checked_at_utc": "2026-10-18T09:56:42Z",
+  "scope": "S11/N2b synthetic persisted coverage history and event-time export",
+  "database": "disposable SQLite, Alembic head c5e8a21d9f40",
+  "contracts": {
+    "coverage_history": "append-only observation per successful page or recorded failure; atomic with journal page write",
+    "coverage_status": "ok only after all reported pages in one scan, without shift",
+    "export": "test-only BTC_USDT 4h synthetic Candle + AnnouncementVersion + coverage observations to N2a DTO",
+    "frozen_seal": "N2a dataset checksum plus canonical export manifest checksum covering visible coverage observation IDs",
+    "late_correction": "received_at after anchor yields WAIT; prior exported snapshot is unchanged",
+    "mixed_mode": "non-synthetic BTC_USDT 4h Candle source rejected"
+  },
+  "verified_fixtures": [
+    "prior coverage error remained news_coverage_gap at old anchor after later ok recovery",
+    "restart produced identical dataset and manifest checksum",
+    "later announcement edit left earlier feature hash unchanged and yielded news_edit WAIT",
+    "future candle price changed label and checksum without changing earlier feature hash",
+    "current candle correction after anchor yielded market_late WAIT",
+    "SQLite UPDATE and DELETE of coverage observation were rejected",
+    "disabled export and mixed source were rejected",
+    "disposable coverage fixture checked zero Paper orders",
+    "Disposable PostgreSQL UPDATE/DELETE triggers rejected mutation and concurrent same-edit kept one new version"
+  ],
+  "checks": {
+    "targeted_pytest": "33 passed",
+    "sqlite_migration": "upgrade head, alembic check, downgrade b8c9e4a01722, upgrade head: all exit 0",
+    "ruff_check_format": "pass",
+    "git_diff_check": "pass",
+    "disposable_postgresql": "initdb/start, Alembic upgrade head, UPDATE and DELETE rejected, two concurrent same-edit ingests returned IngestResult, 2 versions and 3 observations, stop: pass",
+    "disposable_postgresql_command": "PYTHONPATH=.:services/api .venv/bin/python scripts/disposable_news_pg_probe.py"
+  },
+  "external_activity": {
+    "real_mexc_news_gets": 0,
+    "active_compose_or_database_mutations": 0,
+    "paper_orders": 0,
+    "telegram_sends": 0,
+    "live_trading": false,
+    "disposable_postgresql_cluster": "Unix socket only; temporary directory deleted after stop"
+  },
+  "limitations": [
+    "One disposable PostgreSQL concurrent same-edit pair passed; broader writer schedules and repeatable-read export isolation remain untested.",
+    "Synthetic source and coverage do not establish real MEXC data-use rights or feed completeness.",
+    "Current mutable Candle rows do not preserve historical corrections; later received_at fails closed rather than reconstructing missing old values.",
+    "No real forward model evaluation or Paper execution occurred.",
+    "Coverage state before this migration cannot be reconstructed from the old mutable latest row; migration does not backfill historical observations."
+  ]
+}

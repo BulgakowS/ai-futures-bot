@@ -1,0 +1,112 @@
+{
+  "date_utc": "2026-10-15",
+  "stage": "S09 limited local hardening",
+  "telegram_official_source": {
+    "checked_utc": "2026-10-15",
+    "url": "https://core.telegram.org/bots/api#sendmessage",
+    "browser": "gstack /browse",
+    "test_channel_delivery": "not tested; no token or channel"
+  },
+  "commands": {
+    "make lint test": "PASS: 87 passed, 1 third-party anyio/starlette deprecation warning",
+    "docker compose -p ai-futures up -d --build api trading": "PASS",
+    "docker compose -p ai-futures exec -T api alembic current": "b7638c3920e4 (head)",
+    "docker compose -p ai-futures exec -T api alembic check": "No new upgrade operations detected",
+    "docker compose -p ai-futures exec -T api python scripts/smoke.py": "PASS: readiness/DB/migrations/Redis/trading/state ok; kill switch true",
+    "scripts/fault_smoke.py": "PASS: local controlled outages and recovery",
+    "scripts/backup_restore.py": "PASS: isolated PostgreSQL restore; temporary DB dropped"
+  },
+  "backup_restore": {
+    "format": "pg_dump custom, mode 0600, file outside repo; temporary file removed after verification",
+    "sha256": "5ce660af58e0ef52063891d781739333c80feab971f5dee5c096bdc3d76ec7b0",
+    "isolated_restore": "pass",
+    "schema_revision": "b7638c3920e4",
+    "paper_portfolios": 5,
+    "paper_orders": 28,
+    "paper_fills": 24,
+    "paper_ledger": 42,
+    "backtest_datasets": 1,
+    "backtest_runs": 2,
+    "unbalanced_ledger": 0,
+    "orphan_paper_orders": 0,
+    "orphan_paper_fills": 0,
+    "orphan_backtest_runs": 0,
+    "invalid_backtest_modes": 0,
+    "unknown_paper_orders": 0
+  },
+  "fault_smoke": {
+    "kill_switch": true,
+    "redis": "503 unavailable -> 200 ok",
+    "postgres": "503 unavailable -> 200 ok",
+    "api": "endpoint unavailable -> 200 ok",
+    "trading": "503 stale -> 200 ok",
+    "counts_before_after": {
+      "paper_orders": 28,
+      "paper_fills": 24,
+      "paper_ledger": 42,
+      "backtest_runs": 2
+    }
+  },
+  "short_observation": {
+    "target_seconds": 60,
+    "actual_wall_seconds": 63.0,
+    "start_utc": "2026-10-15T08:37:08.742403+00:00",
+    "end_utc": "2026-10-15T08:38:11.785644+00:00",
+    "interval_seconds": 10,
+    "samples": 6,
+    "config_version": "foundation-v1",
+    "kill_switch": true,
+    "readiness_ok_samples": 6,
+    "readiness_error_samples": 0,
+    "market_ok_samples": 6,
+    "final_candle_delta": 2,
+    "paper_orders_delta": 0,
+    "paper_fills_delta": 0,
+    "paper_ledger_delta": 0,
+    "unknown_orders_after": 0,
+    "queued_alerts_before_after": [
+      9,
+      10
+    ],
+    "docker_sample_peaks": {
+      "ai-futures-api-1": {
+        "max_cpu_percent_sample": 21.96,
+        "max_memory_mib_sample": 69.87
+      },
+      "ai-futures-postgres-1": {
+        "max_cpu_percent_sample": 6.54,
+        "max_memory_mib_sample": 37.7
+      },
+      "ai-futures-redis-1": {
+        "max_cpu_percent_sample": 1.29,
+        "max_memory_mib_sample": 10.15
+      },
+      "ai-futures-trading-1": {
+        "max_cpu_percent_sample": 75.56,
+        "max_memory_mib_sample": 111.9
+      },
+      "ai-futures-web-1": {
+        "max_cpu_percent_sample": 0.01,
+        "max_memory_mib_sample": 46.49
+      }
+    }
+  },
+  "alert_flap_fix": {
+    "initial_60s_queued_alerts_before_after": [
+      3,
+      7
+    ],
+    "after_30s_stable_recovery_60s_before_after": [
+      9,
+      10
+    ],
+    "interpretation": "one real transient stale transition remains; no external delivery asserted"
+  },
+  "limits": [
+    "No Telegram token/test channel; HTTP MockTransport only",
+    "No long paper soak; local observation ~63s only",
+    "No historical backup retention/encryption or alternate-host restore",
+    "No live broker; BROKER_UNKNOWN tested only at bot gate with injected state",
+    "No SLA or sustained resource threshold inferred"
+  ]
+}

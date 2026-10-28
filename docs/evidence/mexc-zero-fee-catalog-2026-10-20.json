@@ -1,0 +1,538 @@
+{
+  "observed_at": "2026-10-20T08:50:28.898737+00:00",
+  "source": "https://api.mexc.com/api/v1/contract/detail/country",
+  "scope": "public research candidates only",
+  "candidate_fields_checked": ["baseCoin", "quoteCoin", "settleCoin"],
+  "total_rows": 1108,
+  "candidate_count": 87,
+  "non_candidate_rows": 913,
+  "unknown_rows": 0,
+  "invalid_rows": 108,
+  "classification_note": "invalid means outside the local S14 USDT symbol/field schema, not necessarily invalid at MEXC",
+  "candidates": [
+    {
+      "symbol": "1000BONK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "AAVE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ABTSTOCK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ACE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ACNSTOCK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "AKAMSTOCK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "AKE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ALLO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ALUMINUM_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "APE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "APT_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ARB_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ASTER_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "AVAX_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "BICO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "BILL_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "BLESS_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "BR_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "BTR_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "BTW_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "COAI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "COPPER_USDT",
+      "fee_rate_type": "TEMP",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "CYS_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "DASH_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "DEXE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "DOT_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ESPORTS_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "EVAA_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "FLOKI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "FOLKS_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "GALA_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "HBAR_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "HEI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "HNT_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ICP_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "INJ_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "JASMY_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "JTO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "KAITO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LAB_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LAYER_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LDO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LEAD_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LIGHT_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LINK_USDT",
+      "fee_rate_type": "TEMP",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LONGXIA_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LSK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LTC_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "LYN_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "MEGA_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "MYX_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "NGAS_USDT",
+      "fee_rate_type": "TEMP",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "NICKEL_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ONDO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ONE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "OP_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ORDI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "PENGU_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "PGSTOCK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "PIPPIN_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "POL_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "PONS_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "POWER_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "RE_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "RIVER_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "SHIB_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "SKYAI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "SPX_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "STO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "SYN_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "TAO_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "TRUMPOFFICIAL_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "TUT_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "UAI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "VELVET_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "VIRTUAL_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "VVV_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "VZSTOCK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "WFCSTOCK_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "WLFI_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "XLM_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "XPD_USDT",
+      "fee_rate_type": "TEMP",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "XPL_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "XPT_USDT",
+      "fee_rate_type": "TEMP",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ZEC_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    },
+    {
+      "symbol": "ZINC_USDT",
+      "fee_rate_type": "BASE",
+      "promo_excludes_api_users": true,
+      "api_account_fee": "unknown"
+    }
+  ],
+  "private_requests": 0,
+  "orders": 0
+}

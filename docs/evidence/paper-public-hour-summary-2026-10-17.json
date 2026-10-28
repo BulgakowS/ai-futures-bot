@@ -1,0 +1,220 @@
+{
+  "alert_outbox": {
+    "after_by_kind": [
+      {
+        "first_soak_window": 0,
+        "kind": "kill_switch",
+        "last_24h": 3,
+        "last_hour": 0,
+        "newest_utc": "2026-10-16T08:57:59.801645+00:00",
+        "observation_window": 0,
+        "oldest_utc": "2026-10-16T08:50:13.073508+00:00",
+        "published": 0,
+        "queued": 3,
+        "second_soak_window": 0,
+        "total": 3
+      },
+      {
+        "first_soak_window": 0,
+        "kind": "market_stale",
+        "last_24h": 80,
+        "last_hour": 0,
+        "newest_utc": "2026-10-16T23:06:47.400474+00:00",
+        "observation_window": 0,
+        "oldest_utc": "2026-10-15T08:30:24.385999+00:00",
+        "published": 0,
+        "queued": 275,
+        "second_soak_window": 0,
+        "total": 275
+      },
+      {
+        "first_soak_window": 0,
+        "kind": "worker_down",
+        "last_24h": 18,
+        "last_hour": 0,
+        "newest_utc": "2026-10-16T15:37:46.869517+00:00",
+        "observation_window": 0,
+        "oldest_utc": "2026-10-15T08:32:50.59129+00:00",
+        "published": 0,
+        "queued": 48,
+        "second_soak_window": 0,
+        "total": 48
+      }
+    ],
+    "after_checked_at_utc": "2026-10-17T01:34:45.32522+00:00",
+    "before_by_kind": [
+      {
+        "kind": "kill_switch",
+        "last_24h": 3,
+        "last_hour": 0,
+        "newest_utc": "2026-10-16T08:57:59.801645+00:00",
+        "oldest_utc": "2026-10-16T08:50:13.073508+00:00",
+        "published": 0,
+        "queued": 3,
+        "total": 3
+      },
+      {
+        "kind": "market_stale",
+        "last_24h": 83,
+        "last_hour": 0,
+        "newest_utc": "2026-10-16T23:06:47.400474+00:00",
+        "oldest_utc": "2026-10-15T08:30:24.385999+00:00",
+        "published": 0,
+        "queued": 275,
+        "total": 275
+      },
+      {
+        "kind": "worker_down",
+        "last_24h": 22,
+        "last_hour": 0,
+        "newest_utc": "2026-10-16T15:37:46.869517+00:00",
+        "oldest_utc": "2026-10-15T08:32:50.59129+00:00",
+        "published": 0,
+        "queued": 48,
+        "total": 48
+      }
+    ],
+    "before_checked_at_utc": "2026-10-17T00:34:06.772604+00:00",
+    "events_in_observation_window": [],
+    "payload_or_secret_exported": false,
+    "read_only": true
+  },
+  "config_version": "foundation-v1",
+  "interpretation": [
+    "No sampled continuous ticker_stale interval reached 15 seconds; 190 stale samples formed 176 runs of at most two adjacent samples. This is a sampled observation, not exact exchange outage duration.",
+    "No alert.telegram rows appeared during the observation window, consistent with the 15-second activation confirmation; 5-second monitor ticks need not intersect every brief stale interval, so this does not by itself prove hysteresis for all public events.",
+    "quiet_market_sample.py captures now before sequential quality and ticker localhost GETs; derived source age may differ slightly from age at ticker read.",
+    "CPU/RAM are observed Docker stats peaks; no predeclared resource pass/fail thresholds or SLA exist.",
+    "Public MEXC source is used via the existing Paper cache; no private API, real orders, Telegram send, outbox update or delete was performed.",
+    "Stage 2/8 operational and Stage 8 test-channel delivery/backlog decision remain open; this one-hour window is not a long-term MEXC SLA."
+  ],
+  "kill_switch_before_and_after": true,
+  "live_trading_enabled": false,
+  "mode": "paper",
+  "quiet_cache": {
+    "age_seconds": {
+      "max": 6.631,
+      "p50": 2.977,
+      "p95": 5.038,
+      "p99": 5.632
+    },
+    "duration_seconds": 3600.037,
+    "end_utc": "2026-10-17T01:34:20.459479+00:00",
+    "http_error_samples": 0,
+    "jsonl": "docs/evidence/paper-public-quiet-hour-2026-10-17.jsonl",
+    "quality_counts": {
+      "ok": 3321,
+      "stale": 190
+    },
+    "quality_reasons": {
+      "ticker_stale": 190
+    },
+    "sample_count": 3511,
+    "sample_interval_seconds": {
+      "gaps_over_2_seconds": 0,
+      "max": 1.371
+    },
+    "source_step_seconds": {
+      "max": 4.164,
+      "p50": 3.078,
+      "p95": 3.996,
+      "p99": 4.074
+    },
+    "stale_runs": {
+      "count": 176,
+      "max_observed_consecutive_span_seconds": 1.037,
+      "max_ok_bracket_width_seconds": 3.204,
+      "observed_consecutive_spans_at_least_15_seconds": 0,
+      "one_sample": 162,
+      "three_or_more_samples": 0,
+      "two_sample": 14
+    },
+    "start_utc": "2026-10-17T00:34:20.354237+00:00",
+    "target_interval_seconds": 1,
+    "ticker_source_counts": {
+      "ws": 3511
+    }
+  },
+  "scope": "S10K offline/read-only public Paper operational observation",
+  "soak": {
+    "all_containers_running_healthy_no_restart": true,
+    "all_http_200": true,
+    "all_readiness_dependencies_ok": true,
+    "between_segment_gap_seconds": 0.177,
+    "end_utc": "2026-10-17T01:34:26.286700+00:00",
+    "event_deltas": {
+      "bot_decisions": 59,
+      "final_candles": 75,
+      "funding_settlements": 0,
+      "paper_fills": 0,
+      "paper_intents": 0,
+      "paper_ledger": 0,
+      "paper_orders": 0,
+      "paper_verdicts": 0,
+      "queued_alerts": 0,
+      "unknown_orders": 0
+    },
+    "market_non_ok_reasons": {
+      "ticker_stale": 2
+    },
+    "market_non_ok_samples": 2,
+    "resource_peaks": {
+      "ai-futures-api-1": {
+        "peak_cpu_percent": 31.26,
+        "peak_memory_mib": 87.84,
+        "sample_count": 62
+      },
+      "ai-futures-postgres-1": {
+        "peak_cpu_percent": 75.56,
+        "peak_memory_mib": 51.32,
+        "sample_count": 62
+      },
+      "ai-futures-redis-1": {
+        "peak_cpu_percent": 7.43,
+        "peak_memory_mib": 16.7,
+        "sample_count": 62
+      },
+      "ai-futures-trading-1": {
+        "peak_cpu_percent": 107.38,
+        "peak_memory_mib": 127.4,
+        "sample_count": 62
+      },
+      "ai-futures-web-1": {
+        "peak_cpu_percent": 24.46,
+        "peak_memory_mib": 89.24,
+        "sample_count": 62
+      }
+    },
+    "resource_thresholds_defined": false,
+    "sample_count": 62,
+    "segments": [
+      {
+        "actual_duration_seconds": 1802.83,
+        "end_utc": "2026-10-17T01:04:23.505858+00:00",
+        "error_counts": {
+          "market_non_ok_samples": 1,
+          "quality_reason:ticker_stale": 1
+        },
+        "interval_seconds": 60,
+        "jsonl": "docs/evidence/paper-public-soak-hour-1-2026-10-17.jsonl",
+        "sample_count": 31,
+        "start_utc": "2026-10-17T00:34:20.380756+00:00"
+      },
+      {
+        "actual_duration_seconds": 1802.8,
+        "end_utc": "2026-10-17T01:34:26.286700+00:00",
+        "error_counts": {
+          "market_non_ok_samples": 1,
+          "quality_reason:ticker_stale": 1
+        },
+        "interval_seconds": 60,
+        "jsonl": "docs/evidence/paper-public-soak-hour-2-2026-10-17.jsonl",
+        "sample_count": 31,
+        "start_utc": "2026-10-17T01:04:23.683357+00:00"
+      }
+    ],
+    "start_utc": "2026-10-17T00:34:20.380756+00:00",
+    "wall_span_seconds": 3605.906
+  },
+  "telegram_delivery": "disabled/default-off; no credentials; no external send"
+}

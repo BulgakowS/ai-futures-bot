@@ -1,0 +1,33 @@
+{
+  "step": "S11/G6a",
+  "date_utc": "2026-10-19",
+  "status": "clock_skew_fixed_offline_real_pilot_not_restarted",
+  "reported_real_pilot_incident": {
+    "attempt_1_utc": "07:00:28",
+    "attempt_1_status": "ok",
+    "attempt_2_utc": "07:15:29",
+    "attempt_2_status": "ok",
+    "attempt_3_utc": "07:30:29",
+    "attempt_3_status": "throttled",
+    "attempt_3_http_or_scan": false,
+    "persisted_releases": 2,
+    "persisted_ok_slots": 2,
+    "eligible_16_slot_cohort": false
+  },
+  "root_cause": "runner used 900 monotonic seconds from pre-poll start; G3 compared current UTC against slightly later persisted scan attempted_at",
+  "fix": "before each poll, normalize persisted attempted_at to UTC and require both its plus-15-minute boundary and previous runner start plus 15 minutes monotonic",
+  "bounds_retained": {
+    "window_minutes": 255,
+    "maximum_attempts": 18,
+    "minimum_seconds_between_attempts": 900,
+    "maximum_zip_bytes_per_attempt": 8388608,
+    "maximum_manifest_plus_zip_bytes_total": 134217728,
+    "retry_or_backfill": false,
+    "active_db_compose_paper_live_used_in_fix": false
+  },
+  "verification": {
+    "regression_red_before_fix": "reproduced stop after two attempts with 200 ms persisted-at skew",
+    "targeted_after_fix": "21 passed on fake clock and disposable SQLite; persisted attempted_at readback equals aware UTC; frozen wall clock stops at monotonic deadline",
+    "real_pilot_after_fix": "not run"
+  }
+}

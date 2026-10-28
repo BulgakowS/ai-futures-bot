@@ -1,0 +1,90 @@
+name: ai-futures
+x-backend: &backend
+  build:
+    context: .
+    dockerfile: infra/docker/Dockerfile.backend
+  image: ai-futures-backend:local
+  env_file: .env
+  restart: unless-stopped
+  init: true
+services:
+  postgres:
+    image: postgres:16.9-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ai_futures}
+      POSTGRES_USER: ${POSTGRES_USER:-ai_futures}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run make setup}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  redis:
+    image: redis:7.4.4-bookworm
+    command: [redis-server, --appendonly, 'yes']
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  api:
+    <<: *backend
+    env_file:
+      - .env
+      - .env.credentials
+    ports:
+      - '127.0.0.1:${API_PORT:-8000}:8000'
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -c, 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:8000/api/v1/health/live", timeout=3)']
+      interval: 5s
+      timeout: 4s
+      retries: 12
+      start_period: 10s
+  trading:
+    <<: *backend
+    environment:
+      CREDENTIAL_MASTER_KEY: ''
+    command: [python, -m, services.trading.worker]
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, python, -m, ai_futures.worker_health]
+      interval: 5s
+      timeout: 4s
+      retries: 4
+      start_period: 10s
+  web:
+    build:
+      context: .
+      dockerfile: infra/docker/Dockerfile.web
+    image: ai-futures-web:local
+    environment:
+      BACKEND_URL: http://api:8000
+      BACKEND_AUTH_TOKEN: ${BACKEND_AUTH_TOKEN:?Run make setup}
+    ports:
+      - '127.0.0.1:3030:3030'
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: [CMD, node, -e, 'fetch("http://127.0.0.1:3030").then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))']
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+    restart: unless-stopped
+volumes:
+  postgres-data:
+  redis-data:

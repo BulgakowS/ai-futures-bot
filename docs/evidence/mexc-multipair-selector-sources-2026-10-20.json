@@ -1,0 +1,65 @@
+{
+  "as_of_date": "2026-10-20",
+  "method": "official MEXC Futures pages via gstack /browse; one separate bounded public ticker probe by root",
+  "official_sources": {
+    "rest_ticker": "https://www.mexc.com/api-docs/futures/market-endpoints/get-ticker-contract-market-data",
+    "rest_depth": "https://www.mexc.com/api-docs/futures/market-endpoints/get-contract-order-book-depth",
+    "contract_info": "https://www.mexc.com/api-docs/futures/market-endpoints/get-contract-info",
+    "ws_all_tickers": "https://www.mexc.com/api-docs/futures/websocket-api/tickers",
+    "ws_single_ticker": "https://www.mexc.com/api-docs/futures/websocket-api/get-a-single-ticker",
+    "ws_depth": "https://www.mexc.com/api-docs/futures/websocket-api/order-book-depth",
+    "ws_commands": "https://www.mexc.com/api-docs/futures/websocket-api/command-details-for-data-exchange",
+    "ws_endpoint": "https://www.mexc.com/api-docs/futures/websocket-api/native-ws-endpoint"
+  },
+  "documented": {
+    "rest_ticker": "symbol optional; 10 requests/2s; bid1/ask1; volume24 contracts; amount24 turnover; timestamp trade time",
+    "rest_depth": "symbol required; optional limit; 10 requests/2s; asks/bids, version, system timestamp",
+    "contract_info": "symbol optional; 10 requests/2s; state, futureType, apiAllowed, base/quote/settle and contract/risk rules",
+    "ws_all_tickers": "public sub.tickers; all perpetual contracts; approximately 2s push; sample data list; volume24 contracts and amount24 currency turnover",
+    "ws_single_ticker": "public sub.ticker exact symbol; approximately 1s when trades occur; bid1/ask1 and 24h volume/turnover fields",
+    "ws_depth": "public sub.depth exact symbol; approximately 200ms updates; version, matching-engine cts, outer ts",
+    "ws_connection": "wss://contract.mexc.com/edge; ping every 10-20s; no ping for 1 minute closes connection"
+  },
+  "unknowns": [
+    "REST ticker no-symbol data list is observed but not guaranteed by docs",
+    "REST amount24 currency/unit not explicit on REST page",
+    "all-tickers WS description mentions bid/ask but field table and sample omit them",
+    "depth tuple second/third element quantity and order-count units ambiguous",
+    "maximum REST depth limit and public WS subscription count/throughput not found in reviewed pages",
+    "narrow or delta zero-zone feed not found in reviewed pages",
+    "validated selector TTL, liquidity/spread/depth thresholds and ranking weights not set"
+  ],
+  "one_shot_public_ticker_probe": {
+    "observed_at_utc_minute": "2026-10-20T13:26Z",
+    "url": "https://api.mexc.com/api/v1/contract/ticker",
+    "symbol_parameter": "omitted",
+    "http_status": 200,
+    "response_bytes": 626445,
+    "response_cap_bytes": 4194304,
+    "success": true,
+    "code": 0,
+    "data_type": "list",
+    "row_count": 1201,
+    "first_row_selected_keys": [
+      "symbol",
+      "timestamp",
+      "bid1",
+      "ask1",
+      "volume24",
+      "amount24",
+      "holdVol"
+    ],
+    "raw_response_saved": false,
+    "prices_saved": false,
+    "is_documentation_guarantee": false
+  },
+  "selector_policy": "unknown, stale, inconsistent or unvalidated units imply no selection",
+  "initial_simultaneous_pair_design_cap": 3,
+  "future_pair_range_after_separate_review": "4-5",
+  "max_single_position_basis": "full notional exposure including leverage, not allocated margin",
+  "full_catalog_poll_cap_upper_bound_gib_per_day_at_5_minute_cadence": 2.25,
+  "full_catalog_poll_cap_is_actual_traffic": false,
+  "private_requests": 0,
+  "orders": 0,
+  "runtime_changed": false
+}

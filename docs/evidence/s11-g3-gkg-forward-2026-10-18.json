@@ -1,0 +1,21 @@
+{
+  "stage": "S11/G3",
+  "date_utc": "2026-10-18",
+  "status": "mock_verified_candidate_collect_only",
+  "source_version": "gdelt-gkg-econ-bitcoin-candidate-v1",
+  "real_get_count": 0,
+  "prior_g0d_local_replay": {"rows": 732, "btc_rows": 1, "mean_tone": "-0.695410292072323"},
+  "manifest_get_max_per_scan": 1,
+  "archive_get_max_per_scan": 1,
+  "manifest_limit_bytes": 4096,
+  "archive_limit_bytes": 8388608,
+  "uncompressed_limit_bytes": 31457280,
+  "per_get_total_deadline_seconds": 15,
+  "targeted_tests_passed": 10,
+  "disposable_sqlite_migration_cycle": "pass",
+  "active_database_modified": false,
+  "raw_article_or_archive_persisted": false,
+  "g1_g2_n5a_switched": false,
+  "paper_or_live_activated": false,
+  "forward_coverage_proven": false
+}

@@ -1,0 +1,27 @@
+{
+  "stage": "S11/M2b",
+  "date_utc": "2026-10-19",
+  "status": "default-off correctness fix; Stage 9 collect-only",
+  "defect": "unchanged public rules refreshed mutable cache but left immutable as-of observation stale after one hour",
+  "contract": {
+    "same_payload_reobservation_after_seconds": 1800,
+    "fast_repeat": "deduplicated",
+    "scheduled_worker_refresh_seconds": 3500,
+    "scenario_rules_max_age_seconds": 3600,
+    "missing_refresh": "stale quote, no invented observation",
+    "mutable_paper_rules_semantics": "unchanged"
+  },
+  "checks": {
+    "targeted": "17 passed: instrument rules observation, market integration and market unit",
+    "full": "make lint test: Ruff PASS; 272 passed, 1 third-party Starlette/anyio deprecation warning",
+    "regression": "t0 v1; t0+1m no row; t0+3500s v2 same hash and causal ID; t0+61m quote PASS; t0+2h stale without refresh"
+  },
+  "boundaries": {
+    "real_mexc_get": "none",
+    "active_database_or_compose": "not run",
+    "g7a_collector": "unchanged and not run",
+    "paper_telegram_live": "not run",
+    "actual_fees_funding_or_fills": "not established",
+    "g5b": "not wired; missing_cost_provenance remains"
+  }
+}

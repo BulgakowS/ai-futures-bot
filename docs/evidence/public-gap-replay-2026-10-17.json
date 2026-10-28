@@ -1,0 +1,153 @@
+{
+  "active_compose_mutations": 0,
+  "after_bot_restart": {
+    "decisions": [
+      {
+        "action": "WAIT",
+        "id": "9f4b11d7-1c32-4818-9978-cb4123664dab",
+        "intent_id": null,
+        "reason": "EVENT_GAP",
+        "window_start": "2026-10-17T10:32:00+00:00"
+      }
+    ],
+    "final_rows": 598,
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "target_event_id": "c4f4896b-e22f-474d-bf98-ed1806228100",
+    "target_final_rows": 1,
+    "target_payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+    "target_source": "rest",
+    "unique_final_keys": 598
+  },
+  "after_duplicate_replay": {
+    "decisions": [],
+    "final_rows": 598,
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "target_event_id": "c4f4896b-e22f-474d-bf98-ed1806228100",
+    "target_final_rows": 1,
+    "target_payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+    "target_source": "rest",
+    "unique_final_keys": 598
+  },
+  "after_gap": {
+    "decisions": [],
+    "final_rows": 597,
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "target_event_id": null,
+    "target_final_rows": 0,
+    "target_payload_hash": null,
+    "target_source": null,
+    "unique_final_keys": 597
+  },
+  "after_reconciliation": {
+    "decisions": [],
+    "final_rows": 598,
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "target_event_id": "c4f4896b-e22f-474d-bf98-ed1806228100",
+    "target_final_rows": 1,
+    "target_payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+    "target_source": "rest",
+    "unique_final_keys": 598
+  },
+  "before_gap": {
+    "decisions": [],
+    "final_rows": 598,
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "target_event_id": "78029f5f-90f1-4872-ba5f-c723b716166f",
+    "target_final_rows": 1,
+    "target_payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+    "target_source": "rest",
+    "unique_final_keys": 598
+  },
+  "finished_at": "2026-10-17T10:33:16.271121+00:00",
+  "first_bot_tick": {
+    "decisions": [
+      {
+        "action": "WAIT",
+        "id": "9f4b11d7-1c32-4818-9978-cb4123664dab",
+        "intent_id": null,
+        "reason": "EVENT_GAP",
+        "window_start": "2026-10-17T10:32:00+00:00"
+      }
+    ],
+    "final_rows": 598,
+    "paper_intents": 0,
+    "paper_orders": 0,
+    "target_event_id": "c4f4896b-e22f-474d-bf98-ed1806228100",
+    "target_final_rows": 1,
+    "target_payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+    "target_source": "rest",
+    "unique_final_keys": 598
+  },
+  "initial_market": {
+    "at": "2026-10-17T10:32:50.408419+00:00",
+    "final_candles": 597,
+    "quality_reason": "stream_active",
+    "quality_status": "ok",
+    "reasons": [],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T10:32:49.800000+00:00",
+    "trade_eligible": true,
+    "transport": "ws",
+    "unique_final_keys": 597
+  },
+  "max_public_rest_operations": 60,
+  "max_seconds": 170,
+  "private_requests": 0,
+  "public_rest_operations": 23,
+  "public_rest_paths": {
+    "/api/v1/contract/depth/BTC_USDT": 2,
+    "/api/v1/contract/detail/country": 2,
+    "/api/v1/contract/funding_rate/BTC_USDT": 2,
+    "/api/v1/contract/funding_rate/history": 6,
+    "/api/v1/contract/kline/BTC_USDT": 7,
+    "/api/v1/contract/ping": 2,
+    "/api/v1/contract/ticker": 2
+  },
+  "real_market_candle": {
+    "consumer_cursor_window": "2026-10-17T10:30:00+00:00",
+    "rest_payload": "real_public_MEXC_final_1m",
+    "skipped_consumer_window": "2026-10-17T10:31:00+00:00",
+    "target_event_id_before_test_delete": "78029f5f-90f1-4872-ba5f-c723b716166f",
+    "target_payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+    "target_source": "rest",
+    "target_source_time": "2026-10-17T10:33:07.597349+00:00",
+    "target_window": "2026-10-17T10:32:00+00:00"
+  },
+  "reconciled_at": "2026-10-17T10:33:13.615495+00:00",
+  "reconciliations": 2,
+  "recovered_market": {
+    "at": "2026-10-17T10:33:15.697261+00:00",
+    "final_candles": 598,
+    "quality_reason": "stream_active",
+    "quality_status": "ok",
+    "reasons": [],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T10:33:13.955000+00:00",
+    "trade_eligible": true,
+    "transport": "ws",
+    "unique_final_keys": 598
+  },
+  "rest_backfill_target_hits": [
+    {
+      "payload_hash": "2b67e44ef7eced6be3df56bce5962f71ee693ea565f82a4d0ccd073b76f987ef",
+      "window_start": "2026-10-17T10:32:00+00:00"
+    }
+  ],
+  "result": "pass",
+  "scope": "disposable_sqlite_real_public_ws_rest_test_only_gap",
+  "started_at": "2026-10-17T10:32:41.901883+00:00",
+  "symbol": "BTC_USDT",
+  "telegram_sends": 0,
+  "temporary_resources_cleaned": true,
+  "test_only_fault": {
+    "bot_last_window": "2026-10-17T10:30:00+00:00",
+    "consumer_skipped_window": "2026-10-17T10:31:00+00:00",
+    "deleted_disposable_final_window": "2026-10-17T10:32:00+00:00"
+  },
+  "ws_connections": 1
+}

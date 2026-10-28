@@ -1,0 +1,32 @@
+{
+  "verified_at_utc": "2026-10-15T14:23:16Z",
+  "scope": "S10C F1/F2, offline public rules and REST book model",
+  "market_source": "S10A official MEXC docs and read-only public probes on 2026-10-15; no private endpoint or key used",
+  "fixtures": {
+    "old_public_fee": {"maker": "0", "taker": "0.0002"},
+    "new_public_fee": {"maker": "0.0001", "taker": "0.0004"},
+    "book": "synthetic ordered tick-aligned depth with version, partial and zero liquidity",
+    "limitations": "fixtures prove local accounting and gates, not MEXC queue/fill or personal fee parity"
+  },
+  "checks": [
+    {"command": "make lint test", "result": "PASS: 97 passed, 1 third-party anyio/starlette deprecation warning"},
+    {"command": "npm run build (apps/web)", "result": "PASS: TypeScript and production build"},
+    {"command": "docker compose -p ai-futures up -d --build api trading web", "result": "PASS: rebuilt and started"},
+    {"command": "docker compose -p ai-futures exec -T api alembic current", "result": "PASS: e0e429e4cf31 (head)"},
+    {"command": "docker compose -p ai-futures exec -T api alembic check", "result": "PASS: No new upgrade operations detected"},
+    {"command": "docker compose -p ai-futures exec -T api python scripts/smoke.py", "result": "PASS: readiness ok; DB, migrations, Redis, trading, state ok; paper kill switch true"}
+  ],
+  "verified_behavior": [
+    "fee, tier, mode and state changes invalidate acknowledgement before risk ALLOW",
+    "unsupported fee mode and inactive state cannot be acknowledged",
+    "every fill uses observed public taker rate and stores rules/depth provenance; exact Decimal fee ledger balances",
+    "market and crossing limit use visible REST levels; passive limit stays pending without maker rebate",
+    "repeated book version is idempotent; conflicting same-version or regressed book is stale; stale book blocks",
+    "scenario slippage and limit price bound fills; partial and no-liquidity states preserved"
+  ],
+  "open": [
+    "personal account fee, maker queue/rebate and real exchange fill parity unverified",
+    "public REST book cannot prove hidden liquidity, latency or self impact",
+    "roadmap 3/4 full acceptance and F4/F5 remain open"
+  ]
+}

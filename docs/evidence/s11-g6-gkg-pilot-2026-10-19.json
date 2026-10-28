@@ -1,0 +1,39 @@
+{
+  "step": "S11/G6",
+  "date_utc": "2026-10-19",
+  "status": "pilot_ready_not_run",
+  "source": "G3 GKG candidate one-shot poller",
+  "bounds": {
+    "environment": "APP_ENV=test with two explicit opt-ins",
+    "database": "new disposable temporary SQLite",
+    "window_minutes": 255,
+    "maximum_attempts": 18,
+    "minimum_seconds_between_attempts": 900,
+    "minimum_seconds_remaining_to_start": 60,
+    "maximum_zip_bytes_per_attempt": 8388608,
+    "maximum_manifest_plus_zip_bytes_total": 134217728,
+    "maximum_manifest_bytes_per_attempt": 4096,
+    "get_deadline_seconds_each": 15,
+    "retry_or_backfill": false
+  },
+  "prior_real_observation": {
+    "date_utc": "2026-10-18",
+    "contiguous_batch_ids": ["20261018200000", "20261018201500"],
+    "release_count": 2,
+    "eligible_16_slot_cohort": false
+  },
+  "checks": {
+    "targeted_offline_pytest": "19 passed",
+    "full_make_lint_test_initial_g6_revision": "Ruff PASS; 243 passed; 1 third-party Starlette/anyio warning; exit 0",
+    "final_budget_refinement_check": "targeted 19 passed; Ruff PASS; JSON parse PASS; diff check PASS; full suite not repeated",
+    "root_full_make_lint_test_before_g6": "Ruff PASS; 235 passed; 1 third-party Starlette/anyio warning; exit 0; pytest 61.97s",
+    "active_database_or_compose_used": false,
+    "real_http_in_g6": false,
+    "paper_orders_created": 0
+  },
+  "unverified": [
+    "real 4h15m GKG coverage, lag, revisions, and bandwidth",
+    "immutable MEXC market and cost provenance",
+    "source-compatible forward predictive lift and N5 gate"
+  ]
+}

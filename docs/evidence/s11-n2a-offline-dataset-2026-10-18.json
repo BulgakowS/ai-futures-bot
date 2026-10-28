@@ -1,0 +1,34 @@
+{
+  "recorded_at_utc": "2026-10-18T03:03:45Z",
+  "stage": "S11/N2a",
+  "scope": "synthetic-only pure event-time contract",
+  "network_requests": 0,
+  "active_stack_mutations": 0,
+  "paper_intents_or_orders": 0,
+  "synthetic_fixture": {
+    "symbol": "BTC_USDT",
+    "timeframe": "4h",
+    "final_candles": 10,
+    "announcement_versions": 1,
+    "samples": 8,
+    "waits": 1,
+    "initial_wait_reason": "market_gap_or_unavailable_label",
+    "dataset_checksum": "360b52ef70097c14042e58a683b9f03f89cf02d292891b8e4bb4f0ec5ac1aa37",
+    "config_checksum": "6d6318c65e65de23aa0be22746ecef597adb6dd0d2e1f72d988169f76286585b",
+    "source_checksum": "d54a12de49f1e2869c0bf7ffc8d8bfb78fd155aaf5e9170d528bc3e747750bc9"
+  },
+  "verification": {
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/unit/test_news_dataset.py",
+    "result": "10 passed in 0.07s",
+    "ruff_check": "pass",
+    "ruff_format_check": "pass",
+    "compileall": "pass",
+    "git_diff_check": "pass"
+  },
+  "limits": [
+    "No real MEXC announcement or market corpus was used or stored.",
+    "Coverage ok was synthetic test attestation, not a production collector state.",
+    "No trained model or model decision was produced; no-look-ahead was checked on its feature input.",
+    "Data-use rights, N1b forward collector, N2b persisted export and instrument rules remain open."
+  ]
+}

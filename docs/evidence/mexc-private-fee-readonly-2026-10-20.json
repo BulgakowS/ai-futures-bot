@@ -1,0 +1,52 @@
+{
+  "date_utc": "2026-10-20",
+  "stage": "S13 default-off MEXC Futures account fee reader",
+  "official_sources_checked_with": "gstack /browse",
+  "official_sources": [
+    {
+      "url": "https://www.mexc.com/api-docs/futures/integration-guide",
+      "verified": "OPEN-API GET signs sorted key=value business parameters using HMAC-SHA256 over accessKey + millisecond timestamp + parameterString; ApiKey, Request-Time and Signature headers; REST base https://api.mexc.com"
+    },
+    {
+      "url": "https://github.com/mexcdevelop/mexc-api-demo/blob/c6b3edafdab202117c9812d88d75dc1c863f6326/python/futures/api/src/mexc_client.py",
+      "verified": "Official Futures Python demo uses UTF-8 and lowercase hex hexdigest for HMAC-SHA256 and signed GET headers; demo's .co base URL was not adopted"
+    },
+    {
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-fee-details",
+      "verified": "Private GET /api/v1/private/account/tiered_fee_rate/v2 requires View Order Details; docs sample has data object with symbol, realMakerFee, realTakerFee and feeRateMode"
+    },
+    {
+      "url": "https://www.mexc.com/zero-fee",
+      "verified": "0-Fee Fest excludes API users; public promotional flags do not establish account API fees"
+    }
+  ],
+  "implementation": {
+    "default_enabled": false,
+    "allowed_private_method": "GET",
+    "allowed_private_path": "/api/v1/private/account/tiered_fee_rate/v2",
+    "request_timeout_seconds": 5,
+    "response_limit_bytes": 65536,
+    "retries": 0,
+    "redirects": false,
+    "accepted_fee_rate_mode": "NORMAL",
+    "private_credentials_used_in_tests": false,
+    "live_gate_changed": false,
+    "broker_or_order_path_added": false
+  },
+  "verification": {
+    "targeted_mock_tests": 21,
+    "targeted_mock_tests_status": "passed",
+    "ruff_check_status": "passed",
+    "ruff_format_status": "passed",
+    "git_diff_check_status": "passed",
+    "json_parse_status": "passed"
+  },
+  "external_private_requests": 0,
+  "real_credentials_used": false,
+  "manual_script_executed_with_real_credentials": false,
+  "limitations": [
+    "No account response shape or effective fee verified against MEXC",
+    "TIERED and LEVERAGE schedules fail closed",
+    "Account eligibility, regional access, fee at fill, reconciliation and Live gates remain unverified"
+  ]
+}

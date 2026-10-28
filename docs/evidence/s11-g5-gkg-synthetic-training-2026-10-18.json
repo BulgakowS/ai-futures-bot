@@ -1,0 +1,142 @@
+{
+  "stage": "S11/G5",
+  "date_utc": "2026-10-18",
+  "status": "evaluated-synthetic",
+  "promotion_verdict": "collect-only",
+  "provenance": "synthetic fixture only; no real GKG/market rows used",
+  "dataset_schema": "gdelt-gkg-market-dataset-v2",
+  "dataset_checksum": "2fa292992585d7d2ec5621eaeb13e0cf20716b972c4065d1164e1b656f0855ae",
+  "source_checksum": "8a604ea6aecc6f5fa74503923d1923076e23fbde18954c0dddb02eab331b049d",
+  "dataset_config_checksum": "996e8f4254f55741942be256d7fb407e83b021240106b97301e163538ce2e380",
+  "split": {
+    "train": 38,
+    "validation": 29,
+    "test": 21,
+    "embargo_hours": 4.0,
+    "train_end": "2026-01-07T16:00:00+00:00",
+    "validation_end": "2026-01-12T16:00:00+00:00",
+    "test_end": "2026-01-16T04:00:00+00:00",
+    "class_counts": {
+      "train": {
+        "DOWN": 12,
+        "NEUTRAL": 13,
+        "UP": 13
+      },
+      "validation": {
+        "DOWN": 9,
+        "NEUTRAL": 10,
+        "UP": 10
+      },
+      "test": {
+        "DOWN": 7,
+        "NEUTRAL": 7,
+        "UP": 7
+      }
+    }
+  },
+  "source_waits": {},
+  "assumptions": {
+    "label_cost_bps": "10",
+    "label_cost_version": "synthetic-cost-v1",
+    "fee_bps": "4",
+    "funding_bps": "0",
+    "slippage_bps": "2",
+    "cost_formula": "2*fee_bps + funding_bps + slippage_bps; synthetic round-trip",
+    "pnl": "not calculated; classification research only"
+  },
+  "models": {
+    "market-only": {
+      "artifact_checksum": "f62667ebfecf7738c2e915d27d08b494ca7c70e1944d4ebca64ba1e8e96743ca",
+      "validation_selected_threshold": "0.70",
+      "validation": {
+        "count": 29,
+        "brier": "0.00077676",
+        "log_loss": "0.01989092",
+        "calibration_ece_3bin": "0.01964489",
+        "wait_count": 0,
+        "decision_coverage": "1.00000000",
+        "correct_nonwait": 29
+      },
+      "test": {
+        "count": 21,
+        "brier": "0.00076321",
+        "log_loss": "0.01968455",
+        "calibration_ece_3bin": "0.01944360",
+        "wait_count": 0,
+        "decision_coverage": "1.00000000",
+        "correct_nonwait": 21
+      },
+      "rolling_test_counts": [
+        10,
+        11
+      ]
+    },
+    "gkg+market": {
+      "artifact_checksum": "13da52c74a598622636c5ecaa2c7c669894ebf7960e6aa418e44c3621f41a96a",
+      "validation_selected_threshold": "0.70",
+      "validation": {
+        "count": 29,
+        "brier": "0.00064642",
+        "log_loss": "0.01791383",
+        "calibration_ece_3bin": "0.01771152",
+        "wait_count": 0,
+        "decision_coverage": "1.00000000",
+        "correct_nonwait": 29
+      },
+      "test": {
+        "count": 21,
+        "brier": "0.00067902",
+        "log_loss": "0.01816880",
+        "calibration_ece_3bin": "0.01795574",
+        "wait_count": 0,
+        "decision_coverage": "1.00000000",
+        "correct_nonwait": 21
+      },
+      "rolling_test_counts": [
+        10,
+        11
+      ]
+    }
+  },
+  "code_checksum": "0d9c1677fd2edb05d05040986d90da6124ad0ee19c174b5be624e1fb12db0c67",
+  "dependency_versions": [
+    "python-3.12.5",
+    "httpx-0.28.1",
+    "SQLAlchemy-2.0.41",
+    "pydantic-2.11.4",
+    "pydantic-settings-2.9.1",
+    "gdelt_gkg_dataset:9694cd6dca54b2b782375f9b11f8511bc91d75a5d98e5ab19e4313bb74a8c842",
+    "gdelt_gkg_forward:67454807638b859ed479abaa679abc4ef561ee8115775c8adae79fe0a90e6ff1"
+  ],
+  "checks": {
+    "targeted_g5_g4_unit": "12 passed",
+    "ruff_check_format": "pass",
+    "git_diff_check": "pass"
+  },
+  "independent_real_source_observation": {
+    "source": "root handoff; excluded from G5 training/evaluation",
+    "batches_utc": [
+      "2026-10-18T20:00:00Z",
+      "2026-10-18T20:15:00Z"
+    ],
+    "total_rows": [
+      688,
+      650
+    ],
+    "btc_rows": [
+      2,
+      0
+    ],
+    "second_mean_btc_document_tone": null,
+    "coverage": "2 consecutive slots only; no 16-slot 4h sample"
+  },
+  "external_calls": 0,
+  "paper_orders": 0,
+  "live_orders": 0,
+  "limitations": [
+    "Synthetic GKG and market fixture only; no real source cohort or promotion.",
+    "Two ordered held-out test blocks are not a live forward evaluation.",
+    "No PnL, order fills, actual fees/funding/slippage, or broker calls.",
+    "Source checksum is a portable seal, not independent source attestation."
+  ]
+}

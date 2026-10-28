@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "count": 190,
+      "kind": "market_stale",
+      "newest_utc": "2026-10-15T23:56:33.190091+00:00",
+      "oldest_utc": "2026-10-15T08:30:24.385999+00:00",
+      "published": 0,
+      "utc_date": "2026-10-15"
+    },
+    {
+      "count": 26,
+      "kind": "worker_down",
+      "newest_utc": "2026-10-15T23:00:10.422849+00:00",
+      "oldest_utc": "2026-10-15T08:32:50.591290+00:00",
+      "published": 0,
+      "utc_date": "2026-10-15"
+    },
+    {
+      "count": 3,
+      "kind": "kill_switch",
+      "newest_utc": "2026-10-16T08:57:59.801645+00:00",
+      "oldest_utc": "2026-10-16T08:50:13.073508+00:00",
+      "published": 0,
+      "utc_date": "2026-10-16"
+    },
+    {
+      "count": 82,
+      "kind": "market_stale",
+      "newest_utc": "2026-10-16T15:25:15.776510+00:00",
+      "oldest_utc": "2026-10-16T00:14:48.935337+00:00",
+      "published": 0,
+      "utc_date": "2026-10-16"
+    },
+    {
+      "count": 22,
+      "kind": "worker_down",
+      "newest_utc": "2026-10-16T15:37:46.869517+00:00",
+      "oldest_utc": "2026-10-16T00:41:07.439686+00:00",
+      "published": 0,
+      "utc_date": "2026-10-16"
+    }
+  ],
+  "observed_utc": "2026-10-16T15:41:26.787264+00:00",
+  "source": "active_compose_read_only",
+  "total": 323
+}

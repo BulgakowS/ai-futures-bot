@@ -1,0 +1,226 @@
+{
+  "scope": "Local Paper mode, real MEXC public REST/WS; no private endpoint, key or real order",
+  "run": {
+    "start_utc": "2026-10-16T08:46:16.835363+00:00",
+    "end_utc": "2026-10-16T09:16:19.539155+00:00",
+    "duration_seconds": 1802.827,
+    "target_seconds": 1800,
+    "sample_count": 31,
+    "planned_interval_seconds": 60,
+    "observed_interval_seconds_min": 59.889,
+    "observed_interval_seconds_max": 60.069,
+    "config_version": "foundation-v1",
+    "initial_kill_switch": true
+  },
+  "market": {
+    "quality_ok_samples": 31,
+    "trade_eligible_samples": 31,
+    "ws_transport_samples": 31,
+    "ticker_ws_samples": 31,
+    "ticker_source_age_seconds_max": 5.013,
+    "depth_rest_samples": 31,
+    "depth_source_age_seconds_max": 3.571,
+    "funding_rest_samples": 31,
+    "funding_source_age_seconds_max": 34.375,
+    "http_non_200_samples": 0,
+    "readiness_200_samples": 31,
+    "dependencies_all_ok_samples": 31,
+    "rules_versions": [
+      "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc"
+    ],
+    "rules_state_values": [
+      0
+    ],
+    "funding_coverage_verified_samples": 31,
+    "funding_covered_from": "2026-10-14T16:00:00+00:00",
+    "funding_covered_until": "2026-10-16T16:00:00+00:00",
+    "new_settlements": 0
+  },
+  "event_counts": {
+    "final_candles": {
+      "start": 3714,
+      "end": 3751,
+      "delta": 37
+    },
+    "funding_settlements": {
+      "start": 1003,
+      "end": 1003,
+      "delta": 0
+    },
+    "paper_intents": {
+      "start": 30,
+      "end": 36,
+      "delta": 6
+    },
+    "paper_verdicts": {
+      "start": 30,
+      "end": 36,
+      "delta": 6
+    },
+    "paper_orders": {
+      "start": 28,
+      "end": 34,
+      "delta": 6
+    },
+    "paper_fills": {
+      "start": 24,
+      "end": 30,
+      "delta": 6
+    },
+    "paper_ledger": {
+      "start": 42,
+      "end": 52,
+      "delta": 10
+    },
+    "unknown_orders": {
+      "start": 0,
+      "end": 0,
+      "delta": 0
+    },
+    "bot_decisions": {
+      "start": 825,
+      "end": 854,
+      "delta": 29
+    },
+    "queued_alerts": {
+      "start": 258,
+      "end": 267,
+      "delta": 9
+    }
+  },
+  "resources": {
+    "ai-futures-api-1": {
+      "cpu_percent_peak": 51.26,
+      "cpu_percent_mean": 8.75,
+      "ram_mib_peak": 98.7,
+      "ram_mib_final": 89.28,
+      "container_start_changes": 3,
+      "docker_restart_count_max": 0,
+      "healthy_samples": 31
+    },
+    "ai-futures-postgres-1": {
+      "cpu_percent_peak": 13.6,
+      "cpu_percent_mean": 5.011,
+      "ram_mib_peak": 62.5,
+      "ram_mib_final": 56.79,
+      "container_start_changes": 0,
+      "docker_restart_count_max": 0,
+      "healthy_samples": 31
+    },
+    "ai-futures-redis-1": {
+      "cpu_percent_peak": 2.81,
+      "cpu_percent_mean": 1.008,
+      "ram_mib_peak": 10.41,
+      "ram_mib_final": 10.16,
+      "container_start_changes": 0,
+      "docker_restart_count_max": 0,
+      "healthy_samples": 31
+    },
+    "ai-futures-trading-1": {
+      "cpu_percent_peak": 91.99,
+      "cpu_percent_mean": 29.554,
+      "ram_mib_peak": 117.0,
+      "ram_mib_final": 84.93,
+      "container_start_changes": 0,
+      "docker_restart_count_max": 0,
+      "healthy_samples": 31
+    },
+    "ai-futures-web-1": {
+      "cpu_percent_peak": 31.42,
+      "cpu_percent_mean": 4.53,
+      "ram_mib_peak": 75.09,
+      "ram_mib_final": 71.97,
+      "container_start_changes": 3,
+      "docker_restart_count_max": 0,
+      "healthy_samples": 30
+    }
+  },
+  "observed_alerts_during_soak": {
+    "queued_start": 258,
+    "queued_end": 267,
+    "delta": 9,
+    "by_kind": {
+      "kill_switch_paper": 3,
+      "market_stale_BTC_USDT": 5,
+      "worker_down_trading": 1
+    },
+    "published_count_at_final": 0,
+    "market_stale_recovered_after_alerts": true,
+    "outbox_left_intact": true
+  },
+  "subminute_probe": {
+    "start_utc": "2026-10-16T09:06:48.920663+00:00",
+    "end_utc": "2026-10-16T09:14:46.924300+00:00",
+    "planned_interval_seconds": 2,
+    "sample_count": 240,
+    "http_non_200_samples": 0,
+    "ticker_stale_samples": 10,
+    "ticker_stale_single_sample_between_ok": 10,
+    "ticker_stale_times_utc": [
+      "2026-10-16T09:06:50.930572+00:00",
+      "2026-10-16T09:07:38.925471+00:00",
+      "2026-10-16T09:08:36.929176+00:00",
+      "2026-10-16T09:09:34.922203+00:00",
+      "2026-10-16T09:10:04.926204+00:00",
+      "2026-10-16T09:10:22.919879+00:00",
+      "2026-10-16T09:10:32.917789+00:00",
+      "2026-10-16T09:11:50.926709+00:00",
+      "2026-10-16T09:12:48.924411+00:00",
+      "2026-10-16T09:13:06.925703+00:00"
+    ],
+    "ticker_age_at_stale_seconds_min": 5.013,
+    "ticker_age_at_stale_seconds_max": 5.186,
+    "ticker_source_step_seconds_median": 3.009,
+    "ticker_source_step_seconds_max": 3.948,
+    "depth_ok_samples": 240,
+    "funding_ok_samples": 240
+  },
+  "qa_safety": {
+    "mode": "paper",
+    "kill_switch_restored": true,
+    "all_open_positions_after": 0,
+    "qa_open_positions_after": 0,
+    "running_bots_after": 0,
+    "qa_intents": 6,
+    "qa_verdicts": 6,
+    "qa_orders": 6,
+    "qa_fills": 6,
+    "qa_ledger_rows": 10,
+    "qa_unbalanced_ledger_rows": 0,
+    "manual_orders_only": true
+  },
+  "limits": [
+    "One 30-minute observation does not cover a new 8-hour funding settlement or long-term SLA.",
+    "Minute samples missed short ticker_stale windows; 2-second sampler captured ten, each bracketed by ok samples.",
+    "Ticker stale risk gate is fail-closed; TTL 5s is near observed roughly 3s public source cadence plus source lag, and alert noise remains an open Stage 2/8 gate.",
+    "Three API and three Web container recreations were deliberate during QA; resource peaks are not an idle baseline.",
+    "Manual fills are simulated REST-book estimates with public fee; account-specific MEXC fee, maker queue, hidden liquidity and exchange execution parity are unverified.",
+    "Liquidation is a tier-aware model estimate without private account risk level, ADL or exact MEXC formula."
+  ],
+  "post_soak_followup": {
+    "checked_at_utc": "2026-10-16T14:54:52+00:00",
+    "separate_from_30_minute_run": true,
+    "outbox_queued": 314,
+    "outbox_delta_since_soak_end": 47,
+    "new_market_stale_alerts": 43,
+    "new_worker_down_alerts": 4,
+    "worker_down_alert_times_utc": [
+      "2026-10-16T10:07:39.234920+00:00",
+      "2026-10-16T13:21:07.066821+00:00",
+      "2026-10-16T14:11:20.843910+00:00",
+      "2026-10-16T14:50:59.810476+00:00"
+    ],
+    "trading_container_restarted": false,
+    "trading_container_current_health": "healthy",
+    "worker_heartbeat_current_status": "idle",
+    "current_readiness_http": 200,
+    "current_quality": "ok",
+    "first_worker_alert_near_ws_errors": [
+      "ConnectionClosedError",
+      "MarketDataError"
+    ],
+    "other_worker_alert_causes": "unresolved; no worker warning in examined +/-1 minute logs, no retained heartbeat/quality history",
+    "paper_gate_during_worker_alert": "not directly observed; PaperService.check uses quality/ticker/depth, not heartbeat",
+    "outbox_left_intact": true
+  }
+}

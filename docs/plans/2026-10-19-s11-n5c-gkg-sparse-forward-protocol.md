@@ -1,0 +1,17 @@
+# S11/N5c — попередня реєстрація sparse GKG v3 forward
+
+Статус **`collect-only`**. Пороги й denominator зафіксовані в [N5c config](../../configs/forward/s11-n5c-gkg-sparse-v1.json) до реального forward. Реєстрація не запускає clock, collector, evaluator, модель чи Paper. N5b лишається окремим заблокованим 16-slot протоколом.
+
+## Cohort та бюджет
+
+Після freeze двох **реальних** source-compatible artifacts `market-only` і `sparse-gkg+market` та immutable manifest з їхніми checksums, UTC train/validation межами й embargo ≥4h стартом є перша наступна 00:00 UTC. До цього start time не існує. Рівно 56 послідовних UTC діб містять 336 anchors о 00/04/08/12/16/20. Усі anchors залишаються в denominator, незалежно від BTC count, outcome або стану джерела. Кожному відповідає рівно один заздалегідь визначений GKG batch `anchor−15m` — усього 336 slots. Один append-only claim резервує 8,470,528 B; 336 claims = 2,846,097,408 B, плюс audited opening debit 134,217,728 B. Загальний cap усього news traffic ≤5,000,000,000 B. Перед реальним GET потрібен один durable ledger і вимкнення паралельних legacy news GET. Crash claim без result є `unknown`, повторного GET немає.
+
+## Час і provenance
+
+`decision_at=max(anchor, first_seen_at успішного G7a result, availability фінальної поточної M1 Hour4) ≤ anchor+15m`; попередня M1 Hour4 доступна до рішення. Всі feature inputs, їхні IDs, hashes, source/config versions та immutable rules versions фіксуються as-of decision. Корекція до рішення або gap дає `WAIT`; після рішення не змінює feature hash. Валідний `total_rows>0,btc_rows=0` є відомим нулем, tone=`NULL`; missing/error/crash/late не імпутуються. Label порівнює поточний close з наступним nominal Hour4 close у `anchor+4h`, за M1 версією as-of `target+15m`. Пізніша корекція label його не змінює. Це не execution return. Для cost-adjusted класу потрібні зафіксовані effective/observed rules, account fee, funding та slippage; сценарний Decimal threshold без такого provenance лишається тільки `collect-only`.
+
+## Парна оцінка
+
+Обидва frozen artifacts отримують ті самі eligible anchors. Звіт показує всі 336 anchors, один slot на anchor, coverage ≥95%, gap/error/unknown/late ≤5%, загальний `WAIT` ≤40%, ≥60 незалежних label-complete paired anchors і ≥60% non-WAIT GKG рішень серед eligible. Модельне abstention не вилучає anchor із denominator. Multiclass Brier різниця `sparse-gkg+market − market-only` має бути ≤−0.01, верхня межа 95% paired UTC-day-block CI <−0.01. Додатково звітувати log loss, calibration, класи, latency, негативні результати та `WAIT` за причинами. Фіксовані 2000 bootstrap повторів із seed 20261019. Для сценарного fixed-notional результату врахувати `2×fee+funding+slippage`, нуль експозиції/витрат на `WAIT`; нижня 95% межа paired net delta >0 bps і max drawdown sparse ≤1000 bps. Невідомі правила чи витрати блокують verdict. Пороги не підбирати на forward cohort.
+
+`promote` може бути лише дослідницькою рекомендацією після повної cohort, усіх gates і незалежної перевірки provenance. Жоден verdict не активує Paper сам. Майбутні автоматичні Paper наміри потребують окремого production activation, Stage 8 gate та Risk Engine для кожного open/increase/reduce/close. Live заборонений. Поточний наступний критерій — довести реальну sparse coverage/latency, M1 market і frozen rules/cost provenance, створити й перевірити два source-compatible artifacts та manifest до першого anchor.

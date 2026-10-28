@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-14T15:42:09.966483+00:00",
+  "private_keys": false,
+  "rules": {
+    "version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+    "contractSize": "0.0001",
+    "priceUnit": "0.1",
+    "volUnit": "1",
+    "takerFeeRate": "0.0004"
+  },
+  "ticker": {
+    "source_time": "2026-10-14T15:42:08.802000+00:00",
+    "lastPrice": "81699.6",
+    "bid1": "81699.6",
+    "ask1": "81699.7",
+    "fairPrice": "81699.6",
+    "indexPrice": "81740",
+    "fundingRate": "-0.000012",
+    "holdVol": "447952572"
+  },
+  "candles": {
+    "1m": {
+      "count": 60,
+      "final_count": 59
+    },
+    "5m": {
+      "count": 12,
+      "final_count": 11
+    },
+    "15m": {
+      "count": 4,
+      "final_count": 3
+    }
+  },
+  "funding": {
+    "source_time": "2026-10-14T15:42:13.890000+00:00",
+    "fundingRate": "-0.000012",
+    "collectCycle": 8,
+    "nextSettleTime": "2026-10-14T16:00:00+00:00",
+    "settlement_confirmed": false
+  },
+  "history_count": 20,
+  "depth": {
+    "source_time": "2026-10-14T15:42:14.600000+00:00",
+    "version": 42614015020,
+    "asks": [
+      [
+        "81693.5",
+        "4505"
+      ]
+    ],
+    "bids": [
+      [
+        "81693.4",
+        "42670"
+      ]
+    ]
+  },
+  "ws_source_time": "2026-10-14T15:42:14.870000+00:00",
+  "ws_channels": [
+    "pong",
+    "push.kline",
+    "push.ticker",
+    "rs.sub.kline",
+    "rs.sub.ticker"
+  ]
+}

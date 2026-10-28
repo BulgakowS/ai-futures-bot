@@ -1,0 +1,112 @@
+{
+  "candle": {
+    "cached_final": true,
+    "cached_payload": {
+      "amount": "546577.23662",
+      "close": "81662.5",
+      "high": "81662.6",
+      "low": "81651.4",
+      "open": "81652.8",
+      "vol": "66936.0"
+    },
+    "cached_payload_hash": "17e36b7972a7f2735be549baf11d048bce1aeac2030d0b26268774aba7aff270",
+    "cached_source": "rest",
+    "cached_source_time": "2026-10-17T07:56:23.329643+00:00",
+    "direct_final_by_server_time": true,
+    "direct_payload": {
+      "amount": "546577.23662",
+      "close": "81662.5",
+      "high": "81662.6",
+      "low": "81651.4",
+      "open": "81652.8",
+      "vol": "66936.0"
+    },
+    "direct_payload_hash": "17e36b7972a7f2735be549baf11d048bce1aeac2030d0b26268774aba7aff270",
+    "field_matches": {
+      "amount": true,
+      "close": true,
+      "high": true,
+      "low": true,
+      "open": true,
+      "vol": true
+    },
+    "window_start": "2026-10-17T07:55:00+00:00"
+  },
+  "checked_at": "2026-10-17T07:57:39.720153+00:00",
+  "finished_at": "2026-10-17T07:57:41.847509+00:00",
+  "local_api_gets": 3,
+  "mexc_server_time": "2026-10-17T07:57:40.346000+00:00",
+  "official_docs": [
+    "https://www.mexc.com/api-docs/futures/market-endpoints/get-contract-info",
+    "https://www.mexc.com/api-docs/futures/market-endpoints/get-candlestick-data"
+  ],
+  "official_docs_checked_at": "2026-10-17T07:57:11Z",
+  "paper_mutations": 0,
+  "post_requests": 0,
+  "private_api_requests": 0,
+  "public_get_attempts": 4,
+  "public_get_limit": 5,
+  "result": "pass_point_in_time",
+  "rules": {
+    "cached_public_fields": {
+      "contractSize": "0.0001",
+      "feeRateMode": "NORMAL",
+      "feeRateType": "BASE",
+      "makerFeeRate": "0.0001",
+      "minVol": "1",
+      "priceUnit": "0.1",
+      "riskLimitMode": "CUSTOM",
+      "riskLimitType": "BY_VOLUME",
+      "state": 0,
+      "takerFeeRate": "0.0004",
+      "volUnit": "1"
+    },
+    "cached_quality": {
+      "reasons": [],
+      "status": "ok",
+      "trade_eligible": true,
+      "transport": "ws"
+    },
+    "cached_received_at": "2026-10-17T07:43:56.077040+00:00",
+    "cached_risk_tiers_hash": "14a8d1ea4a4162a77619718daea8daf9fa62162ac3d6174b7e99dd8f85955a04",
+    "cached_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+    "direct_public_fields": {
+      "contractSize": "0.0001",
+      "feeRateMode": "NORMAL",
+      "feeRateType": "BASE",
+      "makerFeeRate": "0.0001",
+      "minVol": "1",
+      "priceUnit": "0.1",
+      "riskLimitMode": "CUSTOM",
+      "riskLimitType": "BY_VOLUME",
+      "state": 0,
+      "takerFeeRate": "0.0004",
+      "volUnit": "1"
+    },
+    "direct_risk_tiers_hash": "14a8d1ea4a4162a77619718daea8daf9fa62162ac3d6174b7e99dd8f85955a04",
+    "direct_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+    "field_matches": {
+      "contractSize": true,
+      "feeRateMode": true,
+      "feeRateType": true,
+      "makerFeeRate": true,
+      "minVol": true,
+      "priceUnit": true,
+      "riskLimitMode": true,
+      "riskLimitType": true,
+      "state": true,
+      "takerFeeRate": true,
+      "volUnit": true
+    }
+  },
+  "scope": "read_only_public_mexc_vs_active_api_cache",
+  "ticker": {
+    "cached_quality_status": "ok",
+    "cached_source": "ws",
+    "cached_source_age_seconds_at_check": 5.896,
+    "cached_source_time": "2026-10-17T07:57:35.950000+00:00",
+    "direct_source_age_seconds_at_check": 2.902,
+    "direct_source_time": "2026-10-17T07:57:38.944000+00:00",
+    "price_compared": false
+  }
+}

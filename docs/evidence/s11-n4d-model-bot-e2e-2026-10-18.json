@@ -1,0 +1,48 @@
+{
+  "run_utc": "2026-10-18T10:09:38Z",
+  "scope": "synthetic test-only disposable SQLite 4h event to Paper risk and read-only Web",
+  "market_symbol": "BTC_USDT",
+  "horizon_hours": 4,
+  "forecast_anchor_utc": "2026-01-01T12:00:00Z",
+  "event_clock_note": "Synthetic event and approval use an injected historical test clock; Paper market snapshots use the current synthetic fixture clock.",
+  "fixture_flags": {
+    "app_env": "test",
+    "forecast_fixture_enabled": true,
+    "model_paper_fixture_enabled": true,
+    "model_bot_fixture_enabled": true,
+    "production_defaults": false
+  },
+  "targeted_tests": {
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/integration/test_model_bot.py",
+    "result": "13 passed in 3.04s; combined with N4c: 19 passed in 3.43s",
+    "assertions": [
+      "two spawned OS processes raced the first event; one forecast, proposal, intent, verdict, order and fill",
+      "restart and event replay did not add rows",
+      "future final candle and news edit did not change as-of forecast",
+      "current candle correction after anchor was blocked by sealed forecast",
+      "missing coverage/artifact/approval, malformed Candle, duplicate final event ID and invalid artifact waited or blocked with zero order/fill",
+      "kill, stale market and worker rejected with zero order/fill",
+      "rules mismatch, expired approval and UNKNOWN order added zero fill",
+      "default-off gate and non-test flag rejected"
+    ]
+  },
+  "read_only_browser": {
+    "tool": "gstack /browse headless",
+    "api_origin": "http://127.0.0.1:8137",
+    "web_origin": "http://127.0.0.1:3118",
+    "database": "temporary SQLite removed on server stop",
+    "research_list_get_status": 200,
+    "research_latest_get_status": 200,
+    "rendered_forecast_id": "ee50464b-1532-57f7-82a9-9260936ad228",
+    "rendered_test_marker": true,
+    "rendered_candidate": "UP LONG entry 101.1 SL 100.0 TP 103.2",
+    "browser_network_post_count": 0,
+    "screenshot": "s11-n4d-model-bot-ui-2026-10-18.png",
+    "limitation": "General health GET returned 503 because this isolated API fixture did not start Redis; research GETs and UI rendering succeeded. Browser did not verify continuous production scheduling or real event-time freshness."
+  },
+  "external_mexc_news_get_count": 0,
+  "active_compose_database_paper_outbox_writes": 0,
+  "live_or_telegram_sends": 0,
+  "production_activation": "disabled",
+  "stage_9_status": "collect-only; real news data-use, forward evaluation and Stage 8 operational gates remain open"
+}

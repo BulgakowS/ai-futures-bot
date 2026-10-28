@@ -1,0 +1,31 @@
+{
+  "verified_at_utc": "2026-10-15T14:40:30Z",
+  "scope": "S10D/F4 public CUSTOM/BY_VOLUME tier-aware paper liquidation model",
+  "official_source": {
+    "url": "https://www.mexc.com/api-docs/futures/market-endpoints/get-contract-info",
+    "checked_at_utc": "2026-10-15T14:31:00Z",
+    "method": "gstack /browse official page, read-only",
+    "semantics": "riskLimitType BY_VOLUME is by contracts; riskLimitCustom maxVol is maximum contracts, with level/mmr/imr/maxLeverage",
+    "limits": "documentation response example is not a current public rules snapshot; private risk level and exact exchange formula unverified"
+  },
+  "fixtures": {
+    "tiers": "six public-shape caps 120000/310000/480000/2800000/17500000/19000000; synthetic positions/prices only",
+    "accounting": "isolated posted margin plus settled funding once; entry fee already posted to wallet; projected taker close/liquidation fees",
+    "safety": "unknown/conflicting tiers, changed rules acknowledgement, stale market, kill, reduce-only, restart/idempotency"
+  },
+  "checks": [
+    {"command": "make lint test", "result": "PASS: 113 passed, 1 third-party anyio/starlette warning"},
+    {"command": ".venv/bin/python -m pytest -q tests/integration/test_market.py::test_actual_reconnect_after_malformed_ws", "result": "PASS after one intermediate full-suite timeout; final full suite passed"},
+    {"command": "docker compose -p ai-futures up -d --build api trading", "result": "PASS"},
+    {"command": "docker compose -p ai-futures exec -T api alembic upgrade head", "result": "PASS"},
+    {"command": "docker compose -p ai-futures exec -T api alembic current", "result": "PASS: e0e429e4cf31 (head)"},
+    {"command": "docker compose -p ai-futures exec -T api alembic check", "result": "PASS: No new upgrade operations detected"},
+    {"command": "docker compose -p ai-futures exec -T api python scripts/smoke.py", "result": "PASS: readiness/dependencies ok; paper mode; kill switch true"}
+  ],
+  "limitations": [
+    "model_estimate is a scenario price, not MEXC liquidatePrice or exchange parity",
+    "private position risk level, ADL, account-specific fees, margin adjustment and exact liquidation formula unknown",
+    "historical funding settlement valuation remains estimated",
+    "F5 multi-process PostgreSQL race/fault/soak and full roadmap 3/4 acceptance remain open"
+  ]
+}

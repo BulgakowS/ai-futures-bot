@@ -1,0 +1,52 @@
+{
+  "stage": "S11/M1",
+  "date_utc": "2026-10-19",
+  "scope": "default-off BTC_USDT final REST Hour4 immutable market observation journal and GKG as-of export",
+  "source_review": {
+    "method": "gstack /browse, read-only official documentation",
+    "checked_at_utc_approx": "2026-10-19T07:15:00Z",
+    "url": "https://www.mexc.com/api-docs/futures/market-endpoints/get-candlestick-data",
+    "confirmed": ["Hour4 interval", "Unix-second start/end", "2000 point response cap", "no documented final flag"]
+  },
+  "migration": {
+    "revision": "d3c7a5e91f02",
+    "database": "new disposable SQLite file only",
+    "cycle": "upgrade head, check, downgrade f2a6c1d9e8b0, upgrade head, check",
+    "result": "pass",
+    "active_postgresql_applied": false
+  },
+  "tests": {
+    "targeted_market_gkg": "26 passed before final validation edit",
+    "post_label_assertion_targeted": "13 passed",
+    "full_suite": "247 passed, 1 external Starlette deprecation warning, exit 0",
+    "lint": "make lint: pass",
+    "invariants": [
+      "REST final only; WS/provisional excluded",
+      "restart replay deduplicates identical hash",
+      "correction and reversion append versions with stable first-seen and causal ID",
+      "UPDATE/DELETE SQL triggers reject mutation",
+      "journal failure rolls back Candle transaction",
+      "default-off Candle works without journal table",
+      "GKG flag-off and missing observations return WAIT",
+      "post-decision correction leaves feature sample stable",
+      "future label correction changes label only when visible by export cutoff",
+      "pre-decision correction and mixed source fail closed"
+    ]
+  },
+  "external_actions": {
+    "mexc_api_get": 0,
+    "telegram_send": 0,
+    "live_orders": 0,
+    "compose_rebuild": false,
+    "active_database_mutation": false,
+    "gkg_pilot_process_or_database_touched": false
+  },
+  "limits": [
+    "PostgreSQL migration and concurrency untested",
+    "real Hour4 coverage, latency, corrections, rules/cost freeze untested",
+    "old mutable Candle history cannot be reconstructed",
+    "REST overlap rechecks only two preceding Hour4 windows",
+    "API Dockerfile auto-runs Alembic head on future rebuild; active rebuild intentionally not run"
+  ],
+  "status": "collect-only"
+}

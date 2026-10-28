@@ -1,0 +1,46 @@
+{
+  "active_compose_or_database_mutations": 0,
+  "checks": {
+    "git_diff_check": true,
+    "python_compile": true,
+    "ruff_check": true,
+    "ruff_format_check": true
+  },
+  "coverage": [
+    "append-only versions",
+    "duplicate/edit/revert/restart",
+    "late backfill and future available_at",
+    "SQLite UPDATE/DELETE immutability",
+    "page gap/hash/totalPage shift",
+    "429/503 state",
+    "atomic invalid page",
+    "default-off test-only gate"
+  ],
+  "external_public_or_private_mexc_requests": 0,
+  "limits": [
+    "PostgreSQL trigger and concurrent writers not executed",
+    "no real poller or API route",
+    "MEXC data-use rights unresolved",
+    "no model training or forecast"
+  ],
+  "migration_cycle": {
+    "alembic_check": true,
+    "downgrade_previous_head": true,
+    "reupgrade_head": true,
+    "temporary_database_removed": true,
+    "upgrade_head": true
+  },
+  "migration_revision": "a4e7d9c20b61",
+  "model_scope": "news+market selected by user",
+  "paper_intents_or_orders": 0,
+  "raw_mexc_announcement_rows_persisted": 0,
+  "recorded_at_utc": "2026-10-18T02:58:29.921261Z",
+  "scope": "S11 N1a offline synthetic announcement journal contract",
+  "telegram_messages": 0,
+  "test_environment": "APP_ENV=test; disposable SQLite file; explicit news_fixture_ingest_enabled=true",
+  "test_result": {
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/integration/test_news.py",
+    "failed": 0,
+    "passed": 10
+  }
+}

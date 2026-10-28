@@ -1,0 +1,34 @@
+{
+  "date_utc": "2026-10-15",
+  "stage": "S08 backend minimum",
+  "commands": {
+    "make lint test": "PASS: 84 passed, 1 third-party anyio/starlette deprecation warning",
+    "docker compose -p ai-futures up -d --build api trading": "PASS",
+    "docker compose -p ai-futures exec -T api alembic current": "d7d5a8b4c601 (head)",
+    "docker compose -p ai-futures exec -T api alembic check": "No new upgrade operations detected",
+    "docker compose -p ai-futures exec -T api python scripts/smoke.py": "PASS: readiness, database, migrations, Redis, trading, state ok; paper kill switch true",
+    "docker compose -p ai-futures ps": "5 containers healthy"
+  },
+  "real_public_cache_smoke": {
+    "source": "local PostgreSQL REST-final MEXC public candle cache; no exchange order or private endpoint",
+    "symbol": "BTC_USDT",
+    "timeframe": "1m",
+    "start_utc": "2026-10-15T07:56:00+00:00",
+    "end_utc": "2026-10-15T08:16:00+00:00",
+    "candles": 20,
+    "gaps": 0,
+    "dataset_checksum": "29e617f99eb8d1170a7ec98aeaac5156a3fd71ba2d74da8c9dba05c95d968589",
+    "import_http_status": 200,
+    "run_http_status": 200,
+    "report_checksum": "1025b9b7aac88ddb5c48039414f54699b978ed37ef63da657f4ba718921dff27",
+    "decisions": 20,
+    "modeled_fills": 7,
+    "interpretation": "technical import/replay smoke only; no profitability claim"
+  },
+  "limits": [
+    "Risk gate is a replay-specific implementation of RiskProfile limits, not PaperService.check parity",
+    "Full historical rules and funding coverage unavailable",
+    "No order book, partial fill, intrabar stop, maintenance margin or liquidation model",
+    "No replay speed/UI or out-of-sample evaluation"
+  ]
+}

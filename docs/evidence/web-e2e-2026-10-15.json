@@ -1,0 +1,65 @@
+{
+  "checked_at_utc": "2026-10-15T07:24:49.327522+00:00",
+  "environment": "local Docker Compose; public MEXC data; paper-only",
+  "browser": "gstack /browse http://127.0.0.1:3000",
+  "browser_checks": {
+    "page_200": true,
+    "live_price_visible": true,
+    "final_candles_visible": true,
+    "bot_created_and_started": true,
+    "journal_fill_fee_visible": true,
+    "refresh_after_web_restart_retained_history": true,
+    "mobile_viewport_width": 375,
+    "mobile_document_scroll_width": 375,
+    "selected_portfolio_persisted_after_refresh": true,
+    "svg_nan_rects_after_fix": 0
+  },
+  "market": {
+    "symbol": "BTC_USDT",
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-15T07:24:43.799000+00:00",
+    "quality": "stale",
+    "quality_sample_note": "single read-only sample was stale; browser separately observed eligible live WS price and the paper OPEN occurred on a confirmed final event"
+  },
+  "bot": {
+    "id": "1cc6dbf1-1ff7-4121-abd4-bc6a72ac2594",
+    "portfolio_id": "03a50e41-353d-4358-b264-a24466964f4a",
+    "status_after_kill": "RISK_HALTED",
+    "active_version": 1,
+    "decisions_count": 103
+  },
+  "causal_chain": {
+    "decision_id": "39b2f007-3e00-4c5a-a953-78f22fa63a7e",
+    "candle_event_id": "822dc5b6-8a2a-484b-bbb4-41eeff7f0d2e",
+    "intent_id": "dc06871b-abb6-4467-9d8b-92328e6532fe",
+    "risk_id": "009306fd-cfdc-476f-84d1-65f68d5545ed",
+    "risk_reason": "RISK_OK",
+    "order_id": "0c0e97c5-cd52-4e26-81f9-087de6d27d47",
+    "fill_id": "2d9a6cd6-1a1c-41c7-aa38-4d961945a221",
+    "fee_ledger_event_key": "fee:2d9a6cd6-1a1c-41c7-aa38-4d961945a221"
+  },
+  "first_fill": {
+    "occurred_at": "2026-10-14T23:35:21.146818+00:00",
+    "quantity": "1",
+    "price": "81527.2",
+    "fee": "0.003261088000",
+    "model": "estimated_fill",
+    "fee_source": "public_contract_rules_taker",
+    "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc"
+  },
+  "ledger": {
+    "fee_wallet_delta": "-0.003261088000",
+    "fee_offset_delta": "0.003261088000",
+    "entries_count": 26
+  },
+  "portfolio_after_web_restart": {
+    "wallet_balance": "1000.016504634320",
+    "open_positions": 0
+  },
+  "final_kill_switch": true,
+  "static_bundle_backend_token_absent": true,
+  "screenshots": [
+    "s06-overview-2026-10-15.png",
+    "s06-mobile-2026-10-15.png"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "before": {
+    "at": "2026-10-17T07:49:08.765734+00:00",
+    "final_candles": 597,
+    "quality_reason": "stream_active",
+    "quality_status": "ok",
+    "reasons": [],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T07:49:05.915000+00:00",
+    "trade_eligible": true,
+    "transport": "ws",
+    "unique_final_keys": 597
+  },
+  "disconnected": {
+    "at": "2026-10-17T07:49:09.220915+00:00",
+    "final_candles": 597,
+    "quality_reason": "disconnect_or_schema_error",
+    "quality_status": "stale",
+    "reasons": [
+      "disconnect_or_schema_error"
+    ],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T07:49:05.915000+00:00",
+    "trade_eligible": false,
+    "transport": "rest_fallback",
+    "unique_final_keys": 597
+  },
+  "external_messages": 0,
+  "final_candle_replay": {
+    "count_delta": 0,
+    "event_id_unchanged": true,
+    "replays": 2,
+    "source": "persisted_real_mexc_final_rest_candle"
+  },
+  "finished_at": "2026-10-17T07:49:34.551418+00:00",
+  "injected_close_at": "2026-10-17T07:49:08.767464+00:00",
+  "max_public_rest_operations": 60,
+  "max_seconds": 170,
+  "paper_orders": 0,
+  "private_requests": 0,
+  "public_rest_operations": 30,
+  "public_rest_paths": {
+    "/api/v1/contract/depth/BTC_USDT": 3,
+    "/api/v1/contract/detail/country": 2,
+    "/api/v1/contract/funding_rate/BTC_USDT": 2,
+    "/api/v1/contract/funding_rate/history": 6,
+    "/api/v1/contract/kline/BTC_USDT": 6,
+    "/api/v1/contract/ping": 3,
+    "/api/v1/contract/ticker": 8
+  },
+  "public_rest_rate_policy": "shared_0.55_second_minimum_spacing_with_retry_backoff",
+  "reconciled_before_ws_ticker": {
+    "at": "2026-10-17T07:49:31.518840+00:00",
+    "final_candles": 597,
+    "quality_reason": "ticker_timeout",
+    "quality_status": "stale",
+    "reasons": [
+      "reconciling",
+      "ticker_stale"
+    ],
+    "ticker_source": "rest",
+    "ticker_source_time": "2026-10-17T07:49:24.982000+00:00",
+    "trade_eligible": false,
+    "transport": "ws",
+    "unique_final_keys": 597
+  },
+  "reconciliations": 2,
+  "recovered": {
+    "at": "2026-10-17T07:49:34.251853+00:00",
+    "final_candles": 597,
+    "quality_reason": "stream_active",
+    "quality_status": "ok",
+    "reasons": [],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T07:49:31.805000+00:00",
+    "trade_eligible": true,
+    "transport": "ws",
+    "unique_final_keys": 597
+  },
+  "rest_fallback": {
+    "at": "2026-10-17T07:49:11.505302+00:00",
+    "final_candles": 597,
+    "quality_reason": "disconnect_or_schema_error",
+    "quality_status": "stale",
+    "reasons": [
+      "disconnect_or_schema_error"
+    ],
+    "ticker_source": "rest_fallback",
+    "ticker_source_time": "2026-10-17T07:49:08.896000+00:00",
+    "trade_eligible": false,
+    "transport": "rest_fallback",
+    "unique_final_keys": 597
+  },
+  "result": "pass",
+  "scope": "disposable_sqlite_public_rest_ws_only",
+  "second_reconciled_at": "2026-10-17T07:49:31.498031+00:00",
+  "started_at": "2026-10-17T07:49:01.408406+00:00",
+  "symbol": "BTC_USDT",
+  "ws_connections": 2,
+  "ws_ticker_frames": [
+    3,
+    1
+  ],
+  "ws_tickers_skipped_after_pause": [
+    0,
+    3
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "stage": "S20",
+  "observed_at_utc_date": "2026-10-20",
+  "method": "official MEXC Futures documentation read through gstack /browse",
+  "private_requests": 0,
+  "orders": 0,
+  "credentials_used": false,
+  "sources": [
+    {
+      "name": "Place Order",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/place-order",
+      "documented": ["POST /api/v1/private/order/create", "type=2 Post Only (maker only)", "externalOid optional", "Order Placing permission", "4/2s"]
+    },
+    {
+      "name": "Get Order by External ID",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-order-by-external-id",
+      "documented": ["GET /api/v1/private/order/external/{symbol}/{external_oid}", "dealVol and fee fields", "View Order Details permission", "20/2s"]
+    },
+    {
+      "name": "Get Order Information by Order ID",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-order-information-by-order-id",
+      "documented": ["GET /api/v1/private/order/get/{orderId}", "View Order Details permission", "20/2s"]
+    },
+    {
+      "name": "Get Current Orders",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-current-orders",
+      "documented": ["GET /api/v1/private/order/list/open_orders", "page size up to 100", "View Order Details permission", "20/2s"]
+    },
+    {
+      "name": "Cancel by External Order ID",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/cancel-by-external-order-id",
+      "documented": ["POST /api/v1/private/order/cancel_with_external", "per-order result code", "Order Placing permission", "20/2s"]
+    },
+    {
+      "name": "Cancel Orders",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/cancel-orders",
+      "documented": ["POST /api/v1/private/order/cancel", "up to 50 order IDs", "Order Placing permission", "20/2s"]
+    },
+    {
+      "name": "Trade Records by Order ID",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-trade-records-by-order-id",
+      "documented": ["GET /api/v1/private/order/deal_details/{orderId}", "deal fee and feeCurrency", "table isTaker versus example taker mismatch", "View Order Details permission", "20/2s"]
+    },
+    {
+      "name": "Historical Order Deal Details",
+      "url": "https://www.mexc.com/api-docs/futures/account-and-trading-endpoints/get-historical-order-deal-details",
+      "documented": ["GET /api/v1/private/order/list/order_deals/v3", "table pagination object versus example data list mismatch", "View Order Details permission", "20/2s"]
+    },
+    {
+      "name": "Error Codes",
+      "url": "https://www.mexc.com/api-docs/futures/error-code",
+      "documented": ["500 and 9999: query operation result before retry", "603 repeated request: check status before resubmission"]
+    }
+  ],
+  "unknown": [
+    "immediate-cross Post Only disposition and response/status code",
+    "per-fill maker guarantee for type=2 beyond the documentation label",
+    "externalOid uniqueness, durable idempotency and retention",
+    "partial fill versus cancel race and unknown create/cancel outcome",
+    "actual deal payload field name isTaker versus taker and historical data shape",
+    "account-specific API maker 0% eligibility and actual fills"
+  ],
+  "conclusion": "research only; Live remains blocked"
+}

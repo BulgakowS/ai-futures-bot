@@ -1,0 +1,734 @@
+{
+  "verified_at_utc": "2026-10-14T15:19:36.713403+00:00",
+  "read_only": true,
+  "authentication": false,
+  "rest": {
+    "api-country": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "symbol": "BTC_USDT",
+        "displayName": "BTC_USDT永续",
+        "displayNameEn": "BTC_USDT PERPETUAL",
+        "positionOpenType": 3,
+        "baseCoin": "BTC",
+        "quoteCoin": "USDT",
+        "baseCoinName": "BTC",
+        "quoteCoinName": "USDT",
+        "futureType": 1,
+        "settleCoin": "USDT",
+        "contractSize": 0.0001,
+        "minLeverage": 1,
+        "maxLeverage": 500,
+        "countryConfigContractMaxLeverage": 0,
+        "priceScale": 1,
+        "volScale": 0,
+        "amountScale": 4,
+        "priceUnit": 0.1,
+        "volUnit": 1,
+        "minVol": 1,
+        "maxVol": 400000,
+        "bidLimitPriceRate": 0.1,
+        "askLimitPriceRate": 0.1,
+        "takerFeeRate": 0.0004,
+        "makerFeeRate": 0.0001,
+        "maintenanceMarginRate": 0.001,
+        "initialMarginRate": 0.002,
+        "riskBaseVol": 19000000,
+        "riskIncrVol": 0,
+        "riskLongShortSwitch": 0,
+        "riskIncrMmr": 0,
+        "riskIncrImr": 0,
+        "riskLevelLimit": 1,
+        "priceCoefficientVariation": 0.004,
+        "indexOrigin": [
+          "BITGET",
+          "BYBIT",
+          "BINANCE",
+          "HTX",
+          "UPBIT",
+          "OKX",
+          "MEXC",
+          "KUCOIN"
+        ],
+        "state": 0,
+        "isNew": false,
+        "isHot": false,
+        "isHidden": false,
+        "conceptPlate": [
+          "mc-trade-zone-mainly",
+          "mc-trade-zone-layer2",
+          "mc-trade-zone-pow"
+        ],
+        "conceptPlateId": [
+          50,
+          5,
+          12
+        ],
+        "riskLimitType": "BY_VOLUME",
+        "maxNumOrders": [
+          200,
+          50
+        ],
+        "marketOrderMaxLevel": 20,
+        "marketOrderPriceLimitRate1": 0.1,
+        "marketOrderPriceLimitRate2": 0.005,
+        "triggerProtect": 0.1,
+        "appraisal": 0,
+        "showAppraisalCountdown": 0,
+        "automaticDelivery": 0,
+        "apiAllowed": true,
+        "depthStepList": [
+          "0.1",
+          "1",
+          "10",
+          "100"
+        ],
+        "limitMaxVol": 2500000,
+        "threshold": 0,
+        "baseCoinIconUrl": "https://public.mocortech.com/coin/F20250612182226438Ba037qttKoGcrm.png",
+        "id": 10,
+        "vid": "128f589271cb4951b03e71e6323eb7be",
+        "baseCoinId": "febc9973be4d4d53bb374476239eb219",
+        "createTime": 1591242684000,
+        "openingTime": 0,
+        "openingCountdownOption": 1,
+        "showBeforeOpen": true,
+        "isMaxLeverage": true,
+        "isZeroFeeRate": false,
+        "riskLimitMode": "CUSTOM",
+        "isZeroFeeSymbol": false,
+        "riskLimitCustom": [
+          {
+            "level": 1,
+            "maxVol": 120000,
+            "mmr": 0.001,
+            "imr": 0.002,
+            "maxLeverage": 500
+          },
+          {
+            "level": 2,
+            "maxVol": 310000,
+            "mmr": 0.004,
+            "imr": 0.005,
+            "maxLeverage": 200
+          },
+          {
+            "level": 3,
+            "maxVol": 480000,
+            "mmr": 0.005,
+            "imr": 0.01,
+            "maxLeverage": 100
+          },
+          {
+            "level": 4,
+            "maxVol": 2800000,
+            "mmr": 0.01,
+            "imr": 0.02,
+            "maxLeverage": 50
+          },
+          {
+            "level": 5,
+            "maxVol": 17500000,
+            "mmr": 0.02,
+            "imr": 0.05,
+            "maxLeverage": 20
+          },
+          {
+            "level": 6,
+            "maxVol": 19000000,
+            "mmr": 0.05,
+            "imr": 0.1,
+            "maxLeverage": 10
+          }
+        ],
+        "liquidationFeeRate": 0.0004,
+        "feeRateMode": "NORMAL",
+        "leverageFeeRates": [],
+        "tieredFeeRates": [],
+        "type": 1,
+        "stopOnlyFair": false,
+        "preMarket": false,
+        "typeLabel": 0,
+        "fn": "BTC_USDT永续",
+        "feeRateType": "BASE",
+        "tagIdList": [
+          5,
+          8
+        ],
+        "tempMaxLeverageLimited": false,
+        "regularMaxLeverage": 500
+      }
+    },
+    "api-detail": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "symbol": "BTC_USDT",
+        "displayName": "BTC_USDT永续",
+        "displayNameEn": "BTC_USDT PERPETUAL",
+        "positionOpenType": 3,
+        "baseCoin": "BTC",
+        "quoteCoin": "USDT",
+        "baseCoinName": "BTC",
+        "quoteCoinName": "USDT",
+        "futureType": 1,
+        "settleCoin": "USDT",
+        "contractSize": 0.0001,
+        "minLeverage": 1,
+        "maxLeverage": 500,
+        "countryConfigContractMaxLeverage": 0,
+        "priceScale": 1,
+        "volScale": 0,
+        "amountScale": 4,
+        "priceUnit": 0.1,
+        "volUnit": 1,
+        "minVol": 1,
+        "maxVol": 400000,
+        "bidLimitPriceRate": 0.1,
+        "askLimitPriceRate": 0.1,
+        "takerFeeRate": 0.0004,
+        "makerFeeRate": 0.0001,
+        "maintenanceMarginRate": 0.001,
+        "initialMarginRate": 0.002,
+        "riskBaseVol": 19000000,
+        "riskIncrVol": 0,
+        "riskLongShortSwitch": 0,
+        "riskIncrMmr": 0,
+        "riskIncrImr": 0,
+        "riskLevelLimit": 1,
+        "priceCoefficientVariation": 0.004,
+        "indexOrigin": [
+          "BITGET",
+          "BYBIT",
+          "BINANCE",
+          "HTX",
+          "UPBIT",
+          "OKX",
+          "MEXC",
+          "KUCOIN"
+        ],
+        "state": 0,
+        "isNew": false,
+        "isHot": false,
+        "isHidden": false,
+        "conceptPlate": [
+          "mc-trade-zone-mainly",
+          "mc-trade-zone-layer2",
+          "mc-trade-zone-pow"
+        ],
+        "conceptPlateId": [
+          50,
+          5,
+          12
+        ],
+        "riskLimitType": "BY_VOLUME",
+        "maxNumOrders": [
+          200,
+          50
+        ],
+        "marketOrderMaxLevel": 20,
+        "marketOrderPriceLimitRate1": 0.1,
+        "marketOrderPriceLimitRate2": 0.005,
+        "triggerProtect": 0.1,
+        "appraisal": 0,
+        "showAppraisalCountdown": 0,
+        "automaticDelivery": 0,
+        "apiAllowed": true,
+        "depthStepList": [
+          "0.1",
+          "1",
+          "10",
+          "100"
+        ],
+        "limitMaxVol": 2500000,
+        "threshold": 0,
+        "baseCoinIconUrl": "https://public.mocortech.com/coin/F20250612182226438Ba037qttKoGcrm.png",
+        "id": 10,
+        "vid": "128f589271cb4951b03e71e6323eb7be",
+        "baseCoinId": "febc9973be4d4d53bb374476239eb219",
+        "createTime": 1591242684000,
+        "openingTime": 0,
+        "openingCountdownOption": 1,
+        "showBeforeOpen": true,
+        "isMaxLeverage": true,
+        "isZeroFeeRate": false,
+        "riskLimitMode": "CUSTOM",
+        "isZeroFeeSymbol": false,
+        "riskLimitCustom": [
+          {
+            "level": 1,
+            "maxVol": 120000,
+            "mmr": 0.001,
+            "imr": 0.002,
+            "maxLeverage": 500
+          },
+          {
+            "level": 2,
+            "maxVol": 310000,
+            "mmr": 0.004,
+            "imr": 0.005,
+            "maxLeverage": 200
+          },
+          {
+            "level": 3,
+            "maxVol": 480000,
+            "mmr": 0.005,
+            "imr": 0.01,
+            "maxLeverage": 100
+          },
+          {
+            "level": 4,
+            "maxVol": 2800000,
+            "mmr": 0.01,
+            "imr": 0.02,
+            "maxLeverage": 50
+          },
+          {
+            "level": 5,
+            "maxVol": 17500000,
+            "mmr": 0.02,
+            "imr": 0.05,
+            "maxLeverage": 20
+          },
+          {
+            "level": 6,
+            "maxVol": 19000000,
+            "mmr": 0.05,
+            "imr": 0.1,
+            "maxLeverage": 10
+          }
+        ],
+        "liquidationFeeRate": 0.0004,
+        "feeRateMode": "NORMAL",
+        "leverageFeeRates": [],
+        "tieredFeeRates": [],
+        "type": 1,
+        "stopOnlyFair": false,
+        "preMarket": false,
+        "typeLabel": 0,
+        "fn": "BTC_USDT永续",
+        "feeRateType": "BASE",
+        "tagIdList": [
+          5,
+          8
+        ],
+        "tempMaxLeverageLimited": false,
+        "regularMaxLeverage": 500
+      }
+    },
+    "api-ticker": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "contractId": 10,
+        "symbol": "BTC_USDT",
+        "lastPrice": 81999.4,
+        "bid1": 81999.4,
+        "ask1": 81999.5,
+        "volume24": 338382336,
+        "amount24": 2810799478.85681,
+        "holdVol": 447699829,
+        "lower24Price": 81622.6,
+        "high24Price": 84113.5,
+        "riseFallRate": -0.0167,
+        "riseFallValue": -1393.6,
+        "indexPrice": 82043.9,
+        "fairPrice": 81999.3,
+        "fundingRate": -1e-06,
+        "maxBidPrice": 90248.2,
+        "minAskPrice": 73839.5,
+        "timestamp": 1791991059899,
+        "riseFallRates": {
+          "zone": "UTC+8",
+          "r": -0.0167,
+          "v": -1393.6,
+          "r7": -0.0429,
+          "r30": 0.0635,
+          "r90": 0.2539,
+          "r180": 0.0983,
+          "r365": -0.2823
+        },
+        "riseFallRatesOfTimezone": [
+          -0.0178,
+          -0.0135,
+          -0.0167
+        ]
+      }
+    },
+    "api-funding": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "symbol": "BTC_USDT",
+        "fundingRate": -1e-06,
+        "maxFundingRate": 0.0018,
+        "minFundingRate": -0.0018,
+        "collectCycle": 8,
+        "nextSettleTime": 1791993600000,
+        "timestamp": 1791991064456,
+        "idxPrice": 82048.4,
+        "fairPrice": 82002.7
+      }
+    },
+    "funding-history": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "pageSize": 3,
+        "totalCount": 1620,
+        "totalPage": 540,
+        "currentPage": 1,
+        "resultList": [
+          {
+            "symbol": "BTC_USDT",
+            "fundingRate": 1.4e-05,
+            "settleTime": 1791964800000,
+            "collectCycle": 8
+          },
+          {
+            "symbol": "BTC_USDT",
+            "fundingRate": -9e-06,
+            "settleTime": 1791936000000,
+            "collectCycle": 8
+          },
+          {
+            "symbol": "BTC_USDT",
+            "fundingRate": 3.4e-05,
+            "settleTime": 1791907200000,
+            "collectCycle": 8
+          }
+        ]
+      }
+    },
+    "depth": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "cts": null,
+        "asks": [
+          [
+            81916.3,
+            2945,
+            1
+          ],
+          [
+            81916.4,
+            9920,
+            1
+          ],
+          [
+            81916.5,
+            7327,
+            2
+          ],
+          [
+            81916.6,
+            5765,
+            2
+          ],
+          [
+            81916.7,
+            4906,
+            2
+          ]
+        ],
+        "bids": [
+          [
+            81916.2,
+            73704,
+            12
+          ],
+          [
+            81916.1,
+            30515,
+            1
+          ],
+          [
+            81913.8,
+            536,
+            2
+          ],
+          [
+            81911.2,
+            4046,
+            2
+          ],
+          [
+            81911.1,
+            10204,
+            4
+          ]
+        ],
+        "version": 42613213330,
+        "timestamp": 1791990976859
+      }
+    },
+    "newbase-ping": {
+      "success": true,
+      "code": 0,
+      "data": 1791990976210
+    },
+    "kline": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "time": {
+          "count": 2000,
+          "first": 1791870900,
+          "last": 1791990840
+        },
+        "open": {
+          "count": 2000,
+          "first": 83638.0,
+          "last": 81769.4
+        },
+        "close": {
+          "count": 2000,
+          "first": 83656.1,
+          "last": 81800.0
+        },
+        "high": {
+          "count": 2000,
+          "first": 83663.2,
+          "last": 81838.9
+        },
+        "low": {
+          "count": 2000,
+          "first": 83638.0,
+          "last": 81769.4
+        },
+        "vol": {
+          "count": 2000,
+          "first": 418600.0,
+          "last": 630601.0
+        },
+        "amount": {
+          "count": 2000,
+          "first": 3501847.19107,
+          "last": 5159301.29163
+        },
+        "realOpen": {
+          "count": 2000,
+          "first": 83638.1,
+          "last": 81773.4
+        },
+        "realClose": {
+          "count": 2000,
+          "first": 83656.1,
+          "last": 81800.0
+        },
+        "realHigh": {
+          "count": 2000,
+          "first": 83663.2,
+          "last": 81838.9
+        },
+        "realLow": {
+          "count": 2000,
+          "first": 83638.1,
+          "last": 81770.0
+        }
+      }
+    },
+    "api-kline5": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "time": {
+          "count": 2000,
+          "first": 1791391200,
+          "last": 1791990900
+        },
+        "open": {
+          "count": 2000,
+          "first": 83413.3,
+          "last": 81824.5
+        },
+        "close": {
+          "count": 2000,
+          "first": 83406.2,
+          "last": 82000.1
+        },
+        "high": {
+          "count": 2000,
+          "first": 83422.7,
+          "last": 82016.9
+        },
+        "low": {
+          "count": 2000,
+          "first": 83350.0,
+          "last": 81810.0
+        },
+        "vol": {
+          "count": 2000,
+          "first": 1693705.0,
+          "last": 1694492.0
+        },
+        "amount": {
+          "count": 2000,
+          "first": 14122224.61391,
+          "last": 13883524.05597
+        },
+        "realOpen": {
+          "count": 2000,
+          "first": 83413.2,
+          "last": 81824.5
+        },
+        "realClose": {
+          "count": 2000,
+          "first": 83406.2,
+          "last": 82000.1
+        },
+        "realHigh": {
+          "count": 2000,
+          "first": 83422.7,
+          "last": 82016.9
+        },
+        "realLow": {
+          "count": 2000,
+          "first": 83350.0,
+          "last": 81810.0
+        }
+      }
+    },
+    "api-kline15": {
+      "success": true,
+      "code": 0,
+      "data": {
+        "time": {
+          "count": 2000,
+          "first": 1790191800,
+          "last": 1791990900
+        },
+        "open": {
+          "count": 2000,
+          "first": 84366.5,
+          "last": 81824.5
+        },
+        "close": {
+          "count": 2000,
+          "first": 84398.0,
+          "last": 82000.1
+        },
+        "high": {
+          "count": 2000,
+          "first": 84444.8,
+          "last": 82016.9
+        },
+        "low": {
+          "count": 2000,
+          "first": 84344.9,
+          "last": 81810.0
+        },
+        "vol": {
+          "count": 2000,
+          "first": 2904842.0,
+          "last": 1697183.0
+        },
+        "amount": {
+          "count": 2000,
+          "first": 24516452.96347,
+          "last": 13905590.28501
+        },
+        "realOpen": {
+          "count": 2000,
+          "first": 84366.9,
+          "last": 81824.5
+        },
+        "realClose": {
+          "count": 2000,
+          "first": 84398.0,
+          "last": 82000.1
+        },
+        "realHigh": {
+          "count": 2000,
+          "first": 84444.8,
+          "last": 82016.9
+        },
+        "realLow": {
+          "count": 2000,
+          "first": 84344.9,
+          "last": 81810.0
+        }
+      }
+    }
+  },
+  "websocket": {
+    "opened": true,
+    "events": [
+      {
+        "channel": "pong",
+        "data": 1791991035629,
+        "ts": 1791991035629
+      },
+      {
+        "channel": "rs.sub.ticker",
+        "data": "success",
+        "ts": 1791991035630
+      },
+      {
+        "channel": "rs.sub.kline",
+        "data": "success",
+        "ts": 1791991035630
+      },
+      {
+        "symbol": "BTC_USDT",
+        "data": {
+          "symbol": "BTC_USDT",
+          "interval": "Min1",
+          "t": 1791991020,
+          "o": 81938,
+          "c": 81946.5,
+          "h": 81962.2,
+          "l": 81937.9,
+          "a": 313498.35188,
+          "q": 38255,
+          "ro": 81938,
+          "rc": 81946.5,
+          "rh": 81962.2,
+          "rl": 81937.9
+        },
+        "channel": "push.kline",
+        "ts": 1791991035724
+      },
+      {
+        "symbol": "BTC_USDT",
+        "data": {
+          "symbol": "BTC_USDT",
+          "lastPrice": 81946.5,
+          "riseFallRate": -0.0173,
+          "fairPrice": 81950.1,
+          "indexPrice": 81995.3,
+          "volume24": 338111457,
+          "amount24": 2808578958.34479,
+          "maxBidPrice": 90194.8,
+          "minAskPrice": 73795.7,
+          "lower24Price": 81622.6,
+          "high24Price": 84113.5,
+          "timestamp": 1791991035731,
+          "bid1": 81946.5,
+          "ask1": 81946.6,
+          "holdVol": 448291834,
+          "riseFallValue": -1446.5,
+          "fundingRate": -1e-06,
+          "zone": "UTC+8",
+          "riseFallRates": [
+            -0.0173,
+            -0.0435,
+            0.0628,
+            0.2531,
+            0.0976,
+            -0.2828
+          ],
+          "riseFallRatesOfTimezone": [
+            -0.0184,
+            -0.0141,
+            -0.0173
+          ]
+        },
+        "channel": "push.ticker",
+        "ts": 1791991035731
+      }
+    ]
+  }
+}

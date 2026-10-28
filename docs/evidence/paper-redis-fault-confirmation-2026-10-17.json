@@ -1,0 +1,27 @@
+{
+  "command": ".venv/bin/python scripts/paper_worker_faults.py --redis-only",
+  "mode": "paper",
+  "database": "temporary_local_postgresql_cluster",
+  "market_source": "synthetic_loopback_only",
+  "external_messages": 0,
+  "private_mexc_calls": 0,
+  "worker_heartbeat_seconds": 1,
+  "worker_stale_seconds": 4,
+  "redis_ping_delay_seconds": 8,
+  "worker_ping_timeout_seconds": 5,
+  "fault_utc": "2026-10-17T00:25:04.803527+00:00",
+  "heartbeat_stale_elapsed_seconds": 3.079,
+  "risk_reason": "WORKER_STALE",
+  "new_order_or_fill": false,
+  "pending_status": "RISK_CANCELED",
+  "readiness": {"redis": "ok", "trading": "stale"},
+  "recovery_elapsed_seconds": 1.022,
+  "restart_replay_counts_before_and_after": {"intent": 3, "order": 2, "fill": 1},
+  "ledger_rows": 2,
+  "ledger_balanced": true,
+  "temporary_postgres_stopped": true,
+  "limits": [
+    "Thresholds and feed are controlled test fixtures, not the production public stream",
+    "No real Telegram delivery was attempted"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "api_process": "uvicorn_create_app",
+  "blocked_entry": {
+    "no_new_order_or_fill": true,
+    "pending_status": "RISK_CANCELED",
+    "reason": "WORKER_STALE"
+  },
+  "database": "temporary_local_postgresql_cluster",
+  "external_messages": 0,
+  "fault": "controlled_worker_redis_ping_delay",
+  "fault_readiness": {
+    "redis": "ok",
+    "trading": "stale"
+  },
+  "fault_utc": "2026-10-16T15:46:56.014899+00:00",
+  "heartbeat_stale": {
+    "elapsed_s": 3.733,
+    "utc": "2026-10-16T15:46:59.747921+00:00"
+  },
+  "market_source": "synthetic_loopback_only",
+  "mode": "paper",
+  "ping_timeout_logged": {
+    "elapsed_s": 2.034,
+    "utc": "2026-10-16T15:47:01.782036+00:00"
+  },
+  "private_mexc_calls": 0,
+  "processes": {
+    "api": 1,
+    "trading_worker": 2
+  },
+  "recovered": {
+    "elapsed_s": 0.825,
+    "utc": "2026-10-16T15:47:02.820940+00:00"
+  },
+  "redis_ping_delay_seconds": 8,
+  "restart_replay": {
+    "counts_after": {
+      "fill": 1,
+      "intent": 3,
+      "order": 2
+    },
+    "counts_before": {
+      "fill": 1,
+      "intent": 3,
+      "order": 2
+    },
+    "ledger_balanced": true,
+    "ledger_rows": 2,
+    "same_intent": true
+  },
+  "startup": {
+    "elapsed_s": 1.838,
+    "utc": "2026-10-16T15:46:54.704766+00:00"
+  },
+  "temporary_postgres_stopped": true,
+  "worker_heartbeat_seconds": 1,
+  "worker_ping_timeout_seconds": 5,
+  "worker_process": "run_worker",
+  "worker_stale_seconds": 4
+}

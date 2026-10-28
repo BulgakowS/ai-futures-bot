@@ -1,0 +1,36 @@
+{
+  "as_of_date": "2026-10-20",
+  "scope": "sanitized screenshot observation and S14 public proxy match; no account eligibility",
+  "screenshot_context": "MEXC Futures / Zero-Fee Zone / USDT-M",
+  "screenshot_symbols_displayed": [
+    "BRUSDT",
+    "ZECUSDT",
+    "BTWUSDT",
+    "TAOUSDT",
+    "LINKUSDT",
+    "INJUSDT"
+  ],
+  "s14_public_catalog_source": "https://api.mexc.com/api/v1/contract/detail/country",
+  "s14_public_catalog_observed_at": "2026-10-20T08:50:28.898737+00:00",
+  "s14_matching_candidates": [
+    "BR_USDT",
+    "ZEC_USDT",
+    "BTW_USDT",
+    "TAO_USDT",
+    "LINK_USDT",
+    "INJ_USDT"
+  ],
+  "matched_count": 6,
+  "public_proxy_guarantees_exact_current_ui_category": false,
+  "public_proxy_proves_api_account_fee": false,
+  "s14_snapshot_current_for_five_minute_gate": false,
+  "mexc_account_api_maker_confirmation_present": false,
+  "real_account_eligibility": "denied_unknown",
+  "future_selection_preference": "auto-rank current shortlist by liquidity and spread; thresholds not defined",
+  "max_position_meaning": "full notional exposure including leverage, not allocated margin",
+  "screenshot_copied_into_repository": false,
+  "new_public_requests": 0,
+  "private_requests": 0,
+  "orders": 0,
+  "active_runtime_changed": false
+}

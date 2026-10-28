@@ -1,0 +1,116 @@
+{
+  "checked_at_utc": "2026-10-16T08:44:07.662841+00:00",
+  "scope": "S10E/F5a isolated PostgreSQL multi-process Paper/Risk/Bots gate",
+  "market_fixture": "synthetic controlled REST-final candles and fresh/stale public-shaped snapshots; no live exchange probe",
+  "runs": [
+    {
+      "bot_restart": {
+        "bots": 3,
+        "decisions": 3,
+        "fills": 3,
+        "intents": 3,
+        "recovered_processing": 1
+      },
+      "database": "temporary_postgres_16_9_docker_container",
+      "deterministic_candle_clock": true,
+      "duplicate_api_submit": {
+        "independent_api_processes": 2,
+        "intent_order_fill_ledger": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "requests": 8
+      },
+      "external_network_policy": "loopback_only_socket_guard",
+      "invariants": {
+        "backtest_runs": 0,
+        "ledger_wallet_projection": true,
+        "paper_only_mode": true,
+        "per_bot_intent_verdict_order_fill": true,
+        "utc_config_version": true
+      },
+      "kill_bot_close": {
+        "fresh_close": "ALLOW",
+        "ledger_balanced": true,
+        "new_open": "KILL_SWITCH",
+        "pending": "KILL_CANCELED",
+        "reduce_only": true,
+        "stale_close": "DATA_STALE"
+      },
+      "kill_close_race": "ALLOW_REDUCE_ONLY",
+      "kill_open_race": "KILL_SWITCH",
+      "market_source": "controlled_synthetic_final_stream",
+      "mode": "paper",
+      "private_mexc_calls": 0,
+      "processes": {
+        "api": 2,
+        "worker": 6
+      },
+      "temporary_postgres_stopped": true
+    },
+    {
+      "bot_restart": {
+        "bots": 3,
+        "decisions": 3,
+        "fills": 3,
+        "intents": 3,
+        "recovered_processing": 1
+      },
+      "database": "temporary_local_postgresql_18_cluster",
+      "deterministic_candle_clock": true,
+      "duplicate_api_submit": {
+        "independent_api_processes": 2,
+        "intent_order_fill_ledger": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "requests": 8
+      },
+      "external_network_policy": "loopback_only_socket_guard",
+      "invariants": {
+        "backtest_runs": 0,
+        "ledger_wallet_projection": true,
+        "paper_only_mode": true,
+        "per_bot_intent_verdict_order_fill": true,
+        "utc_config_version": true
+      },
+      "kill_bot_close": {
+        "fresh_close": "ALLOW",
+        "ledger_balanced": true,
+        "new_open": "KILL_SWITCH",
+        "pending": "KILL_CANCELED",
+        "reduce_only": true,
+        "stale_close": "DATA_STALE"
+      },
+      "kill_close_race": "ALLOW_REDUCE_ONLY",
+      "kill_open_race": "KILL_SWITCH",
+      "market_source": "controlled_synthetic_final_stream",
+      "mode": "paper",
+      "private_mexc_calls": 0,
+      "processes": {
+        "api": 2,
+        "worker": 6
+      },
+      "temporary_postgres_stopped": true
+    }
+  ],
+  "checks": {
+    "make_lint_test": "PASS: 113 passed, 1 third-party anyio/starlette deprecation warning",
+    "compose_build_api_trading": "PASS",
+    "compose_alembic_current": "e0e429e4cf31 (head)",
+    "compose_alembic_check": "No new upgrade operations detected",
+    "compose_smoke": "PASS: readiness ok; database/migrations/redis/trading/state ok; mode paper; kill switch true",
+    "temporary_pg16_containers_remaining": 0,
+    "temporary_local_clusters_remaining": 0
+  },
+  "limits": [
+    "No long public-market paper soak or browser end-to-end in F5a.",
+    "Controlled synthetic market fixture demonstrates causality and gates, not MEXC execution parity.",
+    "Race order is nondeterministic: an OPEN committed before kill may be allowed; after kill it is rejected.",
+    "No Live trading path or private MEXC credentials were exercised."
+  ]
+}

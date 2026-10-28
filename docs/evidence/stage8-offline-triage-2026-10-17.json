@@ -1,0 +1,668 @@
+{
+  "compose_health": [
+    {
+      "health": "healthy",
+      "service": "api",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "postgres",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "redis",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "trading",
+      "state": "running"
+    },
+    {
+      "health": "healthy",
+      "service": "web",
+      "state": "running"
+    }
+  ],
+  "current_alert_states": [
+    {
+      "active": false,
+      "changed_at_utc": "2026-10-17T07:09:37.186543Z",
+      "kind": "worker_down",
+      "pending_at_utc": null,
+      "recovered_at_utc": null,
+      "subject": "trading"
+    },
+    {
+      "active": false,
+      "changed_at_utc": "2026-10-17T10:34:01.767761Z",
+      "kind": "market_stale",
+      "pending_at_utc": null,
+      "recovered_at_utc": null,
+      "subject": "BTC_USDT"
+    }
+  ],
+  "current_app_state": {
+    "kill_switch": true,
+    "mode": "paper"
+  },
+  "current_heartbeats": [
+    {
+      "at_utc": "2026-10-17T10:36:29.920911Z",
+      "name": "trading",
+      "status": "idle"
+    }
+  ],
+  "db_checked_at_utc": "2026-10-17T10:36:30.632683Z",
+  "diagnostics": {
+    "counts_by_class": {
+      "market_rest_unavailable": 288,
+      "market_ws_unavailable": 39
+    },
+    "coverage_limit": "The current trading container was created 2026-10-16 15:37 UTC; selected diagnostic lines start 16:20 UTC. Earlier causes cannot be reconstructed from these container logs. A nearby diagnostic is temporal correlation, not proven root cause.",
+    "exception_type_counts": [
+      {
+        "class": "market_rest_unavailable",
+        "count": 285,
+        "type": "ConnectError"
+      },
+      {
+        "class": "market_rest_unavailable",
+        "count": 3,
+        "type": "ReadTimeout"
+      },
+      {
+        "class": "market_ws_unavailable",
+        "count": 7,
+        "type": "MarketDataError"
+      },
+      {
+        "class": "market_ws_unavailable",
+        "count": 32,
+        "type": "gaierror"
+      }
+    ],
+    "first_selected_line_utc": "2026-10-16T16:20:19.456961Z",
+    "last_selected_line_utc": "2026-10-17T10:33:18.751151Z",
+    "new_alert_nearby_diagnostics": [
+      {
+        "alert_at_utc": "2026-10-17T06:54:13.171797Z",
+        "diagnostics_within_120s": {
+          "market_rest_unavailable": 40,
+          "market_ws_unavailable": 8
+        },
+        "kind": "market_stale"
+      },
+      {
+        "alert_at_utc": "2026-10-17T06:54:28.246823Z",
+        "diagnostics_within_120s": {
+          "market_rest_unavailable": 45,
+          "market_ws_unavailable": 9
+        },
+        "kind": "worker_down"
+      },
+      {
+        "alert_at_utc": "2026-10-17T07:43:50.940980Z",
+        "diagnostics_within_120s": {
+          "market_ws_unavailable": 1
+        },
+        "kind": "market_stale"
+      },
+      {
+        "alert_at_utc": "2026-10-17T08:14:24.931161Z",
+        "diagnostics_within_120s": {
+          "market_rest_unavailable": 1,
+          "market_ws_unavailable": 1
+        },
+        "kind": "market_stale"
+      },
+      {
+        "alert_at_utc": "2026-10-17T10:33:16.557324Z",
+        "diagnostics_within_120s": {
+          "market_ws_unavailable": 1
+        },
+        "kind": "market_stale"
+      }
+    ],
+    "selected_lines": 327
+  },
+  "evidence_written_at_utc": "2026-10-17T10:37:56.919548Z",
+  "external_messages": 0,
+  "outbox": {
+    "alert_total": 331,
+    "by_kind": [
+      {
+        "count": 3,
+        "first_utc": "2026-10-16T08:50:13.073508Z",
+        "kind": "kill_switch",
+        "last_utc": "2026-10-16T08:57:59.801645Z",
+        "same_kind_subject_repeat_gaps": {
+          "count": 2,
+          "exact_same_timestamp": 0,
+          "median_seconds": 233.364,
+          "min_seconds": 173.129,
+          "under_2min": 0,
+          "under_30min": 2,
+          "under_5min": 2
+        },
+        "subject": "paper"
+      },
+      {
+        "count": 279,
+        "first_utc": "2026-10-15T08:30:24.385999Z",
+        "kind": "market_stale",
+        "last_utc": "2026-10-17T10:33:16.557324Z",
+        "same_kind_subject_repeat_gaps": {
+          "count": 278,
+          "exact_same_timestamp": 0,
+          "median_seconds": 146.943,
+          "min_seconds": 15.074,
+          "under_2min": 99,
+          "under_30min": 259,
+          "under_5min": 191
+        },
+        "subject": "BTC_USDT"
+      },
+      {
+        "count": 49,
+        "first_utc": "2026-10-15T08:32:50.591290Z",
+        "kind": "worker_down",
+        "last_utc": "2026-10-17T06:54:28.246823Z",
+        "same_kind_subject_repeat_gaps": {
+          "count": 48,
+          "exact_same_timestamp": 0,
+          "median_seconds": 1155.361,
+          "min_seconds": 45.862,
+          "under_2min": 2,
+          "under_30min": 28,
+          "under_5min": 4
+        },
+        "subject": "trading"
+      }
+    ],
+    "by_utc_day": [
+      {
+        "count": 190,
+        "date_utc": "2026-10-15",
+        "kind": "market_stale"
+      },
+      {
+        "count": 26,
+        "date_utc": "2026-10-15",
+        "kind": "worker_down"
+      },
+      {
+        "count": 3,
+        "date_utc": "2026-10-16",
+        "kind": "kill_switch"
+      },
+      {
+        "count": 85,
+        "date_utc": "2026-10-16",
+        "kind": "market_stale"
+      },
+      {
+        "count": 22,
+        "date_utc": "2026-10-16",
+        "kind": "worker_down"
+      },
+      {
+        "count": 4,
+        "date_utc": "2026-10-17",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "date_utc": "2026-10-17",
+        "kind": "worker_down"
+      }
+    ],
+    "by_utc_hour": [
+      {
+        "count": 21,
+        "hour_utc": "2026-10-15T08:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T08:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 19,
+        "hour_utc": "2026-10-15T09:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-15T09:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 22,
+        "hour_utc": "2026-10-15T10:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-15T10:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 27,
+        "hour_utc": "2026-10-15T11:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-15T11:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-15T12:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 9,
+        "hour_utc": "2026-10-15T13:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T13:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 17,
+        "hour_utc": "2026-10-15T14:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-15T14:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 9,
+        "hour_utc": "2026-10-15T15:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-15T15:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 4,
+        "hour_utc": "2026-10-15T16:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T16:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 12,
+        "hour_utc": "2026-10-15T17:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T17:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-15T18:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-15T18:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 4,
+        "hour_utc": "2026-10-15T19:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T19:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 17,
+        "hour_utc": "2026-10-15T20:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 19,
+        "hour_utc": "2026-10-15T21:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T21:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-15T22:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-15T22:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 5,
+        "hour_utc": "2026-10-15T23:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-15T23:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-16T00:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T00:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 4,
+        "hour_utc": "2026-10-16T01:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-16T01:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T02:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T02:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T03:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T03:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 7,
+        "hour_utc": "2026-10-16T04:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T04:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-16T05:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 4,
+        "hour_utc": "2026-10-16T07:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-16T07:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-16T08:00:00Z",
+        "kind": "kill_switch"
+      },
+      {
+        "count": 5,
+        "hour_utc": "2026-10-16T08:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-16T08:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 5,
+        "hour_utc": "2026-10-16T09:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 20,
+        "hour_utc": "2026-10-16T10:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-16T10:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 4,
+        "hour_utc": "2026-10-16T11:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 6,
+        "hour_utc": "2026-10-16T12:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 7,
+        "hour_utc": "2026-10-16T13:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-16T13:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 5,
+        "hour_utc": "2026-10-16T14:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 3,
+        "hour_utc": "2026-10-16T14:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 5,
+        "hour_utc": "2026-10-16T15:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 2,
+        "hour_utc": "2026-10-16T15:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-16T16:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-16T17:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-16T23:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-17T06:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-17T06:00:00Z",
+        "kind": "worker_down"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-17T07:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-17T08:00:00Z",
+        "kind": "market_stale"
+      },
+      {
+        "count": 1,
+        "hour_utc": "2026-10-17T10:00:00Z",
+        "kind": "market_stale"
+      }
+    ],
+    "new_after_s10k": 5,
+    "new_after_s10k_events": [
+      {
+        "at_utc": "2026-10-17T06:54:13.171797Z",
+        "kind": "market_stale"
+      },
+      {
+        "at_utc": "2026-10-17T06:54:28.246823Z",
+        "kind": "worker_down"
+      },
+      {
+        "at_utc": "2026-10-17T07:43:50.940980Z",
+        "kind": "market_stale"
+      },
+      {
+        "at_utc": "2026-10-17T08:14:24.931161Z",
+        "kind": "market_stale"
+      },
+      {
+        "at_utc": "2026-10-17T10:33:16.557324Z",
+        "kind": "market_stale"
+      }
+    ],
+    "other_topic_rows": 1,
+    "published": 0,
+    "queued": 331
+  },
+  "payload_or_ids_exported": false,
+  "read_only": true,
+  "resources": {
+    "comparison": [
+      {
+        "current_cpu_percent_min_max": [
+          0.8,
+          17.28
+        ],
+        "current_memory_mib_min_max": [
+          80.72,
+          92.48
+        ],
+        "current_peak_to_s10k_peak_cpu_ratio": 0.553,
+        "current_peak_to_s10k_peak_memory_ratio": 1.053,
+        "s10k_62_sample_peak_cpu_percent": 31.26,
+        "s10k_62_sample_peak_memory_mib": 87.84,
+        "samples": 3,
+        "service": "ai-futures-api-1"
+      },
+      {
+        "current_cpu_percent_min_max": [
+          3.24,
+          7.99
+        ],
+        "current_memory_mib_min_max": [
+          57.37,
+          58.6
+        ],
+        "current_peak_to_s10k_peak_cpu_ratio": 0.106,
+        "current_peak_to_s10k_peak_memory_ratio": 1.142,
+        "s10k_62_sample_peak_cpu_percent": 75.56,
+        "s10k_62_sample_peak_memory_mib": 51.32,
+        "samples": 3,
+        "service": "ai-futures-postgres-1"
+      },
+      {
+        "current_cpu_percent_min_max": [
+          0.38,
+          0.54
+        ],
+        "current_memory_mib_min_max": [
+          9.4,
+          9.95
+        ],
+        "current_peak_to_s10k_peak_cpu_ratio": 0.073,
+        "current_peak_to_s10k_peak_memory_ratio": 0.596,
+        "s10k_62_sample_peak_cpu_percent": 7.43,
+        "s10k_62_sample_peak_memory_mib": 16.7,
+        "samples": 3,
+        "service": "ai-futures-redis-1"
+      },
+      {
+        "current_cpu_percent_min_max": [
+          11.35,
+          100.47
+        ],
+        "current_memory_mib_min_max": [
+          84.61,
+          84.79
+        ],
+        "current_peak_to_s10k_peak_cpu_ratio": 0.936,
+        "current_peak_to_s10k_peak_memory_ratio": 0.666,
+        "s10k_62_sample_peak_cpu_percent": 107.38,
+        "s10k_62_sample_peak_memory_mib": 127.4,
+        "samples": 3,
+        "service": "ai-futures-trading-1"
+      },
+      {
+        "current_cpu_percent_min_max": [
+          0.0,
+          0.58
+        ],
+        "current_memory_mib_min_max": [
+          79.07,
+          79.84
+        ],
+        "current_peak_to_s10k_peak_cpu_ratio": 0.024,
+        "current_peak_to_s10k_peak_memory_ratio": 0.895,
+        "s10k_62_sample_peak_cpu_percent": 24.46,
+        "s10k_62_sample_peak_memory_mib": 89.24,
+        "samples": 3,
+        "service": "ai-futures-web-1"
+      }
+    ],
+    "current_sample_count_per_service": 3,
+    "current_sample_spacing_seconds": 2,
+    "limit": "S10K peaks came from 62 minute-spaced samples over one hour; current values are only three short snapshots. CPU percentages are Docker per-core units, not host saturation or SLA.",
+    "snapshot_aggregated_at_utc": "2026-10-17T10:37:56.919703Z"
+  },
+  "scope": "S10Q read-only active Compose PostgreSQL outbox, selected local diagnostics, Docker stats",
+  "sql": "BEGIN READ ONLY; SET LOCAL statement_timeout = 5s; SELECT kind/subject/time/published aggregates; COMMIT"
+}

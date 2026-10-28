@@ -1,0 +1,20 @@
+{
+  "evidence_version": "s11-n5a-cleanup-v1",
+  "recorded_at_utc": "2026-10-18T19:38:04Z",
+  "protocol_status": "collect-only",
+  "promotion_enabled": false,
+  "source_compatible_real_artifacts": 0,
+  "completed_real_forward_periods": 0,
+  "runtime_evaluator_present": false,
+  "checks": {
+    "static_fail_closed_protocol": "passed",
+    "removed_module_imports": 0,
+    "targeted_news_training_tests": "6 passed in 0.84s",
+    "ruff": "passed",
+    "compileall": "passed",
+    "git_diff_check": "passed"
+  },
+  "market_metrics": null,
+  "paper_orders": 0,
+  "telegram_sends": 0
+}

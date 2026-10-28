@@ -1,0 +1,38 @@
+{
+  "date_utc": "2026-10-18",
+  "scope": "S11/G4/T1 offline GKG event-time correction",
+  "schema": "gdelt-gkg-market-dataset-v2",
+  "persisted_export_schema": "persisted-gkg-market-export-v2",
+  "synthetic_case": {
+    "anchor_utc": "2026-10-18T08:00:00Z",
+    "final_candle_received_utc": "2026-10-18T08:02:00Z",
+    "last_required_gkg_observed_utc": "2026-10-18T08:03:00Z",
+    "decision_at_utc": "2026-10-18T08:03:00Z",
+    "target_close_utc": "2026-10-18T12:00:00Z",
+    "time_to_target_seconds": "14220",
+    "max_decision_delay_seconds": 900
+  },
+  "checks": [
+    "10 targeted unit and disposable SQLite integration tests passed",
+    "Ruff check and format check passed on four changed Python files",
+    "git diff --check passed"
+  ],
+  "faults_checked": [
+    "late GKG revision excluded from earlier decision features",
+    "market and GKG availability after 15 minutes wait",
+    "exactly 15 minutes accepted",
+    "incomplete 16-slot coverage waits",
+    "decision after cutoff waits",
+    "label before target close waits",
+    "future label mutation leaves feature hash unchanged",
+    "repeat build and persisted export restart are identical"
+  ],
+  "external_http_gets": 0,
+  "active_database_access": false,
+  "paper_or_live_orders": 0,
+  "limitations": [
+    "synthetic cohort only; no real 16-slot coverage or latency distribution",
+    "mutable market Candle cannot prove unseen historical corrections",
+    "no trained or forward-evaluated GKG model"
+  ]
+}

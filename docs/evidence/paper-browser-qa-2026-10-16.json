@@ -1,0 +1,91 @@
+{
+  "mode": "paper",
+  "kill_switch_restored": true,
+  "qa_portfolio_id": "0f2a3d43-9127-47f2-ae06-6b6ec7711651",
+  "qa_portfolio_name": "S10F real-public manual QA",
+  "open_positions_after": 0,
+  "bot_statuses_after": [
+    "RISK_HALTED"
+  ],
+  "manual_open_fills": [
+    {
+      "intent_id": "993feb4f-d79b-48fe-86d0-9871b2e85d35",
+      "order_id": "490fed30-7d7b-4608-8e97-a51f1a01f41e",
+      "position_id": "7c2ed638-8602-4ba1-990c-1e8197605531",
+      "occurred_at_utc": "2026-10-16T08:50:13.046321+00:00",
+      "status": "FILLED",
+      "quantity_contracts": "1",
+      "fill_price": "82354.6",
+      "estimated_fill": "estimated_fill",
+      "fee": "0.003294184000",
+      "fee_source": "public_contract_rules_taker",
+      "applied_public_fee_rate": "0.0004",
+      "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+      "depth_version": 42682375240
+    },
+    {
+      "intent_id": "a1ee09cd-c45e-4b60-a062-43472e258825",
+      "order_id": "af146cec-7529-4820-b0e6-444e09c9564d",
+      "position_id": "3cb64f41-8a97-4a55-be1a-b87fbdd7a7cc",
+      "occurred_at_utc": "2026-10-16T08:54:06.448704+00:00",
+      "status": "FILLED",
+      "quantity_contracts": "1",
+      "fill_price": "82268.2",
+      "estimated_fill": "estimated_fill",
+      "fee": "0.003290728000",
+      "fee_source": "public_contract_rules_taker",
+      "applied_public_fee_rate": "0.0004",
+      "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+      "depth_version": 42682443220
+    },
+    {
+      "intent_id": "302a7150-e695-48e9-b680-3589f4f9c4cf",
+      "order_id": "62c9c098-1c3f-4bf2-97df-c3b15105da58",
+      "position_id": "5a291286-51a9-4a45-9f98-6f029fe5afc7",
+      "occurred_at_utc": "2026-10-16T08:57:24.172169+00:00",
+      "status": "FILLED",
+      "quantity_contracts": "1",
+      "fill_price": "82251.5",
+      "estimated_fill": "estimated_fill",
+      "fee": "0.003290060000",
+      "fee_source": "public_contract_rules_taker",
+      "applied_public_fee_rate": "0.0004",
+      "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+      "depth_version": 42682497855
+    }
+  ],
+  "qa_counts": {
+    "intents": 6,
+    "verdicts": 6,
+    "orders": 6,
+    "fills": 6,
+    "ledger_rows": 10,
+    "unbalanced_ledger_rows": 0
+  },
+  "api_position_history_regression": {
+    "before_fix_http": 500,
+    "after_fix_http": 200,
+    "closed_reason": "POSITION_CLOSED"
+  },
+  "browser": {
+    "tool": "gstack /browse source CLI",
+    "viewport_px": 375,
+    "dashboard_scroll_width_px": 375,
+    "positions_open_scroll_width_px": 375,
+    "positions_closed_scroll_width_px": 375,
+    "journal_fills_scroll_width_px": 375,
+    "mobile_close": "confirmed",
+    "screenshots": [
+      "paper-browser-dashboard-2026-10-16.png",
+      "paper-browser-fills-2026-10-16.png",
+      "paper-browser-position-model-2026-10-16.png",
+      "paper-browser-mobile-fixed-2026-10-16.png",
+      "paper-browser-mobile-fills-2026-10-16.png"
+    ]
+  },
+  "limits": [
+    "Manual Paper orders, not autonomous bot signals",
+    "REST book estimated fill and tier liquidation model are not exchange execution parity",
+    "Pre-fix API 500 count not captured globally"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "task": "S11/N4b read-only research API/UI",
+  "recorded_at_utc": "2026-10-18T03:27:20Z",
+  "backend_api": {
+    "environment": "disposable SQLite with Alembic; ASGITransport; no external service",
+    "command": "PYTHONPATH=.:services/api .venv/bin/pytest -q tests/integration/test_forecast_journal.py tests/integration/test_forecast_api.py",
+    "passed": 3,
+    "failed": 0,
+    "duration_seconds": 2.27,
+    "checks": [
+      "missing and wrong Bearer token rejected for all three GET paths",
+      "empty journal list and latest return collect-only",
+      "bounded list, latest and detail expose causal UTC/provenance",
+      "candidate marked synthetic TEST and WAIT has no proposal",
+      "unknown ID 404, POST 405, zero disposable Paper intent/order rows"
+    ]
+  },
+  "web_build": {
+    "environment": "APP_ENV=test; AF_TEST_DIST_DIR=.next-s10o",
+    "result": "Next.js production build and TypeScript passed",
+    "host_guard_tests": "2 passed; production stays on port 3000, test override loopback only"
+  },
+  "browser": {
+    "tool": "gstack /browse",
+    "web": "isolated loopback 127.0.0.1:3117",
+    "backend": "controlled synthetic mock 127.0.0.1:8127; not the disposable SQLite API",
+    "checks": [
+      "collect-only and synthetic TEST candidate visible",
+      "WAIT detail visible without proposal",
+      "zero Research execution buttons",
+      "375px viewport scrollWidth=375",
+      "browser console had no messages",
+      "BFF GET list/latest/detail 200; POST research 404; unrelated GET 404; foreign Host 403"
+    ],
+    "screenshot": "s11-n4b-research-ui-mock-2026-10-18.png",
+    "screenshot_sha256": "85824885ad300d64a9192f34f04cbb66a172b02568fd3d55f1b4e031c51d660b"
+  },
+  "cleanup": {
+    "ports_3117_8127": "closed",
+    "gstack_browser_daemon": "disconnected",
+    "temporary_next_build": "removed"
+  },
+  "external_market_requests": 0,
+  "active_compose_database_outbox_writes": 0,
+  "paper_intents_or_orders": 0,
+  "telegram_sends": 0,
+  "verdict": "N4b read-only surface complete; Stage 9 collect-only"
+}

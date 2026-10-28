@@ -1,0 +1,209 @@
+{
+  "checked_at": "2026-10-14T23:11:28.917956+00:00",
+  "mode": "paper",
+  "private_requests": 0,
+  "market": {
+    "ticker_source": "ws",
+    "ticker_time": "2026-10-14T23:11:28.833000+00:00",
+    "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+    "depth_model": "estimated_rest_snapshot"
+  },
+  "manual": {
+    "portfolio_id": "4fabef79-8cc6-4935-96c3-c7ce61cf0099",
+    "open": {
+      "intent": {
+        "id": "0e69b833-a68d-46a8-8da1-0cffb504a1ee",
+        "portfolio_id": "4fabef79-8cc6-4935-96c3-c7ce61cf0099",
+        "epoch": 1,
+        "idempotency_key": "a083e488-61ee-4538-925f-9972591175ba",
+        "payload_hash": "e466e8c8e3d8d4fa020d4cbf0fd3fdfd107350f11a133b781fb3f4957df993f7",
+        "payload": {
+          "idempotency_key": "a083e488-61ee-4538-925f-9972591175ba",
+          "symbol": "BTC_USDT",
+          "direction": "LONG",
+          "kind": "market",
+          "quantity": "1",
+          "leverage": "1",
+          "limit_price": null,
+          "stop_loss": "81360.8",
+          "take_profit": null,
+          "source": "manual",
+          "action": "open"
+        },
+        "occurred_at": "2026-10-14T23:11:30.099165+00:00",
+        "config_version": "foundation-v1"
+      },
+      "risk": {
+        "id": "ecb7b04e-b4ad-432c-9a8e-c30e4b53dc68",
+        "intent_id": "0e69b833-a68d-46a8-8da1-0cffb504a1ee",
+        "outcome": "ALLOW",
+        "reason": "RISK_OK",
+        "snapshot": {
+          "quality": {
+            "status": "ok",
+            "trade_eligible": true,
+            "reasons": [],
+            "transport": "ws"
+          },
+          "ticker_id": "048ac0a4-6a33-4e94-96a7-b4cb8523e5d8",
+          "depth_id": "888c7495-80a4-4018-b03b-280039d4938d",
+          "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+          "reduce_only": false,
+          "profile": {
+            "max_leverage": "3",
+            "risk_per_trade": "0.005",
+            "max_total_risk": "0.015",
+            "max_daily_loss": "0.03",
+            "max_drawdown": "0.10",
+            "max_positions": 3,
+            "max_notional_equity": "3",
+            "slippage_bps": "2",
+            "depth_participation": "0.10"
+          },
+          "account": {
+            "equity": "1000.000000000000",
+            "available_balance": "1000.000000000000",
+            "wallet_balance": "1000.000000000000"
+          },
+          "trade_risk": "0.029799070",
+          "margin_and_fee_reserve": "8.160993092"
+        },
+        "occurred_at": "2026-10-14T23:11:30.111062+00:00",
+        "config_version": "foundation-v1"
+      },
+      "order": {
+        "id": "631276c2-a8fd-494d-acfe-cdc5a53873da",
+        "intent_id": "0e69b833-a68d-46a8-8da1-0cffb504a1ee",
+        "verdict_id": "ecb7b04e-b4ad-432c-9a8e-c30e4b53dc68",
+        "portfolio_id": "4fabef79-8cc6-4935-96c3-c7ce61cf0099",
+        "epoch": 1,
+        "symbol": "BTC_USDT",
+        "direction": "LONG",
+        "kind": "market",
+        "status": "FILLED",
+        "quantity": "1",
+        "filled_quantity": "1",
+        "average_price": "81577.3",
+        "reserve": "0",
+        "payload": {
+          "idempotency_key": "a083e488-61ee-4538-925f-9972591175ba",
+          "symbol": "BTC_USDT",
+          "direction": "LONG",
+          "kind": "market",
+          "quantity": "1",
+          "leverage": "1",
+          "limit_price": null,
+          "stop_loss": "81360.8",
+          "take_profit": null,
+          "source": "manual",
+          "action": "open",
+          "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+          "last_depth_id": "888c7495-80a4-4018-b03b-280039d4938d",
+          "position_id": "4eaafcc0-b3a5-44b5-bacf-7fed518350ff"
+        },
+        "occurred_at": "2026-10-14T23:11:30.112683+00:00",
+        "updated_at": "2026-10-14T23:11:30.124571+00:00",
+        "config_version": "foundation-v1"
+      }
+    },
+    "close": {
+      "intent": {
+        "id": "c1e44464-6baf-43d3-b0c9-7235001a4ab0",
+        "portfolio_id": "4fabef79-8cc6-4935-96c3-c7ce61cf0099",
+        "epoch": 1,
+        "idempotency_key": "1bb74021-b736-4904-b9ed-7baebcdb41b3",
+        "payload_hash": "e77eef6bff6ab43af666f57446a25ed7000c0bd11de94b6dcd46d55666759cbe",
+        "payload": {
+          "idempotency_key": "1bb74021-b736-4904-b9ed-7baebcdb41b3",
+          "quantity": null,
+          "reason": "manual",
+          "action": "close",
+          "position_id": "4eaafcc0-b3a5-44b5-bacf-7fed518350ff"
+        },
+        "occurred_at": "2026-10-14T23:11:30.192637+00:00",
+        "config_version": "foundation-v1"
+      },
+      "risk": {
+        "id": "2e19f3f4-5f0c-4383-8a89-1d9978a52cd0",
+        "intent_id": "c1e44464-6baf-43d3-b0c9-7235001a4ab0",
+        "outcome": "ALLOW",
+        "reason": "RISK_OK",
+        "snapshot": {
+          "quality": {
+            "status": "ok",
+            "trade_eligible": true,
+            "reasons": [],
+            "transport": "ws"
+          },
+          "ticker_id": "048ac0a4-6a33-4e94-96a7-b4cb8523e5d8",
+          "depth_id": "888c7495-80a4-4018-b03b-280039d4938d",
+          "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+          "reduce_only": true,
+          "profile": {
+            "max_leverage": "3",
+            "risk_per_trade": "0.005",
+            "max_total_risk": "0.015",
+            "max_daily_loss": "0.03",
+            "max_drawdown": "0.10",
+            "max_positions": 3,
+            "max_notional_equity": "3",
+            "slippage_bps": "2",
+            "depth_participation": "0.10"
+          }
+        },
+        "occurred_at": "2026-10-14T23:11:30.198119+00:00",
+        "config_version": "foundation-v1"
+      },
+      "order": {
+        "id": "2dc34884-271b-481a-9727-30a75eb3e23d",
+        "intent_id": "c1e44464-6baf-43d3-b0c9-7235001a4ab0",
+        "verdict_id": "2e19f3f4-5f0c-4383-8a89-1d9978a52cd0",
+        "portfolio_id": "4fabef79-8cc6-4935-96c3-c7ce61cf0099",
+        "epoch": 1,
+        "symbol": "BTC_USDT",
+        "direction": "LONG",
+        "kind": "market",
+        "status": "FILLED",
+        "quantity": "1",
+        "filled_quantity": "1",
+        "average_price": "81544.4",
+        "reserve": "0",
+        "payload": {
+          "idempotency_key": "1bb74021-b736-4904-b9ed-7baebcdb41b3",
+          "quantity": "1",
+          "reason": "manual",
+          "action": "close",
+          "position_id": "4eaafcc0-b3a5-44b5-bacf-7fed518350ff",
+          "symbol": "BTC_USDT",
+          "direction": "LONG",
+          "kind": "market",
+          "leverage": "1",
+          "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+          "last_depth_id": "888c7495-80a4-4018-b03b-280039d4938d"
+        },
+        "occurred_at": "2026-10-14T23:11:30.200288+00:00",
+        "updated_at": "2026-10-14T23:11:30.204913+00:00",
+        "config_version": "foundation-v1"
+      }
+    },
+    "ledger_count": 4,
+    "ledger_balanced": true,
+    "same_payload_same_result": true,
+    "different_payload_409": true
+  },
+  "postgres_concurrency": {
+    "outcomes": [
+      "ALLOW",
+      "REJECT"
+    ],
+    "rejection": [
+      "POSITION_CONFLICT"
+    ],
+    "available_balance": "646.074164706667"
+  },
+  "postgres_concurrent_idempotency": true,
+  "postgres_immutable_ledger": true,
+  "manager_restart_recovery": true,
+  "final_kill_switch": true,
+  "open_smoke_positions": 0
+}

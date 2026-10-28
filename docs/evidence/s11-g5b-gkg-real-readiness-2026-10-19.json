@@ -1,0 +1,40 @@
+{
+  "stage": "S11/G5b",
+  "date_utc": "2026-10-19",
+  "scope": "offline disposable SQLite persisted-source readiness; fixture is not real evidence",
+  "dataset_schema": "gdelt-gkg-market-dataset-v2",
+  "export_schema": "persisted-gkg-market-export-v3",
+  "fixture": {
+    "origin": "test-created real-shaped numeric rows; not observed GDELT or MEXC data",
+    "anchors": 50,
+    "gkg_revision_ids": 800,
+    "gkg_slot_observation_ids": 800,
+    "immutable_m1_observation_ids": 52,
+    "label_cutoff": "per-anchor target_close_at+15m",
+    "chronological_split_with_4h_embargo": {"train": 26, "validation": 10, "test": 12},
+    "readiness_status": "collect-only",
+    "reason": "missing_cost_provenance",
+    "model_artifacts": 0
+  },
+  "negative_gates": [
+    "source_checksum_mismatch",
+    "too_few_samples",
+    "source_quality_wait_on_late_release",
+    "corrected_source_wait",
+    "invalid_real_source_provenance_on_synthetic_marker",
+    "late_label_correction_does_not_rewrite_as_of_label"
+  ],
+  "checks": {
+    "g5b_disposable_sqlite_integration": "6 passed",
+    "existing_g4_g5_unit_and_integration": "15 passed",
+    "ruff_check": "passed"
+  },
+  "not_verified": [
+    "independent real source attestation",
+    "real continuous G3/M1 coverage",
+    "effective and observed instrument rules",
+    "immutable fee/funding/slippage schedule",
+    "real model fit and evaluation",
+    "N5b forward or Paper activation"
+  ]
+}

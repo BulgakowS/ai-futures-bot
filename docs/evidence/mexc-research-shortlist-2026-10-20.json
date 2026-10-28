@@ -1,0 +1,33 @@
+{
+  "as_of_date": "2026-10-20",
+  "scope": "isolated pure research auto-shortlist, no runtime wiring",
+  "source_contracts": [
+    "docs/evidence/mexc-zero-fee-catalog-2026-10-20.json",
+    "docs/evidence/mexc-multipair-selector-sources-2026-10-20.json"
+  ],
+  "user_asset_universe": "all current USDT-M zone proxy candidates, including stock/TradFi if present",
+  "symbol_asset_class_inference": false,
+  "required_explicit_policy_fields": [
+    "max_spread_bps_decimal",
+    "max_ticker_age_seconds_decimal",
+    "max_catalog_age_seconds_decimal",
+    "max_pairs_integer_1_to_3",
+    "scope_symbols_external_allowed_universe"
+  ],
+  "default_numeric_thresholds": false,
+  "numeric_min_24h_turnover_usdt_implemented": false,
+  "reason_min_turnover_unimplemented": "REST amount24 currency/unit is not verified sufficiently for a sound USDT threshold",
+  "research_ranking": "amount24_raw descending, midpoint spread bps ascending, symbol ascending",
+  "invalid_symbol_handling": "per-symbol skip with reason counts; duplicate or foreign ticker symbol denies batch",
+  "max_research_pairs": 3,
+  "positive_synthetic_fixtures_are_trade_ready": false,
+  "always_requires_separate_gates": [
+    "verified depth units and execution liquidity",
+    "S17 account-specific API maker zero confirmation",
+    "shared aggregate Risk Engine cap and all Stage 8/10 Live gates"
+  ],
+  "real_public_requests": 0,
+  "private_requests": 0,
+  "orders": 0,
+  "runtime_changed": false
+}

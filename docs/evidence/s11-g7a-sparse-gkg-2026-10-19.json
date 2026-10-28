@@ -1,0 +1,37 @@
+{
+  "stage": "S11/G7a",
+  "date_utc": "2026-10-19",
+  "status": "collect-only",
+  "real_g7a_gets": 0,
+  "known_prior_gkg_zip_bytes": 22384251,
+  "opening_debit_bytes": 134217728,
+  "budget_version": "gkg-sparse-budget-v2",
+  "fixed_real_journal": "data/research/s11-gkg-sparse.sqlite",
+  "baseline_audit": {
+    "known_prior_gkg_zip_bytes": 22384251,
+    "locally_measured_codebook_pdf_bytes": 434652,
+    "locally_measured_doc_json_bytes": 2486,
+    "locally_measured_manifest_bytes": 319,
+    "remaining_conservative_allowance_bytes": 111396020,
+    "exact_historical_total_known": false
+  },
+  "total_cap_bytes": 5000000000,
+  "per_anchor_reservation_bytes": 8470528,
+  "prior_pilot": {
+    "attempts_utc": ["2026-10-19T07:38:29Z", "2026-10-19T07:53:29Z"],
+    "batch_ids": ["20261019074500", "20261019080000"],
+    "archive_bytes": [3513444, 3793351],
+    "archive_bytes_sum": 7306795,
+    "slots_ok": 2,
+    "slots_error": 0,
+    "stopped_at_utc": "2026-10-19T08:04:31Z",
+    "stop_reason": "5 GB news budget decision",
+    "coverage_claim": "two slots only; no 16-slot coverage"
+  },
+  "validation": "mock HTTP and disposable SQLite only",
+  "limitations": [
+    "opening debit includes a 111,396,020-byte allowance for other prior probes and overhead; exact prior traffic is not independently reconciled",
+    "no real sparse HEAD or GET was executed",
+    "no sparse dataset, model, Paper path or live trading"
+  ]
+}

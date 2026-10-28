@@ -1,0 +1,31 @@
+{
+  "source": "read_only_localhost_market_cache",
+  "samples_file": "paper-public-quiet-15min-2026-10-16.jsonl",
+  "start_utc": "2026-10-16T15:45:48.684030+00:00",
+  "end_utc": "2026-10-16T16:00:49.598271+00:00",
+  "observed_duration_seconds": 900.914,
+  "samples": 877,
+  "http_errors": 0,
+  "quality_ok_samples": 856,
+  "ticker_stale_samples": 21,
+  "ticker_stale_runs": 21,
+  "stale_run_sample_lengths": "all_one_sample_with_ok_between",
+  "ticker_age_seconds": {
+    "p50": 2.754,
+    "p95": 4.697,
+    "p99": 5.24,
+    "max": 5.811
+  },
+  "ticker_source_step_seconds": {
+    "p50": 3.009,
+    "p95": 3.84,
+    "p99": 3.971,
+    "max": 4.021
+  },
+  "risk_ticker_ttl_seconds": 5,
+  "limits": [
+    "Sampled stale runs do not establish their exact duration",
+    "Observation does not establish an MEXC cadence SLA or justify relaxing the risk gate",
+    "No concurrent outbox baseline was captured for an alert delta"
+  ]
+}

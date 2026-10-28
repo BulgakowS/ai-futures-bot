@@ -1,0 +1,301 @@
+{
+  "active_compose_mutations": 0,
+  "before": {
+    "at": "2026-10-17T10:28:02.691044+00:00",
+    "final_candles": 597,
+    "quality_reason": "stream_active",
+    "quality_status": "ok",
+    "reasons": [],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T10:28:00.871000+00:00",
+    "trade_eligible": true,
+    "transport": "ws",
+    "unique_final_keys": 597
+  },
+  "before_api": {
+    "health": {
+      "body": {
+        "dependencies": {
+          "database": "ok",
+          "migrations": "ok",
+          "redis": "ok",
+          "state": "ok",
+          "trading": "ok"
+        },
+        "mode": "paper",
+        "occurred_at": "2026-10-17T10:28:05.575784+00:00",
+        "request_id": "3a5ec430-8a37-45ef-9a37-44ba75c2d0bb",
+        "status": "ok"
+      },
+      "http": 200
+    },
+    "markets/BTC_USDT/quality": {
+      "body": {
+        "reasons": [],
+        "status": "ok",
+        "trade_eligible": true,
+        "transport": "ws"
+      },
+      "http": 200
+    },
+    "markets/BTC_USDT/ticker": {
+      "body": {
+        "config_version": "foundation-v1",
+        "data": {
+          "ask1": "81589.8",
+          "bid1": "81589.7",
+          "fairPrice": "81589.8",
+          "fundingRate": "0.000031",
+          "holdVol": "457764255",
+          "indexPrice": "81620.2",
+          "lastPrice": "81589.8"
+        },
+        "event_id": "efa600d3-3635-4467-a966-c9e668026057",
+        "kind": "ticker",
+        "quality": {
+          "reasons": [],
+          "status": "ok",
+          "trade_eligible": true,
+          "transport": "ws"
+        },
+        "quality_status": "ok",
+        "received_at": "2026-10-17T10:28:05.099938+00:00",
+        "source": "ws",
+        "source_time": "2026-10-17T10:28:03.915000+00:00",
+        "symbol": "BTC_USDT"
+      },
+      "http": 200
+    }
+  },
+  "before_new_ticker": {
+    "at": "2026-10-17T10:28:23.342508+00:00",
+    "final_candles": 598,
+    "quality_reason": "ticker_timeout",
+    "quality_status": "stale",
+    "reasons": [
+      "reconciling",
+      "ticker_stale"
+    ],
+    "ticker_source": "rest",
+    "ticker_source_time": "2026-10-17T10:28:15.780000+00:00",
+    "trade_eligible": false,
+    "transport": "ws",
+    "unique_final_keys": 598
+  },
+  "bff_loopback_guard": "configured_test_port_accepted_nonlocal_host_403",
+  "controlled_bot_cursor": {
+    "last_window": "2026-10-17T10:26:00+00:00",
+    "target_candle_event_id": "c4e42c30-715c-4c98-b6bf-12d3c20f2939",
+    "target_real_final_window": "2026-10-17T10:27:00+00:00"
+  },
+  "fallback": {
+    "at": "2026-10-17T10:28:12.308066+00:00",
+    "final_candles": 598,
+    "quality_reason": "disconnect_or_schema_error",
+    "quality_status": "stale",
+    "reasons": [
+      "disconnect_or_schema_error"
+    ],
+    "ticker_source": "rest_fallback",
+    "ticker_source_time": "2026-10-17T10:28:09.783000+00:00",
+    "trade_eligible": false,
+    "transport": "rest_fallback",
+    "unique_final_keys": 598
+  },
+  "fault": {
+    "at": "2026-10-17T10:28:06.131837+00:00",
+    "final_candles": 598,
+    "quality_reason": "disconnect_or_schema_error",
+    "quality_status": "stale",
+    "reasons": [
+      "disconnect_or_schema_error"
+    ],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T10:28:03.915000+00:00",
+    "trade_eligible": false,
+    "transport": "rest_fallback",
+    "unique_final_keys": 598
+  },
+  "fault_api": {
+    "health": {
+      "body": {
+        "dependencies": {
+          "database": "ok",
+          "migrations": "ok",
+          "redis": "ok",
+          "state": "ok",
+          "trading": "ok"
+        },
+        "mode": "paper",
+        "occurred_at": "2026-10-17T10:28:12.318426+00:00",
+        "request_id": "98863f93-7872-44bc-8d71-ed65e8084af8",
+        "status": "ok"
+      },
+      "http": 200
+    },
+    "markets/BTC_USDT/quality": {
+      "body": {
+        "reasons": [
+          "disconnect_or_schema_error"
+        ],
+        "status": "stale",
+        "trade_eligible": false,
+        "transport": "rest_fallback"
+      },
+      "http": 200
+    },
+    "markets/BTC_USDT/ticker": {
+      "body": {
+        "config_version": "foundation-v1",
+        "data": {
+          "ask1": "81590",
+          "bid1": "81589.9",
+          "fairPrice": "81590",
+          "fundingRate": "0.000031",
+          "holdVol": "457770341",
+          "indexPrice": "81620.2",
+          "lastPrice": "81590"
+        },
+        "event_id": "928913a9-11ef-4392-b6b1-aea1597ee2dd",
+        "kind": "ticker",
+        "quality": {
+          "reasons": [
+            "disconnect_or_schema_error"
+          ],
+          "status": "stale",
+          "trade_eligible": false,
+          "transport": "rest_fallback"
+        },
+        "quality_status": "ok",
+        "received_at": "2026-10-17T10:28:12.250191+00:00",
+        "source": "rest_fallback",
+        "source_time": "2026-10-17T10:28:09.783000+00:00",
+        "symbol": "BTC_USDT"
+      },
+      "http": 200
+    }
+  },
+  "fault_bot": {
+    "decisions": [
+      {
+        "action": "WAIT",
+        "intent_id": null,
+        "reason": "DATA_STALE",
+        "status": "DONE",
+        "window_start": "2026-10-17T10:27:00+00:00"
+      }
+    ],
+    "intents": 0,
+    "orders": 0
+  },
+  "fault_ui": "real_backend_stale_banner_and_ready_start_disabled",
+  "finished_at": "2026-10-17T10:28:27.625327+00:00",
+  "injected_close_at": "2026-10-17T10:28:05.965473+00:00",
+  "max_public_rest_operations": 60,
+  "max_seconds": 230,
+  "private_requests": 0,
+  "public_rest_operations": 36,
+  "public_rest_paths": {
+    "/api/v1/contract/depth/BTC_USDT": 5,
+    "/api/v1/contract/detail/country": 2,
+    "/api/v1/contract/funding_rate/BTC_USDT": 3,
+    "/api/v1/contract/funding_rate/history": 9,
+    "/api/v1/contract/kline/BTC_USDT": 9,
+    "/api/v1/contract/ping": 3,
+    "/api/v1/contract/ticker": 5
+  },
+  "reconciliations": 2,
+  "recovered": {
+    "at": "2026-10-17T10:28:25.774837+00:00",
+    "final_candles": 598,
+    "quality_reason": "stream_active",
+    "quality_status": "ok",
+    "reasons": [],
+    "ticker_source": "ws",
+    "ticker_source_time": "2026-10-17T10:28:25.811000+00:00",
+    "trade_eligible": true,
+    "transport": "ws",
+    "unique_final_keys": 598
+  },
+  "recovered_api": {
+    "health": {
+      "body": {
+        "dependencies": {
+          "database": "ok",
+          "migrations": "ok",
+          "redis": "ok",
+          "state": "ok",
+          "trading": "ok"
+        },
+        "mode": "paper",
+        "occurred_at": "2026-10-17T10:28:25.785914+00:00",
+        "request_id": "fb719a47-7bdc-4c79-81fb-b99b9874b0b2",
+        "status": "ok"
+      },
+      "http": 200
+    },
+    "markets/BTC_USDT/quality": {
+      "body": {
+        "reasons": [],
+        "status": "ok",
+        "trade_eligible": true,
+        "transport": "ws"
+      },
+      "http": 200
+    },
+    "markets/BTC_USDT/ticker": {
+      "body": {
+        "config_version": "foundation-v1",
+        "data": {
+          "ask1": "81590.7",
+          "bid1": "81590.6",
+          "fairPrice": "81590.7",
+          "fundingRate": "0.000031",
+          "holdVol": "457751441",
+          "indexPrice": "81620.2",
+          "lastPrice": "81590.6"
+        },
+        "event_id": "e96d316d-b9e5-4564-b5f5-f604657cf383",
+        "kind": "ticker",
+        "quality": {
+          "reasons": [],
+          "status": "ok",
+          "trade_eligible": true,
+          "transport": "ws"
+        },
+        "quality_status": "ok",
+        "received_at": "2026-10-17T10:28:25.739290+00:00",
+        "source": "ws",
+        "source_time": "2026-10-17T10:28:25.811000+00:00",
+        "symbol": "BTC_USDT"
+      },
+      "http": 200
+    }
+  },
+  "recovered_bot": {
+    "decisions": [
+      {
+        "action": "WAIT",
+        "intent_id": null,
+        "reason": "DATA_STALE",
+        "status": "DONE",
+        "window_start": "2026-10-17T10:27:00+00:00"
+      }
+    ],
+    "intents": 0,
+    "orders": 0
+  },
+  "recovered_ui": "real_backend_active_pill",
+  "result": "pass",
+  "scope": "disposable_sqlite_api_web_bot_real_public_mexc",
+  "second_reconciled_at": "2026-10-17T10:28:23.322195+00:00",
+  "started_at": "2026-10-17T10:27:51.346446+00:00",
+  "symbol": "BTC_USDT",
+  "telegram_sends": 0,
+  "temporary_resources_cleaned": true,
+  "ws_connections": 2,
+  "ws_tickers_skipped_after_pause": [
+    0,
+    3
+  ]
+}

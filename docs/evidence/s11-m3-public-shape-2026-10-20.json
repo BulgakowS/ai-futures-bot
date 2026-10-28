@@ -1,0 +1,24 @@
+{
+  "stage": "S11/M3",
+  "checked_at_utc": "2026-10-20T04:16:40.618Z",
+  "scope": "read-only public MEXC API response shape; no database write",
+  "logical_get_count": 3,
+  "server_at_utc": "2026-10-20T04:16:40.618Z",
+  "anchor_at_utc": "2026-10-20T04:00:00Z",
+  "symbol": "BTC_USDT",
+  "rules_state": 0,
+  "rules_version": "39550f2d2fea4df77288d5e595e12cf577a6cf75c7f0be6e0f67a47bf551f2fc",
+  "hour4_windows": [
+    {"window_start_utc": "2026-10-19T20:00:00Z", "final_by_local_policy": true},
+    {"window_start_utc": "2026-10-20T00:00:00Z", "final_by_local_policy": true},
+    {"window_start_utc": "2026-10-20T04:00:00Z", "final_by_local_policy": false}
+  ],
+  "private_calls": 0,
+  "paper_orders": 0,
+  "active_database_writes": 0,
+  "limitations": [
+    "One public response shape probe does not prove future availability or 15-minute as-of latency.",
+    "Current official Contract Info documentation was not re-read because gstack browser runtime was unavailable.",
+    "Public rules metadata is not account-specific fee or actual execution cost proof."
+  ]
+}

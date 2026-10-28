@@ -1,0 +1,19 @@
+# S11/G7a — sparse GKG v3, бюджетний протокол збору й майбутньої оцінки
+
+Статус: **collect-only, outline; freeze, cohort, модель і Paper не запущені**. Цей документ не змінює N5b: його 16-slot G3/G4/G5b контракт і 56-денний forward лишаються неактивними. G7a має власний source `gdelt-gkg-sparse-v3`; нові dataset/features/model protocol потребують окремої версії та перевірки до freeze.
+
+## Наперед задана одиниця збору
+
+На кожен UTC anchor рівно `00:00/04:00/08:00/12:00/16:00/20:00` є один target ZIP з batch ID `anchor−15m`. Collector запускається вручну після anchor і не пізніше `anchor+15m`. URL будується з цього ID, не вибирається за вмістом/ринком/наявністю BTC. Один HEAD і максимум один GET; redirect, невірний status/Content-Length, ZIP або схему — `error`, відсутній outcome після crash — `unknown`. Будь-яка така спроба незворотно витрачає один anchor та 8,470,528 B budget reservation. Повтор і backfill заборонені. Валідний batch із `btc_rows=0` є нулем; будь-яка відмова/пропуск не є нулем. `first_seen_at` після відповіді потрібний для майбутнього as-of decision; batch timestamp сам по собі не доводить доступність.
+
+## Ліміт
+
+Загальна межа збору новин: **5,000,000,000 response bytes**. Після звірки наявних локальних файлів відкривальний консервативний debit `134,217,728 B` покриває відомі старі GKG ZIP `22,384,251 B`, codebook PDF `434,652 B`, DOC JSON `2,486 B`, manifest `319 B` та `111,396,020 B` резерву під інші prior manifest/DOC/HEAD/web probes і похибку обліку. Останній резерв не є точним виміром усіх старих відповідей. Старі збирачі з окремим бюджетом не можуть паралельно продовжувати news GET. Реальний HTTP CLI використовує лише один фіксований, некомітований SQLite journal `data/research/s11-gkg-sparse.sqlite` для всієї кампанії; його не можна видаляти чи відтворювати як новий ліміт. Тимчасові DB дозволені тільки з ін'єктованим mock HTTP у тестах.
+
+Перед HEAD атомарно комітиться append-only claim із резервом `8 MiB ZIP + 64 KiB response overhead + 16 KiB read overrun`. SQLite `BEGIN IMMEDIATE` серіалізує claim між процесами. Якщо `prior + sum(claims) + next reserve > 5,000,000,000`, немає HTTP. HEAD вимагає `200`, фіксований URL, `Content-Length` у `(0,8 MiB]`, `identity` encoding; GET має `200`, той самий Content-Length і рівно стільки raw ZIP bytes. Весь обмін має 15 s deadline. Резерв не повертається ні за HTTP error, ні за crash, щоб повторний процес не перевищив cap. Збережений `response_bytes` — діагностика завершеної спроби; gate спирається на більшу claim reservation. HTTP framing/TLS, проксі або сторонні news клієнти не входять до локального виміру, тому їх слід облікувати окремо до запуску.
+
+При 56 UTC добах це 336 anchors і максимум `2,846,097,408 B` нових claims; разом із baseline `2,980,315,136 B`, нижче 5 GB. Це лише верхня межа трафіку, не доказ доступності release чи якості сигналу. Немає адаптивного добору batch за результатом. Реальна sparse cohort може містити багато нульових BTC batch; її статистичну придатність потрібно оцінити до model preregistration.
+
+## Наступний prereg перед freeze
+
+Окремо визначити versioned sparse dataset: рівно один release на anchor, immutable attempt/result IDs/hash, `first_seen_at≤decision_at≤anchor+15m`, фінальна M1 Hour4 Candle й provenance правил/сценарних витрат. Missing/late/error/crash дають `WAIT` із повним denominator усіх запланованих anchors. Label — наступний nominal 4h close з окремим `label_cutoff=target+15m`; він не потрапляє в features. Визначити тривалість, мінімальні події/coverage/paired observations, embargo, validation thresholds, paired market-only контроль, cost/risk метрики та freeze manifest **після** bounded real latency/coverage й baseline audit. Поточні N5b пороги та 16-slot features не копіювати до sparse dataset. Будь-яка зміна source/cadence/feature policy означає нову версію та новий майбутній період. Жоден research verdict не відкриває Paper без Stage 8/Risk Engine; Live заборонено.
